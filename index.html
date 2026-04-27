@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f2f2f0" />
+    <title>地球型歴史地図</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css?v=20260428-2" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <div id="globe-stage" class="globe-stage" aria-label="地球型歴史地図"></div>
+
+      <nav class="toolbar" aria-label="地球操作">
+        <button id="zoom-out" type="button" title="縮小" aria-label="縮小">-</button>
+        <button id="zoom-in" type="button" title="拡大" aria-label="拡大">+</button>
+        <button id="reset-view" type="button" title="表示を戻す" aria-label="表示を戻す">⌂</button>
+        <button id="auto-rotate" type="button" title="自転" aria-label="自転">↻</button>
+      </nav>
+
+      <aside class="info-panel" aria-live="polite">
+        <div class="panel-meta">
+          <span id="detail-tier">遠景</span>
+          <span id="feature-count">0 regions</span>
+        </div>
+        <h1 id="info-title">地球型歴史地図</h1>
+        <div id="info-body" class="info-body"></div>
+      </aside>
+
+      <section class="timeline" aria-label="年代">
+        <button id="era-prev" type="button" title="前の年代" aria-label="前の年代">‹</button>
+        <div class="timeline-main">
+          <h2 id="era-title" class="era-title">地球型歴史地図</h2>
+          <div class="timeline-head">
+            <label for="era-range">年代</label>
+            <output id="year-readout" for="era-range">2010</output>
+          </div>
+          <input id="era-range" type="range" min="0" max="0" step="1" value="0" />
+          <div id="era-ticks" class="era-ticks"></div>
+        </div>
+        <button id="era-next" type="button" title="次の年代" aria-label="次の年代">›</button>
+      </section>
+
+      <div id="loading" class="loading" hidden>読み込み中</div>
+    </main>
+
+    <script type="module" src="./src/app.js?v=20260428-2"></script>
+  </body>
+</html>

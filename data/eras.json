@@ -1,0 +1,1240 @@
+{
+  "eras": [
+    {
+      "id": "earth-formation",
+      "label": "45.4億年前",
+      "tickLabel": "45.4億",
+      "title": "地球誕生",
+      "category": "geology",
+      "categoryLabel": "地球史",
+      "ageMa": 4540,
+      "environment": "微惑星の衝突で原始地球が形成され、表面は高温のマグマに覆われていました。",
+      "biology": "生命はまだ確認されていません。",
+      "note": "地球誕生は約45.4億年前として扱っています。",
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "????????????????????2010?????????????????"
+    },
+    {
+      "id": "early-ocean",
+      "label": "40億年前",
+      "title": "原始海洋の時代",
+      "category": "geology",
+      "categoryLabel": "地球史",
+      "ageMa": 4000,
+      "environment": "地表が冷え、海洋と初期の地殻が安定し始めた時代です。",
+      "biology": "生命の有無は不確実で、化学進化が進んでいた可能性があります。",
+      "note": "この時代の情報は全球的な概略です。",
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "????????????????????2010?????????????????"
+    },
+    {
+      "id": "earliest-life",
+      "label": "38億年前",
+      "title": "生命痕跡候補",
+      "category": "biology",
+      "categoryLabel": "生物史",
+      "ageMa": 3800,
+      "environment": "海洋、熱水環境、浅海などが生命起源の候補環境として考えられます。",
+      "biology": "炭素同位体などから生命活動の可能性が議論されています。",
+      "events": [
+        {
+          "title": "イスア地域の生命痕跡候補",
+          "place": "グリーンランド南西部",
+          "lon": -50.2,
+          "lat": 64.7,
+          "summary": "非常に古い堆積岩に生命活動の可能性を示す痕跡が報告されています。",
+          "biology": "初期生命の候補",
+          "environment": "古い海洋堆積環境",
+          "note": "解釈には議論があります。"
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "????????????????????2010?????????????????"
+    },
+    {
+      "id": "stromatolites",
+      "label": "35億年前",
+      "tickLabel": "35億",
+      "title": "ストロマトライトの時代",
+      "category": "biology",
+      "categoryLabel": "生物史",
+      "ageMa": 3500,
+      "environment": "浅海の微生物マットが堆積物を固め、層状構造を作りました。",
+      "biology": "シアノバクテリアに近い微生物群集が生態系の中心でした。",
+      "events": [
+        {
+          "title": "ピルバラのストロマトライト",
+          "place": "西オーストラリア",
+          "lon": 119.4,
+          "lat": -21.3,
+          "summary": "古いストロマトライトが知られる代表地域です。",
+          "biology": "微生物マット",
+          "environment": "浅い海"
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "????????????????????2010?????????????????"
+    },
+    {
+      "id": "great-oxidation",
+      "label": "24億年前",
+      "title": "大酸化イベント",
+      "category": "biology",
+      "categoryLabel": "生物史",
+      "ageMa": 2400,
+      "environment": "光合成による酸素が海洋と大気に蓄積し始め、地球環境が大きく変わりました。",
+      "biology": "酸素を出す微生物が地球規模の環境変化を起こしました。",
+      "events": [
+        {
+          "title": "ハマースリー盆地・Turee Creek Group",
+          "place": "西オーストラリア",
+          "lon": 118.9,
+          "lat": -22.7,
+          "summary": "縞状鉄鉱層の上位に続く地層群で、GOE期の海洋・大気変化を記録する代表地域です。",
+          "biology": "光合成微生物",
+          "environment": "酸素が増え始めた海洋",
+          "note": "代表位置。Turee Creek Group は GOE をまたぐ連続的な海成堆積記録として研究されています。"
+        },
+        {
+          "title": "Duitschland・Rooihoogte・Timeball Hill formations",
+          "place": "南アフリカ・トランスバール盆地",
+          "lon": 27.59,
+          "lat": -26.47,
+          "summary": "硫黄同位体の質量非依存分別が消える時期を含み、大気中酸素の増加を年代づける重要記録です。",
+          "biology": "光合成微生物",
+          "environment": "浅海から陸棚の酸化還元変化",
+          "note": "代表位置は Timeball Hill Formation の掘削コア付近。GOE本体を縛る主要記録です。"
+        },
+        {
+          "title": "Huronian Supergroup",
+          "place": "カナダ・オンタリオ州クーパー湖周辺",
+          "lon": -83.546,
+          "lat": 46.53,
+          "summary": "古土壌・硫黄同位体・氷河性堆積物が、GOE期の低酸素から酸素化への変化を示します。",
+          "biology": "光合成微生物",
+          "environment": "大気酸素上昇期の陸上風化と堆積盆",
+          "note": "クーパー湖古土壌の代表位置。Huronian は北米でGOEを議論する主要な地層群です。"
+        },
+        {
+          "title": "Gowganda Formation",
+          "place": "カナダ・オンタリオ州ゴウガンダ周辺",
+          "lon": -80.78,
+          "lat": 47.65,
+          "summary": "ヒューロニアン氷河作用の後に、酸化的な浅海環境を示すマンガン濃集が報告されています。",
+          "biology": "光合成微生物",
+          "environment": "氷河後の酸化的な浅海",
+          "note": "GOEに伴う気候変動と酸化的海洋環境の関連記録として追加。"
+        },
+        {
+          "title": "Chocolay Group",
+          "place": "米国・ミシガン州スペリオル湖地域",
+          "lon": -87.4,
+          "lat": 46.55,
+          "summary": "スペリオルクラトン南縁の古原生代堆積物で、GOE期の北米氷河記録との対比に使われます。",
+          "biology": "光合成微生物",
+          "environment": "GOE期の氷河性・浅海性堆積環境",
+          "note": "代表位置。Huronian Supergroup と対比される北米側の関連記録です。"
+        },
+        {
+          "title": "Zaonega Formation",
+          "place": "ロシア・カレリア、オネガ盆地",
+          "lon": 34.35,
+          "lat": 62.1,
+          "summary": "約20億年前の有機物に富む地層で、GOE後の酸素化環境と Lomagundi-Jatuli 後続変化を記録します。",
+          "biology": "微生物生態系",
+          "environment": "GOE後の酸素化した海洋・湖沼的盆地",
+          "note": "GOE本体より少し後の記録。『GOE後続』として扱うのが安全です。"
+        },
+        {
+          "title": "Francevillian Basin",
+          "place": "ガボン・フランスヴィル盆地",
+          "lon": 13.6,
+          "lat": -1.6,
+          "summary": "約21億年前の酸素を含む浅海環境と大型有機構造が報告され、GOE後の生物圏変化を示します。",
+          "biology": "微生物から大型有機構造",
+          "environment": "GOE後の酸素化した浅海",
+          "note": "GOE後の記録。大型構造の生物性には議論があるため、ここでは酸素化環境の記録として扱います。"
+        },
+        {
+          "title": "Lomagundi Group",
+          "place": "ジンバブエ・マゴンディ帯",
+          "lon": 30.0,
+          "lat": -16.8,
+          "summary": "Lomagundi 炭素同位体異常の模式地で、GOE後の全球的な炭素循環変化を示す代表記録です。",
+          "biology": "光合成微生物",
+          "environment": "GOE後の浅海炭酸塩環境",
+          "note": "GOE本体ではなく、直後に続く Lomagundi-Jatuli Event の代表記録です。"
+        },
+        {
+          "title": "Minas Supergroup",
+          "place": "ブラジル・ミナスジェライス州",
+          "lon": -43.9,
+          "lat": -20.3,
+          "summary": "鉄鉱層と炭酸塩が、古原生代の酸素化と Lomagundi 型の炭素同位体変動を記録します。",
+          "biology": "光合成微生物",
+          "environment": "GOE後の海洋化学変化",
+          "note": "代表位置は Quadrilatero Ferrifero。GOE後続の炭素同位体記録として追加。"
+        },
+        {
+          "title": "Aravalli Supergroup",
+          "place": "インド・ラージャスターン州ジャーマルコトラ周辺",
+          "lon": 73.72,
+          "lat": 24.42,
+          "summary": "古原生代炭酸塩の高い炭素同位体値やリン酸塩が、GOE後の海洋栄養塩・酸化還元変化と関連づけられます。",
+          "biology": "光合成微生物",
+          "environment": "GOE後の浅海・リン酸塩形成環境",
+          "note": "GOE本体ではなく、Lomagundi-Jatuli に連なる関連記録として追加。"
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "????????????????????2010?????????????????"
+    },
+    {
+      "id": "eukaryotes",
+      "label": "18億年前",
+      "title": "真核生物の拡大",
+      "category": "biology",
+      "categoryLabel": "生物史",
+      "ageMa": 1800,
+      "environment": "酸素を利用する代謝が広がり、細胞の複雑化が進みました。",
+      "biology": "核を持つ真核生物が多様化し始めました。",
+      "events": [
+        {
+          "title": "Changzhougou Formation のアクリターク",
+          "place": "中国北部・河北省パンジャプ周辺",
+          "lon": 115.1,
+          "lat": 40.6,
+          "summary": "約18億年前の有機壁微化石群が、初期真核生物の多様化を示す可能性があります。",
+          "biology": "初期真核生物",
+          "environment": "浅海",
+          "note": "Lamb et al. 2009 で約1800 Ma Changzhougou Formation の多様なアクリタークが報告されています。"
+        },
+        {
+          "title": "Chuanlinggou Formation の大型・多細胞候補",
+          "place": "中国北部・薊県周辺",
+          "lon": 117.4,
+          "lat": 40.05,
+          "summary": "約18億年前から約16.3億年前の層準で、真核生物と解釈される有機壁微化石や多細胞候補が報告されています。",
+          "biology": "初期真核生物・多細胞候補",
+          "environment": "浅海の泥質堆積環境",
+          "note": "1986年の Chuanlinggou 微化石報告と、2024年の約1.63 Ga 多細胞真核生物報告を区別して扱う必要があります。"
+        },
+        {
+          "title": "Negaunee Iron Formation の Grypania",
+          "place": "米国・ミシガン州エンパイア鉱山周辺",
+          "lon": -87.65,
+          "lat": 46.48,
+          "summary": "約21億年前の大型らせん状炭質化石 Grypania が報告され、古い真核生物候補として議論されています。",
+          "biology": "大型真核生物候補",
+          "environment": "鉄鉱層を含む海成堆積環境",
+          "note": "Han and Runnegar 1992 の報告。真核生物とされることが多い一方、古い大型候補として慎重に扱います。"
+        },
+        {
+          "title": "Roper Group の Tappania・Valeria・Satka",
+          "place": "オーストラリア北部・マッカーサー盆地",
+          "lon": 134.7,
+          "lat": -14.8,
+          "summary": "約15億年前の Roper Group から、複雑な有機壁微化石群が多数報告されています。",
+          "biology": "初期真核生物",
+          "environment": "浅海から外洋寄りの泥質堆積環境",
+          "note": "Javaux らの研究以降、Roper Group は中期原生代の真核微化石記録の代表例です。18億年前より後続の記録です。"
+        },
+        {
+          "title": "Greyson Formation の Tappania 群集",
+          "place": "米国・モンタナ州ニューランクリーク周辺",
+          "lon": -110.8,
+          "lat": 46.8,
+          "summary": "Belt Supergroup の約15.5-14.5億年前の地層から、Roper Group と似た複雑な真核微化石群が報告されています。",
+          "biology": "初期真核生物",
+          "environment": "浅海性の泥質堆積環境",
+          "note": "Adam 2014/2017 による Laurentia 側の記録。18億年前より後続の分布拡大記録です。"
+        },
+        {
+          "title": "Rohtas Formation の Grypania",
+          "place": "インド中部・ヴィンディヤ盆地ソン渓谷",
+          "lon": 83.9,
+          "lat": 24.65,
+          "summary": "Vindhyan Supergroup の Rohtas Formation から、約16億年前の大型藻類候補 Grypania が報告されています。",
+          "biology": "大型真核藻類候補",
+          "environment": "浅海の炭酸塩・泥質堆積環境",
+          "note": "Pb-Pb 年代 1599±48 Ma が報告されています。18億年前より後の大型真核候補記録です。"
+        },
+        {
+          "title": "Kamo Group の Tappania 群集",
+          "place": "ロシア・シベリア卓状地中央アンガラ盆地",
+          "lon": 101.0,
+          "lat": 58.5,
+          "summary": "シベリアの中期原生代地層から、Tappania を含む複雑な有機壁微化石群が報告されています。",
+          "biology": "初期真核生物",
+          "environment": "海成堆積盆",
+          "note": "Nagovitsin らの Kamo Group 報告。位置は盆地代表点で、18億年前より後続の分布記録です。"
+        },
+        {
+          "title": "Francevillian Basin の大型有機構造",
+          "place": "ガボン・フランスヴィル盆地",
+          "lon": 13.6,
+          "lat": -1.6,
+          "summary": "約21億年前の大型構造化石が報告され、酸素化後の複雑な生命の候補として議論されています。",
+          "biology": "大型生命候補",
+          "environment": "酸素を含む浅海環境",
+          "note": "El Albani et al. 2010 の記録。真核生物と断定せず、複雑な大型生命候補として表示します。"
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "????????????????????2010?????????????????"
+    },
+    {
+      "id": "multicellular",
+      "label": "12億年前",
+      "title": "多細胞化への道",
+      "category": "biology",
+      "categoryLabel": "生物史",
+      "ageMa": 1200,
+      "environment": "浅海の生態系で、藻類や微生物群集が広がりました。",
+      "biology": "多細胞性や有性生殖につながる複雑な生命活動が発達しました。",
+      "events": [
+        {
+          "title": "Bangiomorpha pubescens",
+          "place": "カナダ北極圏・サマーセット島 Hunting Formation",
+          "lon": -94.2,
+          "lat": 73.5,
+          "summary": "約10.5-12億年前の多細胞紅藻で、有性生殖に関わる生活環も示唆される代表的な化石です。",
+          "biology": "多細胞藻類",
+          "environment": "潮間帯から浅海の炭酸塩環境",
+          "note": "Butterfield 2000 とその後の年代研究で、古い多細胞紅藻として広く参照されています。"
+        },
+        {
+          "title": "Qingshania magnifica",
+          "place": "中国北部・Chuanlinggou Formation",
+          "lon": 117.4,
+          "lat": 40.05,
+          "summary": "約16.35億年前の細胞構造を保つ多細胞微化石として報告されました。",
+          "biology": "多細胞真核生物候補",
+          "environment": "浅海の泥質堆積環境",
+          "note": "Science Advances 2024 の報告。12億年前より古い、多細胞化の前史として追加。"
+        },
+        {
+          "title": "Gaoyuzhuang Formation の大型炭質圧縮化石",
+          "place": "中国北部・天津市薊州区周辺",
+          "lon": 117.45,
+          "lat": 40.05,
+          "summary": "約15.6億年前のデシメートル級大型化石が、多細胞真核生物として解釈されています。",
+          "biology": "大型多細胞真核生物",
+          "environment": "浅海の炭酸塩・泥質堆積環境",
+          "note": "Nature Communications 2016 と後続の年代研究で扱われる、前エディアカラ大型多細胞記録です。"
+        },
+        {
+          "title": "Rafatazmia chitrakootensis",
+          "place": "インド中部・Vindhyan Supergroup Tirohan Dolomite",
+          "lon": 80.9,
+          "lat": 25.2,
+          "summary": "約16億年前の三次元保存された糸状化石で、紅藻類と解釈されています。",
+          "biology": "多細胞紅藻候補",
+          "environment": "ストロマトライトを伴う浅海炭酸塩環境",
+          "note": "PLOS Biology 2017 の報告。年代と分類には慎重さが必要ですが、紅藻候補として重要です。"
+        },
+        {
+          "title": "Horodyskia moniliformis",
+          "place": "米国・モンタナ州 Glacier National Park Appekunny Formation",
+          "lon": -113.65,
+          "lat": 48.8,
+          "summary": "約14.8億年前の「数珠状」大型化石で、多細胞または共細胞性大型生物の候補として議論されています。",
+          "biology": "大型多細胞候補",
+          "environment": "浅海のシルト質堆積環境",
+          "note": "Horodyskia の生物性には議論があります。近年は多細胞・共細胞性大型生物として再評価する研究もあります。"
+        },
+        {
+          "title": "Horodyskia williamsii",
+          "place": "西オーストラリア・Bangemall Supergroup",
+          "lon": 117.2,
+          "lat": -23.5,
+          "summary": "中期原生代の数珠状大型化石で、モンタナの Horodyskia と比較される多細胞候補です。",
+          "biology": "大型多細胞候補",
+          "environment": "浅海の珪質砕屑性堆積環境",
+          "note": "Western Australia の Horodyskia 記録。生物性と系統的位置は未確定として表示します。"
+        },
+        {
+          "title": "Lantian biota",
+          "place": "中国南部・安徽省 Lantian Formation",
+          "lon": 118.18,
+          "lat": 29.86,
+          "summary": "初期エディアカラ紀の大型で形態分化した真核生物群で、海底の多細胞生態系を示します。",
+          "biology": "大型多細胞真核生物",
+          "environment": "酸化還元が変動する海底環境",
+          "note": "約6.35億年前以降の後続記録。多細胞化が大型・多様化へ進む段階として追加。"
+        },
+        {
+          "title": "Weng'an biota",
+          "place": "中国南部・貴州省甕安 Doushantuo Formation",
+          "lon": 107.48,
+          "lat": 27.1,
+          "summary": "三次元保存された多細胞藻類や胚様化石を含む、エディアカラ紀の重要なリン酸塩化石群です。",
+          "biology": "多細胞藻類・胚様化石",
+          "environment": "リン酸塩化した浅海環境",
+          "note": "動物胚とする解釈には議論があります。ここでは多細胞生物・藻類記録として扱います。"
+        },
+        {
+          "title": "Doushantuo chert nodules の多細胞藻類",
+          "place": "中国南部・湖北省三峡地域",
+          "lon": 110.8,
+          "lat": 30.8,
+          "summary": "初期エディアカラ紀のチャート団塊から、解剖学的細部を持つ多様な多細胞藻類が報告されています。",
+          "biology": "多細胞藻類",
+          "environment": "浅海のチャート・炭酸塩環境",
+          "note": "Doushantuo Formation の後続記録。大型動物出現前の藻類多様化として追加。"
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "????????????????????2010?????????????????"
+    },
+    {
+      "id": "ediacaran",
+      "label": "6.35億年前",
+      "title": "エディアカラ生物群",
+      "category": "biology",
+      "categoryLabel": "生物史",
+      "ageMa": 635,
+      "environment": "全球凍結後の海洋で、大型で柔らかい体の生物が現れました。",
+      "biology": "初期の大型多細胞生物が海底に広がりました。",
+      "events": [
+        {
+          "title": "Ediacara Hills",
+          "place": "南オーストラリア・Rawnsley Quartzite",
+          "lon": 138.1,
+          "lat": -30.8,
+          "summary": "エディアカラ生物群の名の由来になった古典的産地で、Dickinsonia や Spriggina などで知られます。",
+          "biology": "大型多細胞生物",
+          "environment": "浅海から海底",
+          "note": "現露頭の代表位置。Ediacara Member は White Sea 型に近い多様な生物群を含みます。"
+        },
+        {
+          "title": "Nilpena Ediacara fossil beds",
+          "place": "南オーストラリア・フリンダース山脈",
+          "lon": 138.42,
+          "lat": -31.1,
+          "summary": "多数の化石面が原位置で保存され、エディアカラ生物群の群集構造や生態を詳しく調べられる重要産地です。",
+          "biology": "Dickinsonia・Spriggina など",
+          "environment": "浅海底の微生物マット上",
+          "note": "Ediacara Hills と近接しますが、発掘面が広く生態復元研究で特に重要なため別マーカーにしています。"
+        },
+        {
+          "title": "Mistaken Point biota",
+          "place": "カナダ・ニューファンドランド島アバロン半島",
+          "lon": -53.18,
+          "lat": 46.63,
+          "summary": "約5.79-5.65億年前の深海底群集で、レンジオモルフなど大型で複雑な生物が火山灰層下に保存されています。",
+          "biology": "レンジオモルフ・葉状生物",
+          "environment": "深海底",
+          "note": "Avalon 型生物群の代表。世界最古級の大型で複雑な海底生態系として扱われます。"
+        },
+        {
+          "title": "Charnwood Forest",
+          "place": "英国・レスターシャー",
+          "lon": -1.25,
+          "lat": 52.72,
+          "summary": "Charnia masoni の発見で知られる深海性のエディアカラ型化石産地です。",
+          "biology": "Charnia などの葉状生物",
+          "environment": "深海底",
+          "note": "Avalon 型に属する英国側の代表産地。Mistaken Point と似た深水環境の記録です。"
+        },
+        {
+          "title": "White Sea biota",
+          "place": "ロシア北西部・白海沿岸 Zimnie Gory",
+          "lon": 40.55,
+          "lat": 65.32,
+          "summary": "Dickinsonia、Kimberella、Tribrachidium など多様な大型化石と移動痕で知られる代表的な浅海-デルタ性産地です。",
+          "biology": "Dickinsonia・Kimberella など",
+          "environment": "浅海からデルタ前縁",
+          "note": "White Sea 型生物群の代表。運動性や摂食行動の議論で重要です。"
+        },
+        {
+          "title": "Nama Group",
+          "place": "ナミビア南部・Nama Basin",
+          "lon": 16.7,
+          "lat": -26.8,
+          "summary": "終末エディアカラ紀の Ernietta、Rangea、Cloudina、Namacalathus などで知られ、骨格化した動物候補も含みます。",
+          "biology": "erniettomorph・cloudinid など",
+          "environment": "浅海炭酸塩-砕屑性盆地",
+          "note": "Nama 型生物群の代表。約5.49-5.39億年前の若いエディアカラ記録です。"
+        },
+        {
+          "title": "Sekwi Brook assemblage",
+          "place": "カナダ北西部・マッケンジー山地",
+          "lon": -128.55,
+          "lat": 64.35,
+          "summary": "Sheepbed・Blueflower formations からエディアカラ型化石が報告され、北西カナダの重要な大型化石記録です。",
+          "biology": "葉状生物・管状生物など",
+          "environment": "海成堆積盆",
+          "note": "北西カナダの代表位置。複数の新分類群が報告されています。"
+        },
+        {
+          "title": "Podolia Ediacaran biota",
+          "place": "ウクライナ・Podolia / Mohyliv-Podilskyi 周辺",
+          "lon": 27.8,
+          "lat": 48.45,
+          "summary": "Charnia、Dickinsonia、Rangea などと対比される化石群が報告され、火山灰年代で時期が制約されています。",
+          "biology": "エディアカラ型大型化石",
+          "environment": "浅海性珪質砕屑環境",
+          "note": "ウクライナの代表位置。年代制約のある東欧プラットフォーム上の記録です。"
+        },
+        {
+          "title": "Kushk Series biota",
+          "place": "イラン中央部・Kushk / Chahmir 地域",
+          "lon": 55.55,
+          "lat": 31.75,
+          "summary": "Kimberella persii、Cloudina、Corumbella、erniettomorph、rangeomorph などを含む多様な終末エディアカラ紀化石群です。",
+          "biology": "Kimberella・管状化石・葉状生物",
+          "environment": "浅海性堆積環境",
+          "note": "中央イランの終末エディアカラ記録。White Sea 後の多様性を考えるうえで重要です。"
+        },
+        {
+          "title": "Lantian biota",
+          "place": "中国南部・安徽省 Lantian Formation",
+          "lon": 118.18,
+          "lat": 29.86,
+          "summary": "初期エディアカラ紀の大型で形態分化した真核生物群で、Avalon 型より古い可能性がある海底生態系です。",
+          "biology": "大型多細胞真核生物",
+          "environment": "酸化還元が変動する海底環境",
+          "note": "典型的な Dickinsonia 型の動物群とは別系統の可能性もあるため、大型真核生物群として表示します。"
+        },
+        {
+          "title": "Gaojiashan biota",
+          "place": "中国・陝西省南部 Dengying Formation",
+          "lon": 106.25,
+          "lat": 32.83,
+          "summary": "終末エディアカラ紀の Conotubus、Cloudina 型管状化石などで知られる、カンブリア紀直前の重要産地です。",
+          "biology": "管状生物・骨格化候補",
+          "environment": "浅海炭酸塩環境",
+          "note": "Nama 型に近い若い記録。柔らかい典型的エディアカラ型だけでなく、管状・骨格化候補を含みます。"
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "????????????????????2010?????????????????"
+    },
+    {
+      "id": "cambrian",
+      "label": "5.41億年前",
+      "tickLabel": "5.41億",
+      "title": "カンブリア爆発",
+      "category": "biology",
+      "categoryLabel": "生物史",
+      "ageMa": 541,
+      "environment": "海で動物の体制が急速に多様化し、捕食や硬い殻が重要になりました。",
+      "biology": "節足動物、腕足動物、初期脊索動物などが多様化しました。",
+      "events": [
+        {
+          "title": "Chengjiang biota",
+          "place": "中国雲南省・Maotianshan Shale",
+          "lon": 102.9,
+          "lat": 24.7,
+          "summary": "約5.18億年前の軟体部保存化石群で、節足動物、葉足動物、初期脊索動物など多様な動物体制を示します。",
+          "biology": "海生無脊椎動物と初期脊索動物",
+          "environment": "デルタから浅海の泥質環境",
+          "note": "カンブリア爆発を議論する代表的な初期カンブリア Lagerstätte。現露頭の代表位置です。"
+        },
+        {
+          "title": "Burgess Shale",
+          "place": "カナダ・ブリティッシュコロンビア州 Yoho National Park",
+          "lon": -116.5,
+          "lat": 51.4,
+          "summary": "中期カンブリア紀の軟体部保存化石群で、カンブリア爆発後の動物多様性を詳細に示す古典的産地です。",
+          "biology": "海生動物群",
+          "environment": "大陸棚斜面",
+          "note": "初期カンブリアではなく約5.08億年前の後続記録ですが、軟体部保存による比較基準として重要です。"
+        },
+        {
+          "title": "Sirius Passet biota",
+          "place": "グリーンランド北部・Peary Land",
+          "lon": -42.22,
+          "lat": 82.79,
+          "summary": "初期カンブリア紀の北半球高緯度 Lagerstätte で、節足動物、葉足動物、海綿などを含みます。",
+          "biology": "節足動物・葉足動物・海綿",
+          "environment": "低酸素を伴う海成堆積環境",
+          "note": "GEUS などで 82°47.6'N, 42°13.3'W 付近として示される古典的産地です。"
+        },
+        {
+          "title": "Qingjiang biota",
+          "place": "中国湖北省・長陽、清江流域",
+          "lon": 111.2,
+          "lat": 30.47,
+          "summary": "約5.18億年前の Burgess Shale 型化石群で、クラゲ類など軟体性生物を多く含む高多様性産地です。",
+          "biology": "軟体性動物・節足動物・藻類",
+          "environment": "浅海からやや深い泥質環境",
+          "note": "Science 2019 の Qingjiang biota。Chengjiang と同時代級ですが、生物相がかなり異なります。"
+        },
+        {
+          "title": "Emu Bay Shale",
+          "place": "南オーストラリア・カンガルー島 Big Gully",
+          "lon": 137.52,
+          "lat": -35.6,
+          "summary": "南半球を代表する初期カンブリア紀 Lagerstätte で、三葉虫、ラディオドンタ類、複眼などの保存で知られます。",
+          "biology": "三葉虫・節足動物・ラディオドンタ類",
+          "environment": "近岸から浅海の活動的な堆積盆",
+          "note": "オーストラリアで最重要の Burgess Shale 型産地。Science Advances 2024 で堆積環境が再検討されています。"
+        },
+        {
+          "title": "Guanshan biota",
+          "place": "中国雲南省・昆明周辺 Wulongqing Formation",
+          "lon": 102.75,
+          "lat": 24.9,
+          "summary": "カンブリア第4期の Burgess Shale 型化石群で、Tuzoia など節足動物を含む多様な軟体部保存記録です。",
+          "biology": "節足動物・三葉虫・軟体性動物",
+          "environment": "浅海泥質環境",
+          "note": "Chengjiang より少し若い雲南の Lagerstätte。Stage 4 の後続的多様化を示します。"
+        },
+        {
+          "title": "Kaili biota",
+          "place": "中国貴州省・Kaili Formation",
+          "lon": 107.98,
+          "lat": 26.58,
+          "summary": "カンブリア第2-3シリーズ境界付近の化石群で、Burgess Shale 型保存と通常の有殻化石の両方を含みます。",
+          "biology": "節足動物・三葉虫・海綿・腕足動物",
+          "environment": "浅海性泥質堆積環境",
+          "note": "初期から中期カンブリアへの移行をつなぐ記録として重要です。"
+        },
+        {
+          "title": "Kuanchuanpu biota",
+          "place": "中国陝西省南部・寧強県 Kuanchuanpu Formation",
+          "lon": 107.39,
+          "lat": 32.67,
+          "summary": "最初期カンブリアの小型有殻化石とリン酸塩化胚化石で知られ、動物の骨格化と発生記録を示します。",
+          "biology": "小型有殻化石・胚化石",
+          "environment": "リン酸塩に富む浅海環境",
+          "note": "軟体部 Lagerstätte ではなく、カンブリア爆発初期の骨格化・胚発生記録として追加。"
+        },
+        {
+          "title": "Meishucun small shelly fossils",
+          "place": "中国雲南省・晋寧 Meishucun section",
+          "lon": 102.68,
+          "lat": 24.68,
+          "summary": "Terreneuvian の小型有殻化石が豊富で、三葉虫出現前の骨格化した動物群を示します。",
+          "biology": "小型有殻化石",
+          "environment": "浅海炭酸塩・リン酸塩環境",
+          "note": "澄江より古い、カンブリア紀初期の『骨格化』側の記録です。"
+        },
+        {
+          "title": "Souss Lagerstätte",
+          "place": "モロッコ・Anti-Atlas、Tazemmourt section",
+          "lon": -9.25,
+          "lat": 30.55,
+          "summary": "下部カンブリア系 Amouslek Formation から、三葉虫、腕足動物、ヒオリテス類などの軟体部保存が報告されています。",
+          "biology": "三葉虫・腕足動物・ヒオリテス類",
+          "environment": "北西アフリカ縁辺の浅海性堆積環境",
+          "note": "Scientific Reports 2021 で『アフリカ初のカンブリア紀 Konservat-Lagerstätte』として報告。代表座標です。"
+        },
+        {
+          "title": "Brèche à Micmacca small shelly fossils",
+          "place": "モロッコ・High Atlas / Jbel Wawrmast Formation",
+          "lon": -7.55,
+          "lat": 31.0,
+          "summary": "カンブリア第2シリーズからミャオリンギアン境界付近の小型有殻化石群が報告され、北西アフリカの殻・骨格化記録を示します。",
+          "biology": "小型有殻化石・腕足動物・軟体動物様化石",
+          "environment": "浅海の泥質・石灰質薄層",
+          "note": "High Atlas と Anti-Atlas の Brèche à Micmacca Member に由来する記録。軟体部 Lagerstätte ではなく骨格化石側の記録です。"
+        },
+        {
+          "title": "Sinsk biota",
+          "place": "ロシア・シベリア卓状地 Lena River 沿い",
+          "lon": 124.8,
+          "lat": 61.4,
+          "summary": "初期カンブリア紀のシベリア産 Lagerstätte で、藻類、海綿、刺胞動物、節足動物などを含みます。",
+          "biology": "海綿・節足動物・軟体性生物",
+          "environment": "シベリア平台上の海成環境",
+          "note": "代表座標。Sinsk Lagerstätte はロシア側の重要な初期カンブリア軟体部化石記録です。"
+        },
+        {
+          "title": "Orsten-type microfossils",
+          "place": "スウェーデン南部・Kinnekulle / Alum Shale",
+          "lon": 13.42,
+          "lat": 58.6,
+          "summary": "後期カンブリアの三次元リン酸塩化微化石で、節足動物の幼生や微小体構造を立体的に保存します。",
+          "biology": "微小節足動物・幼生化石",
+          "environment": "石灰質団塊を含む海成頁岩",
+          "note": "カンブリア爆発そのものより若い記録。微小動物の体制・発生を補う後続記録として追加。"
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "????????????????????2010?????????????????"
+    },
+    {
+      "id": "devonian",
+      "label": "4.19億年前",
+      "title": "魚類と陸上植物の時代",
+      "category": "biology",
+      "categoryLabel": "生物史",
+      "ageMa": 419,
+      "environment": "陸上植物が広がり、河川や沿岸で脊椎動物の陸上進出が進みました。",
+      "biology": "魚類、初期四肢動物、維管束植物が重要です。",
+      "events": [
+        {
+          "title": "Rhynie chert",
+          "place": "スコットランド・アバディーンシャー",
+          "lon": -2.85,
+          "lat": 57.3,
+          "summary": "約4.07億年前の温泉性チャートで、初期維管束植物、菌類、藻類、節足動物まで立体的に保存します。",
+          "biology": "初期陸上植物・菌類・節足動物",
+          "environment": "温泉周辺の陸上湿地",
+          "note": "初期陸上生態系の古典的 Lagerstätte。植物だけでなく菌根様共生や陸上食物網も議論されます。"
+        },
+        {
+          "title": "Miguasha / Escuminac Formation",
+          "place": "カナダ・ケベック州ミグアシャ",
+          "lon": -66.4,
+          "lat": 48.1,
+          "summary": "後期デボン紀の魚類化石群で、Eusthenopteron や Elpistostege など魚類から四肢動物への移行を考える重要産地です。",
+          "biology": "肉鰭類・板皮類・初期条鰭類",
+          "environment": "河口から沿岸",
+          "note": "Elpistostege の胸鰭から指骨相同構造が報告され、手の起源を議論する代表記録です。"
+        },
+        {
+          "title": "Gogo Formation",
+          "place": "西オーストラリア・Kimberley / Fitzroy Crossing 周辺",
+          "lon": 125.6,
+          "lat": -18.1,
+          "summary": "後期デボン紀の三次元保存された魚類化石で知られ、板皮類の胚や軟組織保存も報告されています。",
+          "biology": "板皮類・肉鰭類・初期魚類群",
+          "environment": "熱帯礁周辺の海",
+          "note": "Gogo Lagerstätte は初期脊椎動物の繁殖・軟組織研究で重要。現露頭の代表位置です。"
+        },
+        {
+          "title": "Tiktaalik roseae",
+          "place": "カナダ・ヌナブト準州エルズミーア島 Fram Formation",
+          "lon": -79.45,
+          "lat": 78.3,
+          "summary": "約3.75億年前の浅水性肉鰭類で、頸部・肋骨・肢に近い胸鰭など四肢動物的特徴を持ちます。",
+          "biology": "魚類-四肢動物移行型",
+          "environment": "河川からデルタの浅水環境",
+          "note": "Nature 2006 で報告された代表的な移行化石。完全な四肢動物ではなく、エルピストステガ類の魚です。"
+        },
+        {
+          "title": "Acanthostega and Ichthyostega",
+          "place": "東グリーンランド・Ymer Ø 周辺",
+          "lon": -23.0,
+          "lat": 73.0,
+          "summary": "後期デボン紀の初期四肢動物 Acanthostega と Ichthyostega が知られ、四肢の進化を考える基準産地です。",
+          "biology": "初期四肢動物",
+          "environment": "河川・湖沼を含む陸水環境",
+          "note": "魚類ではなく四肢動物側の記録。上陸の完成ではなく、水中性の強い四肢動物を含みます。"
+        },
+        {
+          "title": "Red Hill locality",
+          "place": "米国・ペンシルベニア州 Hyner 周辺 Catskill Formation",
+          "lon": -77.63,
+          "lat": 41.33,
+          "summary": "後期デボン紀の氾濫原生態系で、初期四肢動物、肉鰭類、板皮類、Archaeopteris 優占の湿地植物群が見つかります。",
+          "biology": "初期四肢動物・魚類・Archaeopteris",
+          "environment": "河川氾濫原と湿地林",
+          "note": "魚類から四肢動物への移行と森林湿地環境を同じ場所で考えられる北米の重要産地です。"
+        },
+        {
+          "title": "Cleveland Shale",
+          "place": "米国・オハイオ州クリーブランド周辺",
+          "lon": -81.7,
+          "lat": 41.45,
+          "summary": "後期デボン紀の海成頁岩で、巨大板皮類 Dunkleosteus を含む魚類化石で知られます。",
+          "biology": "板皮類・サメ類・海生魚類",
+          "environment": "低酸素を伴う海成盆地",
+          "note": "四肢動物への移行ではなく、『魚類の時代』を象徴する海生大型捕食者側の記録です。"
+        },
+        {
+          "title": "Qujing Devonian fish and plant beds",
+          "place": "中国雲南省・曲靖地域",
+          "lon": 103.8,
+          "lat": 25.5,
+          "summary": "下部デボン系の魚類化石と植物化石で知られ、顎口類・初期維管束植物の多様化を追える地域です。",
+          "biology": "初期魚類・初期陸上植物",
+          "environment": "沿岸から浅海・干潟的環境",
+          "note": "Xitun fauna などを含む代表地域。細かい層準は複数に分かれるため地域代表点です。"
+        },
+        {
+          "title": "Achanarras fish bed",
+          "place": "スコットランド北部・Caithness / Orcadian Basin",
+          "lon": -3.18,
+          "lat": 58.45,
+          "summary": "中期デボン紀の湖成堆積物から多数の魚類化石が産出し、Old Red Sandstone の代表的魚類群を示します。",
+          "biology": "肺魚・肉鰭類・板皮類",
+          "environment": "湖沼",
+          "note": "Orcadian Basin の魚類化石群。陸水域での魚類多様化を示す記録として追加。"
+        },
+        {
+          "title": "Gilboa fossil forest",
+          "place": "米国・ニューヨーク州ギルボア",
+          "lon": -74.45,
+          "lat": 42.4,
+          "summary": "中期デボン紀の古典的な化石森林で、Eospermatopteris などの立木・根系から初期森林の構造が復元されています。",
+          "biology": "初期森林・クラドキシロプシド植物",
+          "environment": "河川沿いの湿潤な陸上環境",
+          "note": "かつて『最古の森林』として知られた代表産地。現在はより古い候補も報告されています。"
+        },
+        {
+          "title": "Cairo fossil forest",
+          "place": "米国・ニューヨーク州カイロ",
+          "lon": -74.05,
+          "lat": 42.32,
+          "summary": "約3.86億年前の森林床で、Archaeopteris 型の大きな根系などが保存され、森林化の早期段階を示します。",
+          "biology": "Archaeopteris 型樹木・初期森林",
+          "environment": "河川氾濫原の森林",
+          "note": "Current Biology 2019 の報告。Gilboa より少し古い、葉と木質幹を持つ森林化の重要記録です。"
+        },
+        {
+          "title": "Hangman Sandstone fossil forest",
+          "place": "英国南西部・Somerset / Devon 海岸",
+          "lon": -3.8,
+          "lat": 51.2,
+          "summary": "約3.9億年前の Calamophyton 森林と植物が作った堆積構造が報告され、最古級の森林記録とされます。",
+          "biology": "Calamophyton 森林",
+          "environment": "季節的洪水を受ける河川性陸上環境",
+          "note": "Journal of the Geological Society 2024 の報告。『最古の森林』候補として追加します。"
+        },
+        {
+          "title": "Zachełmie tetrapod trackways",
+          "place": "ポーランド・Holy Cross Mountains",
+          "lon": 20.67,
+          "lat": 50.86,
+          "summary": "中期デボン紀の四肢動物様足跡で、体化石より古い陸上・浅海縁辺での移動証拠として議論されています。",
+          "biology": "四肢動物様足跡",
+          "environment": "潮間帯からラグーン的環境",
+          "note": "体化石ではなく足跡化石です。魚類から四肢動物への移行年代を押し上げる可能性があり、議論もあるため候補扱いです。"
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "????????????????????2010?????????????????"
+    },
+    {
+      "id": "carboniferous",
+      "label": "3.59億年前",
+      "title": "石炭紀の森林",
+      "category": "biology",
+      "categoryLabel": "生物史",
+      "ageMa": 359,
+      "environment": "湿地林が発達し、大気中の酸素濃度が高くなりました。",
+      "biology": "シダ植物、巨大昆虫、両生類が目立ちます。",
+      "events": [
+        {
+          "title": "Joggins Fossil Cliffs",
+          "place": "カナダ・ノバスコシア州 Fundy 湾岸",
+          "lon": -64.43,
+          "lat": 45.71,
+          "summary": "立ったまま埋もれた石炭林の樹幹と、その中に保存された初期羊膜類・両生類化石で知られます。",
+          "biology": "石炭林・初期羊膜類・両生類",
+          "environment": "赤道域の湿地林と氾濫原",
+          "note": "約3.18億年前の Joggins Formation。Hylonomus など、樹幹内に閉じ込められた脊椎動物記録で重要です。"
+        },
+        {
+          "title": "Fossil Grove",
+          "place": "スコットランド・グラスゴー Victoria Park",
+          "lon": -4.34,
+          "lat": 55.88,
+          "summary": "約3.25億年前のリンボク類の株が生育位置のまま保存された、石炭紀森林の代表的な露頭です。",
+          "biology": "リンボク類・石炭林",
+          "environment": "河川氾濫原の湿地林",
+          "note": "Lepidodendron 型の樹幹・根系が現地保存されています。森林構造を示す地質遺産として追加。"
+        },
+        {
+          "title": "Mazon Creek Lagerstätte",
+          "place": "米国・イリノイ州 Morris / Braidwood 周辺",
+          "lon": -88.42,
+          "lat": 41.37,
+          "summary": "約3.09億年前の鉄質ノジュール中に、植物、昆虫、魚類、軟体性生物まで保存される代表的 Lagerstätte です。",
+          "biology": "石炭林植物・昆虫・魚類・軟体性生物",
+          "environment": "デルタから沿岸湿地",
+          "note": "Braidwood assemblage と Essex assemblage を含む広域産地。陸上・海岸性の両方の生態系を示します。"
+        },
+        {
+          "title": "Montceau-les-Mines Lagerstätte",
+          "place": "フランス・ブルゴーニュ、Montceau-les-Mines",
+          "lon": 4.36,
+          "lat": 46.67,
+          "summary": "後期石炭紀のシデライト団塊から、植物、節足動物、魚類、四肢動物が保存される淡水・湿地性 Lagerstätte です。",
+          "biology": "石炭林植物・節足動物・淡水脊椎動物",
+          "environment": "湿地から湖沼・河川環境",
+          "note": "Late Pennsylvanian の代表的なヨーロッパ産地。植物群集と動物群集の両方が研究されています。"
+        },
+        {
+          "title": "Commentry insect beds",
+          "place": "フランス・アリエ県 Commentry",
+          "lon": 2.74,
+          "lat": 46.29,
+          "summary": "巨大なトンボ様昆虫 Meganeura monyi など、後期石炭紀の大型昆虫化石で有名な産地です。",
+          "biology": "巨大昆虫・石炭林節足動物",
+          "environment": "石炭盆地の湖沼・湿地環境",
+          "note": "Meganeura は現生トンボそのものではなく、メガネウラ類として扱います。巨大節足動物側の代表記録です。"
+        },
+        {
+          "title": "Linton Diamond Coal Mine",
+          "place": "米国・オハイオ州 Jefferson County",
+          "lon": -80.75,
+          "lat": 40.36,
+          "summary": "上部石炭紀のカネル炭から、多数の魚類と四肢動物化石が産出する内陸湿地の脊椎動物産地です。",
+          "biology": "魚類・両生類・初期羊膜類",
+          "environment": "石炭湿地の湖沼・沼沢環境",
+          "note": "Diamond Coal Mine の脊椎動物群。植物化石は少なめで、湿地林内の水域動物相として追加。"
+        },
+        {
+          "title": "Hamilton Quarry",
+          "place": "米国・カンザス州 Greenwood County",
+          "lon": -96.17,
+          "lat": 37.98,
+          "summary": "後期石炭紀の浅海縁辺から陸上までを含む Lagerstätte で、植物、昆虫、多足類、魚類、初期爬虫類などを保存します。",
+          "biology": "植物・昆虫・魚類・初期爬虫類",
+          "environment": "潮汐影響を受けた谷埋め堆積環境",
+          "note": "湿地林だけでなく、海岸近くの多様な陸上・水域生態系を示す後期石炭紀記録です。"
+        },
+        {
+          "title": "Union Chapel Mine tracksite",
+          "place": "米国・アラバマ州 Black Warrior Basin",
+          "lon": -87.05,
+          "lat": 33.75,
+          "summary": "下部ペンシルバニアンの干潟堆積物に、四肢動物・節足動物の足跡が多数保存された重要な足跡産地です。",
+          "biology": "四肢動物足跡・節足動物足跡",
+          "environment": "河口上部の干潟",
+          "note": "体化石ではなく足跡化石です。石炭紀の陸上移動と湿地周辺の活動を示す記録として追加。"
+        },
+        {
+          "title": "Brymbo Fossil Forest",
+          "place": "英国ウェールズ北東部・Brymbo",
+          "lon": -3.05,
+          "lat": 53.07,
+          "summary": "上部石炭紀の根系・幹・植物化石を含む化石森林で、炭田地域の湿地林を現地保存で示します。",
+          "biology": "石炭林植物・根系",
+          "environment": "炭田湿地林",
+          "note": "保全上も重要な軟岩露頭。Stigmaria など石炭林植物の地下構造を示します。"
+        },
+        {
+          "title": "Bickershaw Formation and Lancashire coal measures",
+          "place": "英国・ランカシャー、Wigan 周辺",
+          "lon": -2.55,
+          "lat": 53.52,
+          "summary": "石炭紀のノジュール保存化石・昆虫・節足動物足跡が報告される、英国炭田の重要な湿地性記録です。",
+          "biology": "昆虫・節足動物・湿地林動物",
+          "environment": "炭田湿地からラグーン的環境",
+          "note": "Bickershaw や Sparth Bottoms 周辺を含む代表点。細かい産地は複数に分かれます。"
+        },
+        {
+          "title": "Wamsutta Formation Lagerstätte",
+          "place": "米国・マサチューセッツ州 Norfolk Basin",
+          "lon": -71.34,
+          "lat": 42.03,
+          "summary": "約3.20-3.18億年前の非石炭湿地型 Lagerstätte で、植物、昆虫、クモ類、四肢動物足跡などが報告されています。",
+          "biology": "植物・昆虫・クモ類・四肢動物足跡",
+          "environment": "半湿潤の沖積扇状地",
+          "note": "Nature Communications 2024 の報告。典型的な石炭湿地とは違う、より乾いた陸上生態系として追加。"
+        },
+        {
+          "title": "Writhlington coal forest",
+          "place": "英国・サマセット、Radstock 周辺",
+          "lon": -2.43,
+          "lat": 51.29,
+          "summary": "上部石炭紀炭田の植物化石と石炭林復元で知られる英国南西部の代表的な炭田産地です。",
+          "biology": "石炭林植物・シダ植物・種子シダ",
+          "environment": "石炭湿地林",
+          "note": "Writhlington Geological Nature Reserve 周辺の記録。広域的な炭田植物群の代表として追加。"
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "????????????????????2010?????????????????"
+    },
+    {
+      "id": "permian-triassic",
+      "label": "2.52億年前",
+      "tickLabel": "2.52億",
+      "title": "大量絶滅と三畳紀",
+      "category": "biology",
+      "categoryLabel": "生物史",
+      "ageMa": 252,
+      "environment": "パンゲア超大陸の内陸は乾燥し、史上最大級の大量絶滅後に生態系が再編されました。",
+      "biology": "爬虫類、初期恐竜、初期哺乳類系統が台頭しました。",
+      "events": [
+        {
+          "title": "イスチグアラスト",
+          "place": "アルゼンチン",
+          "lon": -68,
+          "lat": -30.1,
+          "summary": "初期恐竜を含む三畳紀陸上生態系の代表地域です。",
+          "biology": "初期恐竜と主竜類",
+          "environment": "乾燥した陸上環境"
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "????????????????????2010?????????????????"
+    },
+    {
+      "id": "jurassic",
+      "label": "2.01億年前",
+      "title": "ジュラ紀の海と恐竜",
+      "category": "biology",
+      "categoryLabel": "生物史",
+      "ageMa": 201,
+      "environment": "パンゲアが分裂し、温暖な海と陸上生態系が広がりました。",
+      "biology": "恐竜、翼竜、海生爬虫類、初期鳥類が重要です。",
+      "events": [
+        {
+          "title": "ゾルンホーフェン",
+          "place": "ドイツ南部",
+          "lon": 11,
+          "lat": 48.9,
+          "summary": "始祖鳥などの保存状態の良い化石で知られます。",
+          "biology": "初期鳥類と海生生物",
+          "environment": "ラグーン"
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "????????????????????2010?????????????????"
+    },
+    {
+      "id": "cretaceous",
+      "label": "1.45億年前",
+      "title": "白亜紀の被子植物と恐竜",
+      "category": "biology",
+      "categoryLabel": "生物史",
+      "ageMa": 145,
+      "environment": "海面が高く、温暖な気候のもとで大陸がさらに分裂しました。",
+      "biology": "被子植物が広がり、昆虫との関係が発達しました。恐竜も多様でした。",
+      "events": [
+        {
+          "title": "熱河生物群",
+          "place": "中国北東部",
+          "lon": 120.5,
+          "lat": 41.5,
+          "summary": "羽毛恐竜、初期鳥類、植物などを含む白亜紀の代表的な化石群です。",
+          "biology": "羽毛恐竜と初期鳥類",
+          "environment": "湖沼周辺"
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "????????????????????2010?????????????????"
+    },
+    {
+      "id": "paleogene",
+      "label": "6600万年前",
+      "tickLabel": "6600万",
+      "title": "哺乳類の拡大",
+      "category": "biology",
+      "categoryLabel": "生物史",
+      "ageMa": 66,
+      "environment": "白亜紀末の大量絶滅後、生態系の空白を哺乳類と鳥類が埋めていきました。",
+      "biology": "哺乳類、鳥類、被子植物が急速に多様化しました。",
+      "events": [
+        {
+          "title": "チクシュルーブ衝突跡",
+          "place": "メキシコ・ユカタン半島",
+          "lon": -89.5,
+          "lat": 21.3,
+          "summary": "白亜紀末大量絶滅と関係する巨大衝突の代表地点です。",
+          "biology": "恐竜絶滅後の生態系再編",
+          "environment": "全球的な環境急変"
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "????????????????????2010?????????????????"
+    },
+    {
+      "id": "quaternary",
+      "label": "258万年前",
+      "title": "氷期と人類進化",
+      "category": "biology",
+      "categoryLabel": "生物史",
+      "ageMa": 2.58,
+      "environment": "氷期と間氷期が繰り返され、草原や寒冷地環境が拡大しました。",
+      "biology": "ヒト属、大型哺乳類、寒冷地適応の生物群が重要です。",
+      "events": [
+        {
+          "title": "オルドヴァイ峡谷",
+          "place": "タンザニア",
+          "lon": 35.35,
+          "lat": -2.99,
+          "summary": "初期人類と石器文化を考えるうえで重要な地域です。",
+          "biology": "初期人類",
+          "environment": "サバンナと湖沼"
+        },
+        {
+          "title": "ベーリンジア",
+          "place": "ベーリング陸橋周辺",
+          "lon": -170,
+          "lat": 65,
+          "summary": "氷期の海面低下でアジアと北米をつないだ地域です。",
+          "biology": "大型哺乳類と人類移動",
+          "environment": "寒冷なステップ"
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "????????????????????2010?????????????????"
+    },
+    {
+      "id": "holocene",
+      "label": "1.17万年前",
+      "title": "完新世",
+      "category": "biology",
+      "categoryLabel": "生物史",
+      "ageMa": 0.0117,
+      "environment": "最終氷期後に気候が安定し、農耕と都市化が始まりました。",
+      "biology": "人類活動が生態系と分布に大きく影響し始めました。",
+      "events": [
+        {
+          "title": "肥沃な三日月地帯",
+          "place": "西アジア",
+          "lon": 39,
+          "lat": 36,
+          "summary": "農耕と家畜化が進んだ代表地域です。",
+          "biology": "栽培植物と家畜化",
+          "environment": "草原と河川流域"
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "????????????????????2010?????????????????"
+    },
+    {
+      "id": "history-1492",
+      "year": 1492,
+      "label": "1492年",
+      "tickLabel": "1492",
+      "title": "1492年の国境",
+      "category": "history",
+      "categoryLabel": "歴史地図",
+      "environment": "近世初期の政治境界を表示します。",
+      "biology": "生物史マーカーではなく国境ベクターを表示します。",
+      "file": "data/borders/world_1492.min.geojson",
+      "featureCount": 1505,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1492.geojson"
+    },
+    {
+      "id": "history-1815",
+      "year": 1815,
+      "label": "1815年",
+      "title": "1815年の国境",
+      "category": "history",
+      "categoryLabel": "歴史地図",
+      "environment": "ナポレオン戦争後の政治境界を表示します。",
+      "biology": "生物史マーカーではなく国境ベクターを表示します。",
+      "file": "data/borders/world_1815.min.geojson",
+      "featureCount": 405,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1815.geojson"
+    },
+    {
+      "id": "history-1880",
+      "year": 1880,
+      "label": "1880年",
+      "title": "1880年の国境",
+      "category": "history",
+      "categoryLabel": "歴史地図",
+      "environment": "19世紀後半の政治境界を表示します。",
+      "biology": "生物史マーカーではなく国境ベクターを表示します。",
+      "file": "data/borders/world_1880.min.geojson",
+      "featureCount": 224,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1880.geojson"
+    },
+    {
+      "id": "history-1914",
+      "year": 1914,
+      "label": "1914年",
+      "title": "1914年の国境",
+      "category": "history",
+      "categoryLabel": "歴史地図",
+      "environment": "第一次世界大戦前後の政治境界を表示します。",
+      "biology": "生物史マーカーではなく国境ベクターを表示します。",
+      "file": "data/borders/world_1914.min.geojson",
+      "featureCount": 171,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1914.geojson"
+    },
+    {
+      "id": "history-1938",
+      "year": 1938,
+      "label": "1938年",
+      "title": "1938年の国境",
+      "category": "history",
+      "categoryLabel": "歴史地図",
+      "environment": "第二次世界大戦直前の政治境界を表示します。",
+      "biology": "生物史マーカーではなく国境ベクターを表示します。",
+      "file": "data/borders/world_1938.min.geojson",
+      "featureCount": 226,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1938.geojson"
+    },
+    {
+      "id": "history-1945",
+      "year": 1945,
+      "label": "1945年",
+      "title": "1945年の国境",
+      "category": "history",
+      "categoryLabel": "歴史地図",
+      "environment": "第二次世界大戦末期の政治境界を表示します。",
+      "biology": "生物史マーカーではなく国境ベクターを表示します。",
+      "file": "data/borders/world_1945.min.geojson",
+      "featureCount": 217,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1945.geojson"
+    },
+    {
+      "id": "history-1960",
+      "year": 1960,
+      "label": "1960年",
+      "title": "1960年の国境",
+      "category": "history",
+      "categoryLabel": "歴史地図",
+      "environment": "脱植民地化期の政治境界を表示します。",
+      "biology": "生物史マーカーではなく国境ベクターを表示します。",
+      "file": "data/borders/world_1960.min.geojson",
+      "featureCount": 190,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1960.geojson"
+    },
+    {
+      "id": "history-1994",
+      "year": 1994,
+      "label": "1994年",
+      "title": "1994年の国境",
+      "category": "history",
+      "categoryLabel": "歴史地図",
+      "environment": "冷戦後の政治境界を表示します。",
+      "biology": "生物史マーカーではなく国境ベクターを表示します。",
+      "file": "data/borders/world_1994.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1994.geojson"
+    },
+    {
+      "id": "history-2010",
+      "year": 2010,
+      "label": "2010年",
+      "tickLabel": "2010",
+      "title": "2010年の国境",
+      "category": "history",
+      "categoryLabel": "歴史地図",
+      "environment": "現代に近い政治境界を表示します。",
+      "biology": "生物史マーカーではなく国境ベクターを表示します。",
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson"
+    }
+  ]
+}
