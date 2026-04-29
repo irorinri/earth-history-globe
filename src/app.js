@@ -10,8 +10,254 @@ const MAX_BORDER_SEGMENT_DEGREES = 1.25;
 const MIN_DISTANCE = 1.35;
 const MAX_DISTANCE = 4.25;
 const START_DISTANCE = 2.75;
+const EARLY_BOUNDARY_OPACITY = 0.28;
+const EARLY_BOUNDARY_END_ID = 'classical-empires';
+const HUMAN_ERA_START_ID = 'early-hominin-lineage';
 const DEG = Math.PI / 180;
 const RAD = 180 / Math.PI;
+const MAJOR_1492_AMERICAN_POLITIES = new Set([
+  'Mexihcah (Triple Alliance)',
+  'Maya Yucateco',
+  'Muisca',
+  'Quechua',
+  'Taino',
+  'Wallmapu (Mapuche)',
+]);
+const PLACE_NAME_JA = new Map([
+  ['Unknown', '不明'],
+  ['France', 'フランス'],
+  ['United Kingdom', 'イギリス'],
+  ['United Kingdom of Great Britain and Ireland', 'グレートブリテン及びアイルランド連合王国'],
+  ['England', 'イングランド'],
+  ['Scottland', 'スコットランド'],
+  ['Scotland', 'スコットランド'],
+  ['Ireland', 'アイルランド'],
+  ['Portugal', 'ポルトガル'],
+  ['Spain', 'スペイン'],
+  ['Denmark', 'デンマーク'],
+  ['Denmark-Norway', 'デンマーク＝ノルウェー'],
+  ['Norway', 'ノルウェー'],
+  ['Sweden', 'スウェーデン'],
+  ['Finland', 'フィンランド'],
+  ['Italy', 'イタリア'],
+  ['Venice', 'ヴェネツィア'],
+  ['Papal States', '教皇領'],
+  ['Holy Roman Empire', '神聖ローマ帝国'],
+  ['Byzantine Empire', 'ビザンツ帝国'],
+  ['Ottoman Empire', 'オスマン帝国'],
+  ['Roman Empire', 'ローマ帝国'],
+  ['Sassanid Empire', 'サーサーン朝'],
+  ['Umayyad Caliphate', 'ウマイヤ朝'],
+  ['Abbasid Caliphate', 'アッバース朝'],
+  ['Seljuk Empire', 'セルジューク朝'],
+  ['Mongol Empire', 'モンゴル帝国'],
+  ['Yuan Empire', '元'],
+  ['Ming Empire', '明'],
+  ['Qing Empire', '清'],
+  ['Manchu Empire', '清'],
+  ['Russian Empire', 'ロシア帝国'],
+  ['Russia', 'ロシア'],
+  ['Prussia', 'プロイセン'],
+  ['Poland', 'ポーランド'],
+  ['Hungary', 'ハンガリー'],
+  ['Austria', 'オーストリア'],
+  ['Netherlands', 'オランダ'],
+  ['Belgium', 'ベルギー'],
+  ['Luxembourg', 'ルクセンブルク'],
+  ['Switzerland', 'スイス'],
+  ['Serbia', 'セルビア'],
+  ['Georgia', 'ジョージア'],
+  ['Armenia', 'アルメニア'],
+  ['Cyprus', 'キプロス'],
+  ['Greece', 'ギリシャ'],
+  ['Egypt', 'エジプト'],
+  ['Morocco', 'モロッコ'],
+  ['Mali', 'マリ'],
+  ['Ghana', 'ガーナ'],
+  ['Benin', 'ベニン'],
+  ['Congo', 'コンゴ'],
+  ['Ethiopia', 'エチオピア'],
+  ['Axum', 'アクスム'],
+  ['Alwa', 'アルワ'],
+  ['Mossi States', 'モシ諸国'],
+  ['Expansionist Kingdom of Merina', 'メリナ王国'],
+  ['Madagascar', 'マダガスカル'],
+  ['Khoiasan', 'コイサン'],
+  ['Yemen', 'イエメン'],
+  ['Hadramaut', 'ハドラマウト'],
+  ['Oman', 'オマーン'],
+  ['Muscat', 'マスカット'],
+  ['Qatar', 'カタール'],
+  ['Afghanistan', 'アフガニスタン'],
+  ['Tibet', 'チベット'],
+  ['Nepal', 'ネパール'],
+  ['Bhutan', 'ブータン'],
+  ['India', 'インド'],
+  ['Hindu kingdoms', 'ヒンドゥー諸王国'],
+  ['minor Hindu and Buddhist states', 'ヒンドゥー・仏教系小国家群'],
+  ['China', '中国'],
+  ['Han', '漢'],
+  ['Tang', '唐'],
+  ['Song', '宋'],
+  ['Japan', '日本'],
+  ['Ainu', 'アイヌ'],
+  ['Ainus', 'アイヌ'],
+  ['Ryukyu', '琉球'],
+  ['Korea', '朝鮮'],
+  ['Silla', '新羅'],
+  ['Koguryo', '高句麗'],
+  ['Paekche', '百済'],
+  ['Champa', 'チャンパ'],
+  ['Cambodia', 'カンボジア'],
+  ['Khmer Empire', 'クメール帝国'],
+  ['Ayutthaya', 'アユタヤ'],
+  ['Malacca', 'マラッカ'],
+  ['Aceh', 'アチェ'],
+  ['Srivijaya Empire', 'シュリーヴィジャヤ王国'],
+  ['Brunei', 'ブルネイ'],
+  ['Philippines', 'フィリピン'],
+  ['Papua New Guinea', 'パプアニューギニア'],
+  ['Maori', 'マオリ'],
+  ['Polynesians', 'ポリネシア人'],
+  ['Tuʻi Tonga Empire', 'トンガ大首長国'],
+  ['United States', 'アメリカ合衆国'],
+  ['Canada', 'カナダ'],
+  ['Haiti', 'ハイチ'],
+  ['Dominican Republic', 'ドミニカ共和国'],
+  ['Cuba', 'キューバ'],
+  ['Puerto Rico', 'プエルトリコ'],
+  ['Trinidad', 'トリニダード'],
+  ['Taino', 'タイノ'],
+  ['Maya city-states', 'マヤ都市国家群'],
+  ['Maya Yucateco', 'ユカテコ・マヤ'],
+  ['Mexihcah (Triple Alliance)', 'メシカ三国同盟'],
+  ['Muisca', 'ムイスカ'],
+  ['Quechua', 'ケチュア'],
+  ['Wallmapu (Mapuche)', 'ワジマプ（マプチェ）'],
+  ['Inuit', 'イヌイット'],
+  ['Thule', 'チューレ'],
+  ['Cree', 'クリー'],
+  ['Cheyenne', 'シャイアン'],
+  ['Blackfoot', 'ブラックフット'],
+  ['Cherokee', 'チェロキー'],
+  ['Haudenosaunee', 'ハウデノショーニー'],
+  ['Guarani', 'グアラニー'],
+  ['Mapuche', 'マプチェ'],
+  ['Argentina', 'アルゼンチン'],
+  ['Chile', 'チリ'],
+  ['Paraguay', 'パラグアイ'],
+  ['Uruguay', 'ウルグアイ'],
+  ['Nicaragua', 'ニカラグア'],
+  ['Costa Rica', 'コスタリカ'],
+  ['Belize', 'ベリーズ'],
+  ['Guatemala', 'グアテマラ'],
+  ['Honduras', 'ホンジュラス'],
+  ['El Salvador', 'エルサルバドル'],
+  ['French Guiana', 'フランス領ギアナ'],
+  ['Sierra Leone', 'シエラレオネ'],
+  ['Antigua and Barbuda', 'アンティグア・バーブーダ'],
+  ['Dominica', 'ドミニカ国'],
+  ['Saint Kitts and Nevis', 'セントクリストファー・ネイビス'],
+  ['Netherlands Antilles', 'オランダ領アンティル'],
+  ['Australian aboriginal hunter-gatherers', 'オーストラリア先住民狩猟採集民'],
+  ['Caribbean hunter-gatherers', 'カリブ海狩猟採集民'],
+  ['Tasmanian hunter-gatherers', 'タスマニア狩猟採集民'],
+  ['Pampas cultures', 'パンパ文化群'],
+  ['Patagonian shellfish and marine mammal hunters', 'パタゴニア貝類・海獣狩猟民'],
+  ['Finno-Ugric taiga hunter-gatherers', 'フィン・ウゴル系タイガ狩猟採集民'],
+  ['Subarctic forest hunter-gatherers', '亜寒帯森林狩猟採集民'],
+  ['Andean hunter-gatherers', 'アンデス狩猟採集民'],
+  ['Savanna hunter-gatherers', 'サバンナ狩猟採集民'],
+  ['Amazon hunter-gatherers', 'アマゾン狩猟採集民'],
+  ['Plain bison hunters', '平原バイソン狩猟民'],
+  ['Desert hunter-gatherers', '砂漠狩猟採集民'],
+  ['Plateau fichers and hunter gatherers', '高原漁労・狩猟採集民'],
+  ['North American Pacifi foraging, hunting and fishing peoples', '北米太平洋岸の採集・狩猟・漁労民'],
+  ['West African cereal farmers', '西アフリカ穀物農耕民'],
+  ['Eastern North Amercian hunter-gatherers', '北米東部狩猟採集民'],
+  ['Shellfish gatherers', '貝類採集民'],
+  ['Islamic city-states', 'イスラーム都市国家群'],
+  ['Maya city-states', 'マヤ都市国家群'],
+]);
+const PLACE_TERM_JA = new Map([
+  ['empire', '帝国'],
+  ['kingdom', '王国'],
+  ['kingdoms', '諸王国'],
+  ['state', '国家'],
+  ['states', '諸国'],
+  ['republic', '共和国'],
+  ['duchy', '公国'],
+  ['grand', '大'],
+  ['great', '大'],
+  ['confederacy', '連合'],
+  ['confederation', '連合'],
+  ['federation', '連邦'],
+  ['union', '連邦'],
+  ['caliphate', 'カリフ国'],
+  ['emirate', '首長国'],
+  ['sultanate', 'スルタン国'],
+  ['khanate', 'ハン国'],
+  ['dynasty', '王朝'],
+  ['colony', '植民地'],
+  ['colonies', '植民地群'],
+  ['protectorate', '保護領'],
+  ['territory', '領'],
+  ['territories', '領'],
+  ['province', '州'],
+  ['provinces', '諸州'],
+  ['claim', '領有権主張'],
+  ['claims', '領有権主張'],
+  ['city', '都市'],
+  ['cities', '都市群'],
+  ['island', '島'],
+  ['islands', '諸島'],
+  ['north', '北'],
+  ['south', '南'],
+  ['east', '東'],
+  ['west', '西'],
+  ['central', '中央'],
+  ['northern', '北部'],
+  ['southern', '南部'],
+  ['eastern', '東部'],
+  ['western', '西部'],
+  ['upper', '上'],
+  ['lower', '下'],
+  ['new', '新'],
+  ['old', '旧'],
+  ['minor', '小'],
+  ['major', '大'],
+  ['tribe', '部族'],
+  ['tribes', '部族'],
+  ['chiefdom', '首長制社会'],
+  ['chiefdoms', '首長制社会群'],
+  ['hunter', '狩猟民'],
+  ['hunters', '狩猟民'],
+  ['gatherer', '採集民'],
+  ['gatherers', '採集民'],
+  ['foraging', '採集'],
+  ['fishing', '漁労'],
+  ['farmers', '農耕民'],
+  ['cultures', '文化群'],
+  ['culture', '文化'],
+  ['peoples', '諸民族'],
+  ['people', '民族'],
+  ['french', 'フランス領'],
+  ['british', 'イギリス領'],
+  ['spanish', 'スペイン領'],
+  ['portuguese', 'ポルトガル領'],
+  ['dutch', 'オランダ領'],
+  ['german', 'ドイツ領'],
+  ['russian', 'ロシア領'],
+  ['japanese', '日本領'],
+  ['arab', 'アラブ'],
+  ['arabian', 'アラビア'],
+  ['islamic', 'イスラーム'],
+  ['hindu', 'ヒンドゥー'],
+  ['buddhist', '仏教'],
+  ['and', '・'],
+  ['of', 'の'],
+  ['the', ''],
+]);
 
 const stage = document.querySelector('#globe-stage');
 const loading = document.querySelector('#loading');
@@ -22,18 +268,21 @@ const infoBody = document.querySelector('#info-body');
 const eraTitle = document.querySelector('#era-title');
 const yearReadout = document.querySelector('#year-readout');
 const eraRange = document.querySelector('#era-range');
-const eraTicks = document.querySelector('#era-ticks');
+const nameLanguageButton = document.querySelector('#name-language');
 
 const state = {
   eras: [],
   eraIndex: 0,
   geojson: null,
+  pickGeojson: null,
+  borderFeatureCount: null,
   landMesh: null,
   borderLines: null,
   selectedFeature: null,
   selectedEvent: null,
   selectedLonLat: null,
   detailTier: 'far',
+  japaneseNames: false,
   cache: new Map(),
 };
 
@@ -59,7 +308,19 @@ camera.position.set(0, 0.18, START_DISTANCE);
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 0.08;
-controls.enablePan = false;
+controls.enablePan = true;
+controls.panSpeed = 0.72;
+controls.screenSpacePanning = true;
+controls.maxTargetRadius = 1.1;
+controls.mouseButtons = {
+  LEFT: THREE.MOUSE.ROTATE,
+  MIDDLE: THREE.MOUSE.PAN,
+  RIGHT: THREE.MOUSE.PAN,
+};
+controls.touches = {
+  ONE: THREE.TOUCH.ROTATE,
+  TWO: THREE.TOUCH.DOLLY_PAN,
+};
 controls.rotateSpeed = 0.62;
 controls.zoomSpeed = 0.82;
 controls.minDistance = MIN_DISTANCE;
@@ -71,7 +332,7 @@ scene.add(new THREE.HemisphereLight(0xffffff, 0xe8e8e3, 2.85));
 const globe = new THREE.Mesh(
   new THREE.SphereGeometry(RADIUS, 96, 48),
   new THREE.MeshLambertMaterial({
-    color: 0xf0f8fb,
+    color: 0xeeeeee,
   }),
 );
 scene.add(globe);
@@ -96,6 +357,8 @@ scene.add(selectedGroup);
 const raycaster = new THREE.Raycaster();
 const pointer = new THREE.Vector2();
 let pointerDown = null;
+const activeTouchPointers = new Set();
+let hadMultiTouchGesture = false;
 let pendingEraLoad = 0;
 
 init().catch((error) => {
@@ -112,8 +375,7 @@ async function init() {
   eraRange.min = '0';
   eraRange.max = String(state.eras.length - 1);
   eraRange.value = String(state.eraIndex);
-  eraTicks.style.setProperty('--tick-count', String(state.eras.length));
-  eraTicks.innerHTML = buildEraTicks(state.eras);
+  updateTimelineEraBands();
 
   wireUi();
   await loadEra(state.eraIndex);
@@ -129,6 +391,11 @@ function wireUi() {
     controls.autoRotate = !controls.autoRotate;
     event.currentTarget.dataset.active = String(controls.autoRotate);
   });
+  nameLanguageButton.addEventListener('click', () => {
+    state.japaneseNames = !state.japaneseNames;
+    updateNameLanguageButton();
+    renderInfo();
+  });
 
   document.querySelector('#era-prev').addEventListener('click', () => stepEra(-1));
   document.querySelector('#era-next').addEventListener('click', () => stepEra(1));
@@ -141,12 +408,37 @@ function wireUi() {
   });
 
   renderer.domElement.addEventListener('pointerdown', (event) => {
-    if (event.pointerType === 'touch' && !event.isPrimary) return;
-    pointerDown = { x: event.clientX, y: event.clientY, time: performance.now() };
+    if (event.pointerType === 'touch') {
+      activeTouchPointers.add(event.pointerId);
+      hadMultiTouchGesture = activeTouchPointers.size > 1;
+      if (!event.isPrimary) return;
+    } else if (event.button !== 0) {
+      pointerDown = null;
+      return;
+    }
+
+    pointerDown = {
+      x: event.clientX,
+      y: event.clientY,
+      time: performance.now(),
+      pointerId: event.pointerId,
+      pointerType: event.pointerType,
+    };
   });
 
   renderer.domElement.addEventListener('pointerup', (event) => {
+    const wasMultiTouchGesture = hadMultiTouchGesture;
+    if (event.pointerType === 'touch') {
+      activeTouchPointers.delete(event.pointerId);
+      if (activeTouchPointers.size === 0) hadMultiTouchGesture = false;
+    }
+
     if (!pointerDown) return;
+    if (event.pointerId !== pointerDown.pointerId || wasMultiTouchGesture) {
+      pointerDown = null;
+      return;
+    }
+
     const dx = event.clientX - pointerDown.x;
     const dy = event.clientY - pointerDown.y;
     const moved = Math.hypot(dx, dy);
@@ -155,7 +447,22 @@ function wireUi() {
     if (moved <= 9 && elapsed <= 650) pickGlobe(event);
   });
 
+  renderer.domElement.addEventListener('pointercancel', (event) => {
+    if (event.pointerType === 'touch') {
+      activeTouchPointers.delete(event.pointerId);
+      if (activeTouchPointers.size === 0) hadMultiTouchGesture = false;
+    }
+    if (event.pointerId === pointerDown?.pointerId) pointerDown = null;
+  });
+
+  renderer.domElement.addEventListener('auxclick', (event) => {
+    if (event.button === 1) event.preventDefault();
+  });
+
+  renderer.domElement.addEventListener('contextmenu', (event) => event.preventDefault());
+
   window.addEventListener('resize', resize);
+  updateNameLanguageButton();
 }
 
 async function loadEra(index) {
@@ -176,6 +483,7 @@ async function loadEra(index) {
     }
 
     state.geojson = geojson;
+    state.pickGeojson = geojson;
     document.documentElement.dataset.era = era.id ?? String(index);
     document.documentElement.dataset.year = String(era.year ?? era.id ?? index);
     state.selectedFeature = null;
@@ -199,6 +507,10 @@ async function loadEra(index) {
     }
 
     if (geojson.features.length > 0) {
+      const borderGeojson = displayBorderGeojson(era, geojson);
+      state.pickGeojson = borderGeojson;
+      state.borderFeatureCount = borderGeojson.features.length;
+
       state.landMesh = new THREE.Mesh(
         new THREE.SphereGeometry(LAND_RADIUS, 96, 48),
         new THREE.MeshBasicMaterial({
@@ -211,21 +523,24 @@ async function loadEra(index) {
       scene.add(state.landMesh);
 
       state.borderLines = new THREE.LineSegments(
-        buildBorderGeometry(geojson, BORDER_RADIUS),
+        buildBorderGeometry(borderGeojson, BORDER_RADIUS),
         new THREE.LineBasicMaterial({
           color: 0x111111,
           transparent: true,
-          opacity: 0.58,
+          opacity: borderOpacityForTier(state.detailTier, era),
           depthWrite: false,
         }),
       );
       state.borderLines.renderOrder = 2;
       scene.add(state.borderLines);
+    } else {
+      state.pickGeojson = geojson;
+      state.borderFeatureCount = null;
     }
 
     buildEraMarkers(era);
     updateFeatureCount(era);
-    renderInfo();
+    updateDetailTier(true);
   } finally {
     loading.hidden = true;
   }
@@ -248,9 +563,9 @@ function resize() {
 }
 
 function zoomBy(factor) {
-  const direction = camera.position.clone().normalize();
-  const distance = THREE.MathUtils.clamp(camera.position.length() * factor, MIN_DISTANCE, MAX_DISTANCE);
-  camera.position.copy(direction.multiplyScalar(distance));
+  const offset = camera.position.clone().sub(controls.target);
+  const distance = THREE.MathUtils.clamp(offset.length() * factor, MIN_DISTANCE, MAX_DISTANCE);
+  camera.position.copy(controls.target.clone().add(offset.normalize().multiplyScalar(distance)));
   controls.update();
   updateDetailTier(true);
 }
@@ -270,15 +585,337 @@ function stepEra(delta) {
   loadEra(next);
 }
 
+function displayEraTime(era) {
+  const label = String(era?.label ?? '');
+  if (!label) return '';
+
+  if (label.endsWith('年ごろ')) return `${label.slice(0, -2)}頃`;
+  if (label.startsWith('約') && label.endsWith('年前')) return label.slice(1);
+  if (label.endsWith('年前') || label.endsWith('年頃') || label.endsWith('年代')) return label;
+  if (label.endsWith('年')) return `${label.slice(0, -1)}年代`;
+
+  return label;
+}
+
+function updateTimelineEraBands() {
+  const humanEraIndex = state.eras.findIndex((era) => era.id === HUMAN_ERA_START_ID);
+  const maxIndex = Math.max(1, state.eras.length - 1);
+  const humanStartPercent = humanEraIndex >= 0 ? (humanEraIndex / maxIndex) * 100 : 100;
+  eraRange.style.setProperty('--human-era-start', `${humanStartPercent.toFixed(3)}%`);
+}
+
+function displayEraTitle(era) {
+  const title = era?.title || displayEraTime(era);
+  const time = displayEraTime(era);
+  if (!title || !time) return title || '地球型歴史地図';
+
+  const bareTime = time.replace(/年代$/, '年').replace(/年頃$/, '年ごろ');
+  for (const prefix of [time, bareTime, era.label]) {
+    if (prefix && title.startsWith(`${prefix}の`)) {
+      return title.slice(prefix.length + 1);
+    }
+  }
+
+  return title;
+}
+
 function updateYearReadout() {
   const era = state.eras[state.eraIndex];
-  eraTitle.textContent = era ? era.title || era.label : '地球型歴史地図';
-  yearReadout.value = era ? era.label : '';
-  yearReadout.textContent = era ? era.label : '';
+  eraTitle.textContent = era ? displayEraTitle(era) : '地球型歴史地図';
+  yearReadout.value = era ? displayEraTime(era) : '';
+  yearReadout.textContent = era ? displayEraTime(era) : '';
+}
+
+function updateNameLanguageButton() {
+  nameLanguageButton.dataset.active = String(state.japaneseNames);
+  nameLanguageButton.setAttribute('aria-pressed', String(state.japaneseNames));
+  const label = state.japaneseNames ? '地名を元の表記に戻す' : '地名を日本語表示に切り替え';
+  nameLanguageButton.title = label;
+  nameLanguageButton.setAttribute('aria-label', label);
+}
+
+function displayEventTitle(eventData) {
+  if (!state.japaneseNames) return eventData.title;
+  return displayPlaceName(eventData.title, eventData.title);
+}
+
+function displayPlaceName(value, fallback = '不明') {
+  const text = String(value ?? '').trim();
+  if (!text) return fallback;
+  return state.japaneseNames ? japanesePlaceName(text) : text;
+}
+
+function japanesePlaceName(value) {
+  const text = String(value ?? '').trim();
+  if (!text) return '不明';
+  if (PLACE_NAME_JA.has(text)) return PLACE_NAME_JA.get(text);
+  if (hasJapanese(text)) return text;
+
+  const parenthesized = text.match(/^(.+?)\s*\((.+)\)$/);
+  if (parenthesized) {
+    return `${japanesePlaceName(parenthesized[1])}（${japanesePlaceName(parenthesized[2])}）`;
+  }
+
+  const slashParts = text.split(/\s*[/／]\s*/);
+  if (slashParts.length > 1) return slashParts.map((part) => japanesePlaceName(part)).join('・');
+
+  const commaParts = text.split(/\s*,\s*/);
+  if (commaParts.length > 1) return commaParts.map((part) => japanesePlaceName(part)).join('・');
+
+  return text
+    .split(/(\s+|[-‐‑–—])/)
+    .map((part) => {
+      if (!part.trim()) return '';
+      if (/[-‐‑–—]/.test(part)) return '・';
+      const clean = part.replace(/[.,;:]/g, '');
+      const lower = normalizeLatin(clean).toLowerCase();
+      if (PLACE_TERM_JA.has(lower)) return PLACE_TERM_JA.get(lower);
+      return latinWordToKana(clean);
+    })
+    .join('')
+    .replace(/・+/g, '・')
+    .replace(/^・|・$/g, '');
+}
+
+function hasJapanese(value) {
+  return /[\u3040-\u30ff\u3400-\u9fff]/.test(value);
+}
+
+function normalizeLatin(value) {
+  return String(value)
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[ʻʼ’']/g, '');
+}
+
+function latinWordToKana(value) {
+  const raw = String(value ?? '').trim();
+  if (!raw) return '';
+  if (PLACE_NAME_JA.has(raw)) return PLACE_NAME_JA.get(raw);
+  if (!/[A-Za-z]/.test(raw)) return hasJapanese(raw) || /\d/.test(raw) ? raw : '';
+
+  const word = normalizeLatin(raw).toLowerCase().replace(/[^a-z0-9]/g, '');
+  if (!word) return raw;
+  if (PLACE_TERM_JA.has(word)) return PLACE_TERM_JA.get(word);
+
+  let output = '';
+  let index = 0;
+  const syllables = [
+    ['shi', 'シ'],
+    ['chi', 'チ'],
+    ['tsu', 'ツ'],
+    ['cha', 'チャ'],
+    ['che', 'チェ'],
+    ['chi', 'チ'],
+    ['cho', 'チョ'],
+    ['shu', 'シュ'],
+    ['sha', 'シャ'],
+    ['sho', 'ショ'],
+    ['ju', 'ジュ'],
+    ['ja', 'ジャ'],
+    ['jo', 'ジョ'],
+    ['kya', 'キャ'],
+    ['kyu', 'キュ'],
+    ['kyo', 'キョ'],
+    ['gya', 'ギャ'],
+    ['gyu', 'ギュ'],
+    ['gyo', 'ギョ'],
+    ['nya', 'ニャ'],
+    ['nyu', 'ニュ'],
+    ['nyo', 'ニョ'],
+    ['rya', 'リャ'],
+    ['ryu', 'リュ'],
+    ['ryo', 'リョ'],
+    ['bya', 'ビャ'],
+    ['byu', 'ビュ'],
+    ['byo', 'ビョ'],
+    ['pya', 'ピャ'],
+    ['pyu', 'ピュ'],
+    ['pyo', 'ピョ'],
+    ['fa', 'ファ'],
+    ['fi', 'フィ'],
+    ['fe', 'フェ'],
+    ['fo', 'フォ'],
+    ['va', 'ヴァ'],
+    ['vi', 'ヴィ'],
+    ['ve', 'ヴェ'],
+    ['vo', 'ヴォ'],
+    ['th', 'ス'],
+    ['ph', 'フ'],
+    ['qu', 'ク'],
+    ['ck', 'ック'],
+    ['ng', 'ング'],
+    ['sh', 'シ'],
+    ['ch', 'チ'],
+  ];
+  const kana = {
+    a: 'ア',
+    i: 'イ',
+    u: 'ウ',
+    e: 'エ',
+    o: 'オ',
+    ba: 'バ',
+    bi: 'ビ',
+    bu: 'ブ',
+    be: 'ベ',
+    bo: 'ボ',
+    ca: 'カ',
+    ci: 'シ',
+    cu: 'ク',
+    ce: 'セ',
+    co: 'コ',
+    da: 'ダ',
+    di: 'ディ',
+    du: 'ドゥ',
+    de: 'デ',
+    do: 'ド',
+    fa: 'ファ',
+    fi: 'フィ',
+    fu: 'フ',
+    fe: 'フェ',
+    fo: 'フォ',
+    ga: 'ガ',
+    gi: 'ギ',
+    gu: 'グ',
+    ge: 'ゲ',
+    go: 'ゴ',
+    ha: 'ハ',
+    hi: 'ヒ',
+    hu: 'フ',
+    he: 'ヘ',
+    ho: 'ホ',
+    ja: 'ジャ',
+    ji: 'ジ',
+    ju: 'ジュ',
+    je: 'ジェ',
+    jo: 'ジョ',
+    ka: 'カ',
+    ki: 'キ',
+    ku: 'ク',
+    ke: 'ケ',
+    ko: 'コ',
+    la: 'ラ',
+    li: 'リ',
+    lu: 'ル',
+    le: 'レ',
+    lo: 'ロ',
+    ma: 'マ',
+    mi: 'ミ',
+    mu: 'ム',
+    me: 'メ',
+    mo: 'モ',
+    na: 'ナ',
+    ni: 'ニ',
+    nu: 'ヌ',
+    ne: 'ネ',
+    no: 'ノ',
+    pa: 'パ',
+    pi: 'ピ',
+    pu: 'プ',
+    pe: 'ペ',
+    po: 'ポ',
+    ra: 'ラ',
+    ri: 'リ',
+    ru: 'ル',
+    re: 'レ',
+    ro: 'ロ',
+    sa: 'サ',
+    si: 'シ',
+    su: 'ス',
+    se: 'セ',
+    so: 'ソ',
+    ta: 'タ',
+    ti: 'ティ',
+    tu: 'トゥ',
+    te: 'テ',
+    to: 'ト',
+    va: 'ヴァ',
+    vi: 'ヴィ',
+    vu: 'ヴ',
+    ve: 'ヴェ',
+    vo: 'ヴォ',
+    wa: 'ワ',
+    wi: 'ウィ',
+    wu: 'ウ',
+    we: 'ウェ',
+    wo: 'ウォ',
+    ya: 'ヤ',
+    yi: 'イ',
+    yu: 'ユ',
+    ye: 'イェ',
+    yo: 'ヨ',
+    za: 'ザ',
+    zi: 'ジ',
+    zu: 'ズ',
+    ze: 'ゼ',
+    zo: 'ゾ',
+  };
+  const consonants = {
+    b: 'ブ',
+    c: 'ク',
+    d: 'ド',
+    f: 'フ',
+    g: 'グ',
+    h: 'フ',
+    j: 'ジ',
+    k: 'ク',
+    l: 'ル',
+    m: 'ム',
+    n: 'ン',
+    p: 'プ',
+    q: 'ク',
+    r: 'ル',
+    s: 'ス',
+    t: 'ト',
+    v: 'ヴ',
+    w: 'ウ',
+    x: 'クス',
+    y: 'イ',
+    z: 'ズ',
+  };
+
+  while (index < word.length) {
+    if (/\d/.test(word[index])) {
+      output += word[index];
+      index += 1;
+      continue;
+    }
+
+    if (
+      index > 0 &&
+      word[index] === word[index - 1] &&
+      !'aeioun'.includes(word[index])
+    ) {
+      output += 'ッ';
+      index += 1;
+      continue;
+    }
+
+    const special = syllables.find(([latin]) => word.startsWith(latin, index));
+    if (special) {
+      output += special[1];
+      index += special[0].length;
+      continue;
+    }
+
+    const pair = word.slice(index, index + 2);
+    if (kana[pair]) {
+      output += kana[pair];
+      index += 2;
+      continue;
+    }
+
+    const single = word[index];
+    if (kana[single]) output += kana[single];
+    else output += consonants[single] ?? single;
+    index += 1;
+  }
+
+  return output.replace(/ウア/g, 'ワ').replace(/ウイ/g, 'ウィ').replace(/ウエ/g, 'ウェ').replace(/ウオ/g, 'ウォ');
 }
 
 function updateDetailTier(force) {
-  const distance = camera.position.length();
+  const distance = controls.getDistance();
   const next = distance > 2.85 ? 'far' : distance > 1.85 ? 'mid' : 'near';
   if (!force && next === state.detailTier) return;
 
@@ -287,7 +924,7 @@ function updateDetailTier(force) {
   detailTierEl.textContent = next === 'far' ? '遠景' : next === 'mid' ? '標準' : '近景';
 
   if (state.borderLines) {
-    state.borderLines.material.opacity = next === 'far' ? 0.38 : next === 'mid' ? 0.56 : 0.76;
+    state.borderLines.material.opacity = borderOpacityForTier(next, state.eras[state.eraIndex]);
   }
   graticule.material.opacity = next === 'near' ? 0.06 : 0.08;
 
@@ -296,6 +933,18 @@ function updateDetailTier(force) {
     marker.scale.setScalar(next === 'near' ? 1.2 : 1);
   }
   renderInfo();
+}
+
+function borderOpacityForTier(tier, era) {
+  const baseOpacity = tier === 'far' ? 0.38 : tier === 'mid' ? 0.56 : 0.76;
+  return usesEarlyBoundaryOpacity(era) ? baseOpacity * EARLY_BOUNDARY_OPACITY : baseOpacity;
+}
+
+function usesEarlyBoundaryOpacity(era) {
+  const earlyBoundaryEndIndex = state.eras.findIndex((item) => item.id === EARLY_BOUNDARY_END_ID);
+  if (earlyBoundaryEndIndex < 0 || !era) return false;
+  const eraIndex = state.eras.indexOf(era);
+  return eraIndex >= 0 && eraIndex <= earlyBoundaryEndIndex;
 }
 
 function pickGlobe(event) {
@@ -369,7 +1018,7 @@ function renderInfo() {
 
   if (state.selectedEvent) {
     document.documentElement.dataset.selection = 'event';
-    infoTitle.textContent = state.selectedEvent.title;
+    infoTitle.textContent = displayEventTitle(state.selectedEvent);
     infoBody.innerHTML = makeDefinitionList(eventRows(era, state.selectedEvent));
     return;
   }
@@ -395,14 +1044,14 @@ function renderInfo() {
   const props = state.selectedFeature.properties;
   document.documentElement.dataset.selection = 'feature';
   const rows = [
-    ['時代', era.label],
-    ['名称', props.NAME || 'Unknown'],
+    ['時代', displayEraTime(era)],
+    ['名称', displayPlaceName(props.NAME, '不明')],
   ];
 
   if (state.detailTier !== 'far') {
     rows.push(
-      ['宗主国・主体', props.SUBJECTO || props.NAME || '不明'],
-      ['所属', props.PARTOF || 'なし'],
+      ['宗主国・主体', displayPlaceName(props.SUBJECTO || props.NAME, '不明')],
+      ['所属', props.PARTOF ? displayPlaceName(props.PARTOF, 'なし') : 'なし'],
       ['国境精度', precisionLabel(props.BORDERPRECISION)],
     );
   }
@@ -416,13 +1065,13 @@ function renderInfo() {
     );
   }
 
-  infoTitle.textContent = props.NAME || 'Unknown';
+  infoTitle.textContent = displayPlaceName(props.NAME, '不明');
   infoBody.innerHTML = makeDefinitionList(rows);
 }
 
 function eraRows(era) {
   const rows = [
-    ['時代', era.label],
+    ['時代', displayEraTime(era)],
     ['区分', era.categoryLabel || '地球史'],
   ];
 
@@ -451,8 +1100,8 @@ function eraRows(era) {
 
 function eventRows(era, eventData) {
   const rows = [
-    ['時代', era.label],
-    ['地点', eventData.place || '未設定'],
+    ['時代', displayEraTime(era)],
+    ['地点', displayPlaceName(eventData.place, '未設定')],
     ['概要', eventData.summary || '未設定'],
   ];
 
@@ -494,7 +1143,13 @@ function mapDataLabel(era) {
 
 function updateFeatureCount(era) {
   const regionCount = state.geojson?.features?.length ?? 0;
+  const borderCount = state.borderFeatureCount;
   const eventCount = (era.events ?? []).length;
+  if (Number.isFinite(borderCount) && borderCount < regionCount) {
+    featureCountEl.textContent = `${borderCount} borders / ${regionCount} regions`;
+    return;
+  }
+
   if (regionCount > 0 && eventCount > 0) {
     featureCountEl.textContent = `${regionCount} regions / ${eventCount} sites`;
   } else if (regionCount > 0) {
@@ -526,6 +1181,26 @@ function buildEraMarkers(era) {
     marker.userData.event = eventData;
     eraMarkerGroup.add(marker);
   }
+}
+
+function displayBorderGeojson(era, geojson) {
+  if (Number(era.year) !== 1492) return geojson;
+
+  return {
+    ...geojson,
+    features: (geojson.features ?? []).filter(shouldShow1492Border),
+  };
+}
+
+function shouldShow1492Border(feature) {
+  const bbox = feature.bbox;
+  if (!bbox) return true;
+
+  const centerLon = (bbox[0] + bbox[2]) / 2;
+  if (centerLon >= -30) return true;
+
+  const name = feature.properties?.NAME ?? '';
+  return MAJOR_1492_AMERICAN_POLITIES.has(name) || bboxArea(bbox) >= 300;
 }
 
 function findNearbyEvent(lonLat) {
@@ -693,7 +1368,8 @@ function forEachPolygon(geometry, callback) {
 
 function findFeatureAt(lon, lat) {
   const matches = [];
-  for (const feature of state.geojson?.features ?? []) {
+  const pickFeatures = state.pickGeojson?.features ?? state.geojson?.features ?? [];
+  for (const feature of pickFeatures) {
     if (!bboxContains(feature.bbox, lon, lat)) continue;
     if (geometryContains(feature.geometry, lon, lat)) matches.push(feature);
   }
@@ -795,16 +1471,6 @@ async function fetchJson(url) {
   const response = await fetch(url, { cache: 'no-store' });
   if (!response.ok) throw new Error(`${response.status} ${response.statusText}: ${url}`);
   return response.json();
-}
-
-function buildEraTicks(eras) {
-  return eras
-    .map((era, index) => {
-      const label = era.tickLabel ?? '';
-      const major = label ? ' data-major="true"' : '';
-      return `<span${major}>${escapeHtml(label)}</span>`;
-    })
-    .join('');
 }
 
 function makeDefinitionList(rows) {

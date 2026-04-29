@@ -4,7 +4,7 @@
       "id": "earth-formation",
       "label": "45.4億年前",
       "tickLabel": "45.4億",
-      "title": "地球誕生",
+      "title": "原始地球の形成",
       "category": "geology",
       "categoryLabel": "地球史",
       "ageMa": 4540,
@@ -14,12 +14,44 @@
       "file": "data/borders/world_2010.min.geojson",
       "featureCount": 227,
       "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
-      "mapNote": "????????????????????2010?????????????????"
+      "mapNote": "????????????????????2010?????????????????",
+      "events": [
+        {
+          "title": "原始地球の集積とマグマオーシャン",
+          "place": "全球",
+          "lon": 0,
+          "lat": 0,
+          "summary": "微惑星の衝突と集積で原始地球が成長し、表面は広く溶融したマグマオーシャンに覆われたと考えられています。",
+          "biology": "生命はまだ確認されていません。",
+          "environment": "高温の原始地殻・マグマオーシャン",
+          "note": "全球現象のため、地図中央を代表地点として表示します。"
+        },
+        {
+          "title": "月形成巨大衝突",
+          "place": "全球",
+          "lon": 35,
+          "lat": 5,
+          "summary": "火星サイズの天体テイアが原始地球に衝突し、放出された物質から月が形成されたという巨大衝突説が有力です。",
+          "biology": "生命はまだ確認されていません。",
+          "environment": "衝突加熱・再溶融・地球月系の形成",
+          "note": "衝突位置は特定できないため、代表地点です。年代や衝突過程には複数のモデルがあります。"
+        },
+        {
+          "title": "ジャックヒルズの冥王代ジルコン",
+          "place": "西オーストラリア・ジャックヒルズ",
+          "lon": 116.95,
+          "lat": -26.22,
+          "summary": "約44億年前のジルコン結晶が知られ、地球最古級の物質として初期地殻や水の存在を考える重要な手がかりです。",
+          "biology": "生命はまだ確認されていません。",
+          "environment": "初期地殻を示す鉱物記録",
+          "note": "現在の露頭位置を表示しています。当時の大陸配置ではありません。"
+        }
+      ]
     },
     {
       "id": "early-ocean",
       "label": "40億年前",
-      "title": "原始海洋の時代",
+      "title": "初期地殻と原始海洋の成立",
       "category": "geology",
       "categoryLabel": "地球史",
       "ageMa": 4000,
@@ -29,12 +61,54 @@
       "file": "data/borders/world_2010.min.geojson",
       "featureCount": 227,
       "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
-      "mapNote": "????????????????????2010?????????????????"
+      "mapNote": "????????????????????2010?????????????????",
+      "events": [
+        {
+          "title": "ジャックヒルズの初期水循環候補",
+          "place": "西オーストラリア・ジャックヒルズ",
+          "lon": 117.14,
+          "lat": -26.05,
+          "summary": "ジルコンの酸素同位体から、40億年前以前に浅い地殻と水が相互作用していた可能性が示されています。",
+          "biology": "生命の有無は未確認です。",
+          "environment": "冷却した地殻・表層水・初期水循環",
+          "note": "水循環の開始時期を示す間接証拠として表示します。"
+        },
+        {
+          "title": "アカスタ片麻岩複合体",
+          "place": "カナダ・ノースウエスト準州アカスタ川地域",
+          "lon": -115.58,
+          "lat": 65.17,
+          "summary": "約40.2億年前の地殻岩石が残る、地球最古級の岩体です。初期大陸地殻の形成過程を知る重要地点です。",
+          "biology": "生命の有無は未確認です。",
+          "environment": "最古級の保存地殻・衝突/火成活動の記録",
+          "note": "年代は岩体内の古い片麻岩単元を代表しています。"
+        },
+        {
+          "title": "ヌブアギトゥク表成岩帯",
+          "place": "カナダ・ケベック州ハドソン湾東岸",
+          "lon": -77.62,
+          "lat": 58.28,
+          "summary": "非常に古い火山岩・堆積岩が残る可能性があり、初期地殻、海洋化学、熱水環境を考える重要地域です。",
+          "biology": "生命候補の議論につながる環境記録",
+          "environment": "海底火山・熱水・鉄に富む堆積環境",
+          "note": "年代には議論があり、40億年前前後から38億年前台まで複数の解釈があります。"
+        },
+        {
+          "title": "イスア表成岩帯の初期海洋堆積記録",
+          "place": "グリーンランド南西部イスア",
+          "lon": -50.2,
+          "lat": 64.7,
+          "summary": "38億年前前後の海洋堆積岩や火山岩が残り、初期海洋と地殻環境を考える代表地点です。",
+          "biology": "生命活動候補の背景環境",
+          "environment": "変成を受けた古い海洋堆積環境",
+          "note": "生命そのものの解釈は次の「生命痕跡候補」で扱います。"
+        }
+      ]
     },
     {
       "id": "earliest-life",
       "label": "38億年前",
-      "title": "生命痕跡候補",
+      "title": "最古級の生命痕跡候補",
       "category": "biology",
       "categoryLabel": "生物史",
       "ageMa": 3800,
@@ -42,14 +116,54 @@
       "biology": "炭素同位体などから生命活動の可能性が議論されています。",
       "events": [
         {
-          "title": "イスア地域の生命痕跡候補",
-          "place": "グリーンランド南西部",
+          "title": "イスア地域の炭素同位体生命痕跡候補",
+          "place": "グリーンランド南西部イスア",
           "lon": -50.2,
           "lat": 64.7,
-          "summary": "非常に古い堆積岩に生命活動の可能性を示す痕跡が報告されています。",
+          "summary": "非常に古い堆積岩に、生命活動と整合する炭素同位体の痕跡が報告されています。",
           "biology": "初期生命の候補",
           "environment": "古い海洋堆積環境",
-          "note": "解釈には議論があります。"
+          "note": "変成作用を受けており、解釈には議論があります。"
+        },
+        {
+          "title": "イスアのストロマトライト状構造候補",
+          "place": "グリーンランド南西部イスア",
+          "lon": -50.45,
+          "lat": 64.42,
+          "summary": "約37億年前の炭酸塩岩から、ストロマトライト状の構造が報告されています。",
+          "biology": "微生物マット候補",
+          "environment": "浅い海の炭酸塩堆積環境候補",
+          "note": "生物起源か変形構造かについて再検討が続いています。"
+        },
+        {
+          "title": "ヌブアギトゥク熱水噴出孔微化石候補",
+          "place": "カナダ・ケベック州ヌブアギトゥク表成岩帯",
+          "lon": -77.62,
+          "lat": 58.28,
+          "summary": "鉄に富む熱水沈殿物から、微生物活動に似た管状・糸状構造が報告されています。",
+          "biology": "鉄酸化微生物候補",
+          "environment": "海底熱水噴出孔・鉄に富む沈殿物",
+          "note": "候補の年代幅と生物起源には議論があります。"
+        },
+        {
+          "title": "サグレック・ブロックのグラファイト候補",
+          "place": "カナダ・ラブラドル北部",
+          "lon": -63.3,
+          "lat": 58.55,
+          "summary": "約39.5億年前の堆積岩中のグラファイトから、有機的な炭素同位体組成が報告されています。",
+          "biology": "有機炭素・生命痕跡候補",
+          "environment": "初期海洋の堆積岩",
+          "note": "非常に古い生命候補として重要ですが、確定的な化石ではありません。"
+        },
+        {
+          "title": "アキリア島の炭素同位体候補",
+          "place": "グリーンランド・アキリア島",
+          "lon": -51.65,
+          "lat": 63.93,
+          "summary": "38億年前を超える可能性がある岩石から、生命活動を示す可能性がある炭素同位体シグナルが議論されてきました。",
+          "biology": "生命痕跡候補",
+          "environment": "強く変成した化学堆積岩候補",
+          "note": "岩石の成因と年代を含めて長く議論があり、候補として薄めに扱うべき地点です。"
         }
       ],
       "file": "data/borders/world_2010.min.geojson",
@@ -61,7 +175,7 @@
       "id": "stromatolites",
       "label": "35億年前",
       "tickLabel": "35億",
-      "title": "ストロマトライトの時代",
+      "title": "初期ストロマトライト記録",
       "category": "biology",
       "categoryLabel": "生物史",
       "ageMa": 3500,
@@ -69,13 +183,64 @@
       "biology": "シアノバクテリアに近い微生物群集が生態系の中心でした。",
       "events": [
         {
-          "title": "ピルバラのストロマトライト",
-          "place": "西オーストラリア",
-          "lon": 119.4,
-          "lat": -21.3,
-          "summary": "古いストロマトライトが知られる代表地域です。",
+          "title": "ドレッサー層のストロマトライト",
+          "place": "西オーストラリア・ピルバラ地域ドレッサー層",
+          "lon": 119.43,
+          "lat": -21.15,
+          "summary": "約34.8億年前の、最古級で比較的説得力のあるストロマトライトが知られる代表地域です。",
           "biology": "微生物マット",
-          "environment": "浅い海"
+          "environment": "浅い海・熱水影響を受けた火山カルデラ周辺",
+          "note": "表面露頭の保存状態には限界があり、掘削コアなどで再検討されています。"
+        },
+        {
+          "title": "ドレッサー層の陸上温泉生命候補",
+          "place": "西オーストラリア・ピルバラ地域ドレッサー層",
+          "lon": 119.58,
+          "lat": -21.02,
+          "summary": "約34.8億年前の温泉・間欠泉に関連する堆積物から、陸上温泉環境にいた微生物活動の候補が報告されています。",
+          "biology": "温泉微生物マット候補",
+          "environment": "陸上温泉・熱水性シリカ沈殿物",
+          "note": "火星の古い温泉堆積物探査との比較でも重要視されます。"
+        },
+        {
+          "title": "ストレリー・プール層のストロマトライト礁",
+          "place": "西オーストラリア・ピルバラ地域ストレリー・プール層",
+          "lon": 119.24,
+          "lat": -21.18,
+          "summary": "約34.3億年前の浅海性ストロマトライトが広域に分布し、初期生態系を面として考える重要な記録です。",
+          "biology": "微生物マット・ストロマトライト",
+          "environment": "浅海の炭酸塩・珪質堆積環境",
+          "note": "時代は35億年前より少し後ですが、同じ初期太古代の主要地点として追加しています。"
+        },
+        {
+          "title": "エイペックスチャート微化石候補",
+          "place": "西オーストラリア・ピルバラ地域ウォラウーナ群",
+          "lon": 119.74,
+          "lat": -21.16,
+          "summary": "約34.6億年前のチャートから、微化石と解釈された構造が報告され、初期生命研究の代表的な論争地点になりました。",
+          "biology": "微化石候補",
+          "environment": "珪質堆積岩・熱水影響を受けた環境",
+          "note": "生物起源には強い議論があるため、確定化石ではなく候補として表示します。"
+        },
+        {
+          "title": "バーバートン緑色岩帯の微生物マット記録",
+          "place": "南アフリカ・バーバートン緑色岩帯",
+          "lon": 31.05,
+          "lat": -25.78,
+          "summary": "約35.5億〜32億年前の堆積岩に、微生物マット、微化石候補、地球化学的生命痕跡が多数報告されています。",
+          "biology": "微生物マット・微化石候補",
+          "environment": "浅海から熱水影響を受けた堆積環境",
+          "note": "ピルバラと並ぶ初期太古代生命記録の主要地域です。"
+        },
+        {
+          "title": "バーバートンの初期衝突スフェルール層",
+          "place": "南アフリカ・バーバートン緑色岩帯",
+          "lon": 31.2,
+          "lat": -25.92,
+          "summary": "初期太古代の衝突由来スフェルール層が残り、初期生命環境が大型衝突にさらされていたことを示します。",
+          "biology": "初期微生物生態系への環境ストレス",
+          "environment": "海洋堆積盆・衝突噴出物",
+          "note": "生命化石そのものではありませんが、ストロマトライト時代の環境背景として重要です。"
         }
       ],
       "file": "data/borders/world_2010.min.geojson",
@@ -86,7 +251,7 @@
     {
       "id": "great-oxidation",
       "label": "24億年前",
-      "title": "大酸化イベント",
+      "title": "大酸化イベントの始まり",
       "category": "biology",
       "categoryLabel": "生物史",
       "ageMa": 2400,
@@ -166,7 +331,7 @@
         {
           "title": "Lomagundi Group",
           "place": "ジンバブエ・マゴンディ帯",
-          "lon": 30.0,
+          "lon": 30,
           "lat": -16.8,
           "summary": "Lomagundi 炭素同位体異常の模式地で、GOE後の全球的な炭素循環変化を示す代表記録です。",
           "biology": "光合成微生物",
@@ -202,7 +367,7 @@
     {
       "id": "eukaryotes",
       "label": "18億年前",
-      "title": "真核生物の拡大",
+      "title": "初期真核生物の多様化",
       "category": "biology",
       "categoryLabel": "生物史",
       "ageMa": 1800,
@@ -272,7 +437,7 @@
         {
           "title": "Kamo Group の Tappania 群集",
           "place": "ロシア・シベリア卓状地中央アンガラ盆地",
-          "lon": 101.0,
+          "lon": 101,
           "lat": 58.5,
           "summary": "シベリアの中期原生代地層から、Tappania を含む複雑な有機壁微化石群が報告されています。",
           "biology": "初期真核生物",
@@ -298,7 +463,7 @@
     {
       "id": "multicellular",
       "label": "12億年前",
-      "title": "多細胞化への道",
+      "title": "初期多細胞生物候補",
       "category": "biology",
       "categoryLabel": "生物史",
       "ageMa": 1200,
@@ -404,7 +569,7 @@
     {
       "id": "ediacaran",
       "label": "6.35億年前",
-      "title": "エディアカラ生物群",
+      "title": "エディアカラ紀の始まり",
       "category": "biology",
       "categoryLabel": "生物史",
       "ageMa": 635,
@@ -531,7 +696,7 @@
       "id": "cambrian",
       "label": "5.41億年前",
       "tickLabel": "5.41億",
-      "title": "カンブリア爆発",
+      "title": "カンブリア紀の始まり",
       "category": "biology",
       "categoryLabel": "生物史",
       "ageMa": 541,
@@ -642,7 +807,7 @@
           "title": "Brèche à Micmacca small shelly fossils",
           "place": "モロッコ・High Atlas / Jbel Wawrmast Formation",
           "lon": -7.55,
-          "lat": 31.0,
+          "lat": 31,
           "summary": "カンブリア第2シリーズからミャオリンギアン境界付近の小型有殻化石群が報告され、北西アフリカの殻・骨格化記録を示します。",
           "biology": "小型有殻化石・腕足動物・軟体動物様化石",
           "environment": "浅海の泥質・石灰質薄層",
@@ -677,7 +842,7 @@
     {
       "id": "devonian",
       "label": "4.19億年前",
-      "title": "魚類と陸上植物の時代",
+      "title": "デボン紀の始まりと魚類多様化",
       "category": "biology",
       "categoryLabel": "生物史",
       "ageMa": 419,
@@ -727,8 +892,8 @@
         {
           "title": "Acanthostega and Ichthyostega",
           "place": "東グリーンランド・Ymer Ø 周辺",
-          "lon": -23.0,
-          "lat": 73.0,
+          "lon": -23,
+          "lat": 73,
           "summary": "後期デボン紀の初期四肢動物 Acanthostega と Ichthyostega が知られ、四肢の進化を考える基準産地です。",
           "biology": "初期四肢動物",
           "environment": "河川・湖沼を含む陸水環境",
@@ -823,7 +988,7 @@
     {
       "id": "carboniferous",
       "label": "3.59億年前",
-      "title": "石炭紀の森林",
+      "title": "石炭紀の始まりと石炭森林",
       "category": "biology",
       "categoryLabel": "生物史",
       "ageMa": 359,
@@ -949,6 +1114,86 @@
           "biology": "石炭林植物・シダ植物・種子シダ",
           "environment": "石炭湿地林",
           "note": "Writhlington Geological Nature Reserve 周辺の記録。広域的な炭田植物群の代表として追加。"
+        },
+        {
+          "title": "Table Head fossil forest",
+          "place": "カナダ・ノバスコシア州 Cape Breton / Table Head",
+          "lon": -59.95,
+          "lat": 46.22,
+          "summary": "Sydney Basin の Harbour Seam 付近に、約30本のリンボク類を含む上部石炭紀の化石森林が露出します。",
+          "biology": "リンボク類・樹木シダ・石炭湿地林",
+          "environment": "デルタ平野の泥炭湿地と分流河道周辺",
+          "note": "Calder et al. 1996, International Journal of Coal Geology の Table Head 化石森林研究を参照。土壌条件の変化に対する石炭林の応答を示す地点です。"
+        },
+        {
+          "title": "Herrin Coal fossil forest",
+          "place": "米国・イリノイ州 Herrin No. 6 Coal / Riola-Vermilion Grove mines",
+          "lon": -87.72,
+          "lat": 39.95,
+          "summary": "Herrin 炭層上面に広く保存された中部ペンシルバニアンの泥炭湿地林で、森林内の局所差と景観勾配が解析されています。",
+          "biology": "木生シダ・リンボク類・石炭湿地林",
+          "environment": "沿岸泥炭湿地",
+          "note": "DiMichele et al. 2007, Geology の Pennsylvanian mire forest 論文を参照。断層性沈降で急に水没した森林として扱われます。"
+        },
+        {
+          "title": "Radnice Basin Ovčín forest",
+          "place": "チェコ・ボヘミア西部 Radnice Basin / Ovčín",
+          "lon": 13.61,
+          "lat": 49.85,
+          "summary": "Whetstone Horizon の火山灰に埋もれた中部ペンシルバニアンの泥炭形成森林で、森林床を平面として復元できる稀な産地です。",
+          "biology": "リンボク類・コルダイテス類・シダ植物",
+          "environment": "火山灰に覆われた谷底の泥炭湿地",
+          "note": "Opluštil et al. 2009, Review of Palaeobotany and Palynology の in situ 森林研究を参照。Bělka tuff による急速埋没が重要です。"
+        },
+        {
+          "title": "Puertollano forest swamp",
+          "place": "スペイン・Castilla-La Mancha、Puertollano Basin",
+          "lon": -4.11,
+          "lat": 38.69,
+          "summary": "後期ステファニアンの炭層中火山灰が、Sporangiostrobus を多く含む湿地林床を保存したスペイン中央部の代表産地です。",
+          "biology": "Bodeodendron / Sporangiostrobus・シダ植物・トクサ類",
+          "environment": "湖沼性炭田の湿地林",
+          "note": "Wagner 1989, International Journal of Coal Geology の火山灰埋没森林論文を参照。石炭紀末にもリンボク類優占湿地が残った例です。"
+        },
+        {
+          "title": "La Magdalena Coalfield",
+          "place": "スペイン・レオン県 La Magdalena 炭田",
+          "lon": -5.8,
+          "lat": 42.78,
+          "summary": "Variscan 山地縁の網状河川平野で、後期ペンシルバニアンの植物群集のモザイクと環境勾配が復元されています。",
+          "biology": "種子シダ・シダ植物・リンボク類・トクサ類",
+          "environment": "網状河川平野と周辺湿地",
+          "note": "Bashforth et al. 2010, Palaeogeography, Palaeoclimatology, Palaeoecology の植生不均質性研究を参照。典型的な炭層湿地だけでない盆地縁の植生として追加。"
+        },
+        {
+          "title": "Tynemouth Creek Formation",
+          "place": "カナダ・ニューブランズウィック州 St. Martins 南西海岸",
+          "lon": -65.68,
+          "lat": 45.28,
+          "summary": "前期ペンシルバニアンの季節乾燥した河川メガファンで、コルダイテス類を主体とする乾燥寄り森林と湿地植物群が記録されます。",
+          "biology": "コルダイテス類・種子シダ・トクサ類・足跡化石",
+          "environment": "季節乾燥の河川メガファン",
+          "note": "Bashforth et al. 2014, Review of Palaeobotany and Palynology の Tynemouth Creek 植生研究を参照。石炭紀森林を湿地だけに限定しない比較地点です。"
+        },
+        {
+          "title": "Fern Ledges",
+          "place": "カナダ・ニューブランズウィック州 Saint John / Lancaster Formation",
+          "lon": -66.08,
+          "lat": 45.25,
+          "summary": "古典的な上部石炭紀植物化石産地で、植物・昆虫・陸上巻貝などを含む沿岸低地の生態系が知られています。",
+          "biology": "石炭紀植物・昆虫・陸上節足動物",
+          "environment": "汽水湾岸から低地湿地",
+          "note": "Falcon-Lang and Miller 2007, Journal of the Geological Society による Lancaster Formation の古環境・古生態研究を参照。Marie Stopes の古典的植物誌でも有名です。"
+        },
+        {
+          "title": "Kinney Brick Quarry Lagerstätte",
+          "place": "米国・ニューメキシコ州 Manzanita Mountains",
+          "lon": -106.42,
+          "lat": 35.02,
+          "summary": "後期ペンシルバニアンの海湾性 Lagerstätte で、保存のよい植物、昆虫、クモ類、魚類、両生類などを含みます。",
+          "biology": "植物・昆虫・クモ類・魚類・両生類",
+          "environment": "海湾から沿岸湿地の移行環境",
+          "note": "Lucas, DiMichele and Schneider 2022, Newsletter on Carboniferous Stratigraphy の総説を参照。石炭林周辺の沿岸生態系を補う地点です。"
         }
       ],
       "file": "data/borders/world_2010.min.geojson",
@@ -960,7 +1205,7 @@
       "id": "permian-triassic",
       "label": "2.52億年前",
       "tickLabel": "2.52億",
-      "title": "大量絶滅と三畳紀",
+      "title": "ペルム紀末大量絶滅と三畳紀の始まり",
       "category": "biology",
       "categoryLabel": "生物史",
       "ageMa": 252,
@@ -974,7 +1219,98 @@
           "lat": -30.1,
           "summary": "初期恐竜を含む三畳紀陸上生態系の代表地域です。",
           "biology": "初期恐竜と主竜類",
-          "environment": "乾燥した陸上環境"
+          "environment": "乾燥した陸上環境",
+          "note": "Desojo et al. 2020, Scientific Reports などの Ischigualasto Formation 研究を参照。三畳紀陸上生態系と恐竜起源を考える代表地点です。"
+        },
+        {
+          "title": "Meishan Permian-Triassic boundary",
+          "place": "中国・浙江省 Changxing County / Meishan",
+          "lon": 119.71,
+          "lat": 31.08,
+          "summary": "ペルム紀-三畳紀境界の GSSP を含む標準露頭で、海洋生物の急減と炭素循環の変化を高解像度で追えます。",
+          "biology": "海洋無脊椎動物・コノドント・微化石",
+          "environment": "浅海炭酸塩プラットフォーム",
+          "note": "Chen et al. の Meishan P-T transition 研究と ICS GSSP 情報を参照。大量絶滅そのものを示す基準地点として追加。"
+        },
+        {
+          "title": "Siberian Traps",
+          "place": "ロシア・シベリア、Norilsk / Tunguska Basin 周辺",
+          "lon": 88.2,
+          "lat": 69.35,
+          "summary": "Siberian Traps 大規模火成岩区は、P-T 大量絶滅を引き起こした環境擾乱の主要候補として議論されます。",
+          "biology": "火山活動・温室効果ガス・海洋無酸素",
+          "environment": "大規模火成岩区と堆積盆",
+          "note": "Burgess et al. 2017, Nature Communications と Dal Corso et al. 2022, Nature Reviews Earth & Environment を参照。原因側の代表地点です。"
+        },
+        {
+          "title": "Karoo Basin Bethulie PTB",
+          "place": "南アフリカ・Free State、Bethulie 周辺",
+          "lon": 25.93,
+          "lat": -30.34,
+          "summary": "陸上脊椎動物の絶滅と Lystrosaurus を含む初期三畳紀の回復を、連続した陸成層で追える代表地域です。",
+          "biology": "獣弓類・Lystrosaurus・初期三畳紀陸上動物",
+          "environment": "乾燥化した河川氾濫原",
+          "note": "Botha and Smith 2006 の Karoo Basin 回復研究などを参照。陸上生態系側の大量絶滅記録として追加。"
+        },
+        {
+          "title": "Guryul Ravine",
+          "place": "インド・カシミール、Khonmoh / Guryul Ravine",
+          "lon": 74.98,
+          "lat": 34.03,
+          "summary": "テチス海縁辺のペルム紀-三畳紀境界断面で、海成化石・有機炭素・微化石から絶滅前後の環境変化を読めます。",
+          "biology": "腕足類・二枚貝・コノドント・微化石",
+          "environment": "テチス縁辺の浅海から外棚",
+          "note": "Algeo et al. 2007, Palaeogeography, Palaeoclimatology, Palaeoecology と Singh et al. 2015, PLOS ONE を参照。南テチス側の比較断面です。"
+        },
+        {
+          "title": "Paris Biota",
+          "place": "米国・アイダホ州 Bear Lake County / Paris Canyon",
+          "lon": -111.41,
+          "lat": 42.22,
+          "summary": "前期三畳紀の例外的保存化石群で、P-T 境界後わずか数百万年で複雑な海洋生態系が再成立していたことを示します。",
+          "biology": "海綿・甲殻類・軟体動物・魚類",
+          "environment": "東部 Panthalassa の浅海から沖合泥質環境",
+          "note": "Brayard et al. 2021, Scientific Reports の Paris Biota 広域研究を参照。早期回復の代表地点として追加。"
+        },
+        {
+          "title": "Chaohu Fauna",
+          "place": "中国・安徽省 Chaohu / Majiashan",
+          "lon": 117.87,
+          "lat": 31.62,
+          "summary": "前期三畳紀の海生爬虫類・魚類を含む化石群で、絶滅後の海洋捕食者と生態系再編の初期段階を示します。",
+          "biology": "魚竜型類・鰭竜類・魚類・無脊椎動物",
+          "environment": "低緯度海域の炭酸塩堆積環境",
+          "note": "Palaeogeography, Palaeoclimatology, Palaeoecology 2023 の Chaohu Fauna 古環境研究と Motani et al. 2017 を参照。海生爬虫類の早期放散地点です。"
+        },
+        {
+          "title": "Luoping Biota",
+          "place": "中国・雲南省 Luoping / Daaozi",
+          "lon": 104.3,
+          "lat": 24.88,
+          "summary": "中期三畳紀の多様な海洋 Lagerstätte で、絶滅から約1000万年後の海洋生態系回復を示します。",
+          "biology": "節足動物・魚類・海生爬虫類・軟体動物",
+          "environment": "浅海大陸棚",
+          "note": "Hu et al. 2011 の Luoping biota 論文を参照。三畳紀海洋生態系の本格的回復を示す代表地点です。"
+        },
+        {
+          "title": "Monte San Giorgio",
+          "place": "スイス・イタリア国境、Monte San Giorgio / Val Mara",
+          "lon": 8.95,
+          "lat": 45.89,
+          "summary": "中期三畳紀の魚類・海生爬虫類・昆虫を保存する重要な Lagerstätte で、回復後の多層的な生態系を示します。",
+          "biology": "海生爬虫類・魚類・昆虫",
+          "environment": "テチス縁辺のラグーンから浅海盆",
+          "note": "Montagna et al. 2024, Communications Biology と Monte San Giorgio の中期三畳紀化石研究を参照。回復後の海陸接点の多様性として追加。"
+        },
+        {
+          "title": "Madygen Formation",
+          "place": "キルギス南西部・Madygen 地域",
+          "lon": 70.82,
+          "lat": 40.06,
+          "summary": "中期から後期三畳紀の湖沼・河川性 Lagerstätte で、植物、昆虫、魚類、小型爬虫類を含む陸水域生態系を保存します。",
+          "biology": "植物・昆虫・魚類・小型爬虫類",
+          "environment": "内陸湖沼と河川氾濫原",
+          "note": "Voigt et al. 2017, Terrestrial Conservation Lagerstätten の Madygen 章と関連研究を参照。三畳紀の陸水域回復・多様化を補う地点です。"
         }
       ],
       "file": "data/borders/world_2010.min.geojson",
@@ -985,7 +1321,7 @@
     {
       "id": "jurassic",
       "label": "2.01億年前",
-      "title": "ジュラ紀の海と恐竜",
+      "title": "ジュラ紀の始まりと恐竜の拡大",
       "category": "biology",
       "categoryLabel": "生物史",
       "ageMa": 201,
@@ -993,13 +1329,224 @@
       "biology": "恐竜、翼竜、海生爬虫類、初期鳥類が重要です。",
       "events": [
         {
-          "title": "ゾルンホーフェン",
-          "place": "ドイツ南部",
+          "title": "ゾルンホーフェン石灰岩",
+          "place": "ドイツ・バイエルン州ゾルンホーフェン周辺",
           "lon": 11,
           "lat": 48.9,
-          "summary": "始祖鳥などの保存状態の良い化石で知られます。",
-          "biology": "初期鳥類と海生生物",
-          "environment": "ラグーン"
+          "summary": "アーケオプテリクスと、軟体部まで残る海生生物で有名な後期ジュラ紀の板状石灰岩です。",
+          "biology": "アーケオプテリクス、翼竜、魚類、甲殻類",
+          "environment": "浅いラグーン群",
+          "note": "参考: Carney et al. 2012 Nature Communications「New evidence on the colour and nature of the isolated Archaeopteryx feather」; Foth et al. 2014 Nature「New specimen of Archaeopteryx provides insights into the evolution of pennaceous feathers」."
+        },
+        {
+          "title": "ポシドニア頁岩・ホルツマーデン",
+          "place": "ドイツ・バーデン＝ヴュルテンベルク州ホルツマーデン",
+          "lon": 9.52,
+          "lat": 48.64,
+          "summary": "前期ジュラ紀トアルシアンの黒色頁岩から、魚類、イクチオサウルス、プレシオサウルス類のほぼ完全な骨格が多数知られます。",
+          "biology": "イクチオサウルス、プレシオサウルス類、魚類、アンモナイト",
+          "environment": "酸素の乏しい海盆",
+          "note": "参考: Sachs et al. 2025 PeerJ「An unusual early-diverging plesiosauroid from the Lower Jurassic Posidonia Shale of Holzmaden, Germany」."
+        },
+        {
+          "title": "ストロベリー・バンク",
+          "place": "英国・イングランド、イルミンスター",
+          "lon": -2.91,
+          "lat": 50.93,
+          "summary": "前期ジュラ紀トアルシアンの浅海堆積物で、幼体イクチオサウルスなどの海生爬虫類が細部まで保存されています。",
+          "biology": "幼体イクチオサウルス、魚類、海生無脊椎動物",
+          "environment": "浅い海",
+          "note": "参考: Caine & Benton 2011 Palaeontology「Ichthyosauria from the Upper Lias of Strawberry Bank, England」; Jamison-Todd et al. 2022 Journal of Anatomy「Dietary niche partitioning in Early Jurassic ichthyosaurs from Strawberry Bank」."
+        },
+        {
+          "title": "オックスフォード粘土・ピーターバラ",
+          "place": "英国・ピーターバラ／ウィットルジー",
+          "lon": -0.2,
+          "lat": 52.57,
+          "summary": "中期ジュラ紀キャロビアンの海成粘土で、プレシオサウルス類、イクチオサウルス類、海生ワニ類の古典的産地です。",
+          "biology": "プレシオサウルス類、イクチオサウルス類、海生ワニ類、魚類",
+          "environment": "浅い内海の泥底",
+          "note": "参考: Hudson & Martill 1994 Journal of the Geological Society「The Peterborough Member (Callovian, Middle Jurassic) of the Oxford Clay Formation at Peterborough, UK」; Martill 1985「The preservation of marine reptiles in the Lower Oxford Clay」."
+        },
+        {
+          "title": "キンメリッジ粘土",
+          "place": "英国・ドーセット州キンメリッジ湾",
+          "lon": -2.13,
+          "lat": 50.6,
+          "summary": "後期ジュラ紀の海成粘土で、イクチオサウルスやプリオサウルスなど大型海生爬虫類の保存で重要です。",
+          "biology": "イクチオサウルス、プリオサウルス、海生ワニ類、魚類",
+          "environment": "浅いエペイリック海",
+          "note": "参考: Jacobs & Martill 2020 PLOS ONE「A new ophthalmosaurid ichthyosaur from the Upper Jurassic (Early Tithonian) Kimmeridge Clay of Dorset, UK, with implications for Late Jurassic ichthyosaur diversity」."
+        },
+        {
+          "title": "ラ・ヴルト＝シュル＝ローヌ",
+          "place": "フランス・アルデシュ県ラ・ヴルト＝シュル＝ローヌ",
+          "lon": 4.78,
+          "lat": 44.8,
+          "summary": "中期ジュラ紀の深海性ラーゲルシュテッテで、節足動物、頭足類、棘皮動物などが例外的に保存されます。",
+          "biology": "節足動物、頭足類、棘皮動物、ウミグモ類",
+          "environment": "西テチス縁辺の深い海",
+          "note": "参考: Charbonnier et al. 2014 Comptes Rendus Palevol「The La Voulte-sur-Rhône Lagerstätte (Middle Jurassic, France)」."
+        },
+        {
+          "title": "サンダンス海・レッドウォーター頁岩",
+          "place": "米国・ワイオミング州ナトロナ郡周辺",
+          "lon": -106.7,
+          "lat": 43,
+          "summary": "中期から後期ジュラ紀に北米西部を覆った内海の記録で、プレシオサウルス類やイクチオサウルス類を含みます。",
+          "biology": "プレシオサウルス類、イクチオサウルス類、魚類、アンモナイト",
+          "environment": "北米西部の浅い内海",
+          "note": "参考: O'Keefe & Wahl 2003 Paludicola「Current taxonomic status of the plesiosaur Pantosaurus striatus from the Upper Jurassic Sundance Formation, Wyoming」; Geological Magazine「Palaeoecology of the marine reptiles of the Redwater Shale Member of the Sundance Formation (Jurassic) of central Wyoming, USA」."
+        },
+        {
+          "title": "クリーブランド＝ロイド恐竜採石場",
+          "place": "米国・ユタ州ジュラシック国定記念物",
+          "lon": -110.7,
+          "lat": 39.32,
+          "summary": "モリソン層の有名な骨層で、アロサウルスを中心に多数の後期ジュラ紀恐竜化石が集中します。",
+          "biology": "アロサウルス、ステゴサウルス、カマラサウルス、竜脚類",
+          "environment": "河川氾濫原と一時的な水場",
+          "note": "参考: Madsen 1976「Allosaurus fragilis: A Revised Osteology」; Gates 2005「The Late Jurassic Cleveland-Lloyd Dinosaur Quarry as a Drought-Induced Assemblage」; Peterson et al. 2017「New data towards the development of a comprehensive taphonomic framework for the Late Jurassic Cleveland-Lloyd Dinosaur Quarry, Central Utah」."
+        },
+        {
+          "title": "カーネギー採石場",
+          "place": "米国・ユタ州／コロラド州境、ダイナソー国定記念物",
+          "lon": -109.3,
+          "lat": 40.44,
+          "summary": "崖面に多数の骨が残るモリソン層の代表的産地で、アパトサウルスなど大型竜脚類の展示で知られます。",
+          "biology": "アパトサウルス、カマラサウルス、ステゴサウルス、アロサウルス",
+          "environment": "河川チャネルと氾濫原",
+          "note": "参考: Chure & Engelmann 1989「The fauna of the Morrison Formation in Dinosaur National Monument」; NPS「Morrison Formation」および「The Morrison Formation」解説。"
+        },
+        {
+          "title": "コモ・ブラフ",
+          "place": "米国・ワイオミング州メディシンボウ付近",
+          "lon": -106.05,
+          "lat": 41.97,
+          "summary": "19世紀から知られるモリソン層の歴史的恐竜産地で、ステゴサウルスやディプロドクスなど多数の標本が産しました。",
+          "biology": "ステゴサウルス、ディプロドクス、アパトサウルス、アロサウルス",
+          "environment": "半乾燥の河川氾濫原",
+          "note": "参考: Carrano & Velez-Juarbe 2006「Paleoecology of the Quarry 9 vertebrate assemblage from Como Bluff, Wyoming (Morrison Formation, Late Jurassic)」; Ostrom & McIntosh 1999「Marsh's Dinosaurs」."
+        },
+        {
+          "title": "ロウリニャン層",
+          "place": "ポルトガル・ロウリニャン周辺",
+          "lon": -9.32,
+          "lat": 39.25,
+          "summary": "後期ジュラ紀の沿岸平野堆積物で、獣脚類、竜脚類、卵殻、胚化石が見つかるヨーロッパ有数の恐竜産地です。",
+          "biology": "獣脚類、竜脚類、恐竜卵、胚化石",
+          "environment": "沿岸平野と河川・湖沼",
+          "note": "参考: Mateus et al. 1998「Upper Jurassic theropod dinosaur embryos from Lourinhã, Portugal」; Castanhinha et al. 2009「Dinosaur eggshell and embryo localities in Lourinhã Formation, Late Jurassic, Portugal」."
+        },
+        {
+          "title": "テンダグル層",
+          "place": "タンザニア南東部・リンディ地方",
+          "lon": 39.25,
+          "lat": -10.08,
+          "summary": "後期ジュラ紀ゴンドワナの代表的恐竜産地で、巨大竜脚類や剣竜類、獣脚類が沿岸近くの堆積物から見つかります。",
+          "biology": "ギラファティタン、ディクラエオサウルス、ケントロサウルス、獣脚類",
+          "environment": "潮汐平原、潟、半乾燥の沿岸低地",
+          "note": "参考: Bussert, Heinrich & Aberhan 2009 Fossil Record「The Tendaguru Formation (Late Jurassic to Early Cretaceous, southern Tanzania): definition, palaeoenvironments, and sequence stratigraphy」; Rauhut 2011「Theropod dinosaurs from the Late Jurassic of Tendaguru」."
+        },
+        {
+          "title": "石樹溝層・五彩湾",
+          "place": "中国・新疆ウイグル自治区ジュンガル盆地",
+          "lon": 88.75,
+          "lat": 44.65,
+          "summary": "中期から後期ジュラ紀の湖沼・氾濫原堆積物で、初期ティラノサウルス類や小型獣脚類など多様な恐竜を産します。",
+          "biology": "グアンロン、インロン、リムサウルス、初期アルヴァレスサウルス類",
+          "environment": "湖沼と河川氾濫原",
+          "note": "参考: Xu et al. 2006 Nature「A basal tyrannosauroid dinosaur from the Late Jurassic of China」; Qin et al. 2019 Scientific Reports「A new alvarezsaurian theropod from the Upper Jurassic Shishugou Formation of western China」."
+        },
+        {
+          "title": "大山鋪恐竜化石群",
+          "place": "中国・四川省自貢市",
+          "lon": 104.82,
+          "lat": 29.35,
+          "summary": "中期ジュラ紀の中国を代表する恐竜化石群で、シュノサウルスやオメイサウルスなどの竜脚類が豊富です。",
+          "biology": "シュノサウルス、オメイサウルス、ファヤンゴサウルス、獣脚類",
+          "environment": "内陸の河川・湖沼盆地",
+          "note": "参考: Ouyang 1989「A new sauropod from Dashanpu, Zigong Co., Sichuan Province」; Dong, Zhou & Zhang 1983/1984「The Middle Jurassic dinosaur fauna from Dashanpu, Zigong, Sichuan」."
+        },
+        {
+          "title": "道虎溝層・燕遼生物群",
+          "place": "中国・内モンゴル自治区寧城県道虎溝",
+          "lon": 119.24,
+          "lat": 41.32,
+          "summary": "中期から後期ジュラ紀の湖沼性ラーゲルシュテッテで、羽毛恐竜、翼竜、哺乳形類、昆虫、植物が例外的に保存されます。",
+          "biology": "羽毛恐竜、翼竜、哺乳形類、昆虫、植物",
+          "environment": "火山灰の影響を受けた湖沼",
+          "note": "参考: Sullivan et al. 2014「The vertebrates of the Jurassic Daohugou Biota of northeastern China」; Pan et al. 2019「High-resolution taphonomic and palaeoecological analyses of the Jurassic Yanliao Biota of the Daohugou area」."
+        },
+        {
+          "title": "髫髻山層・凌源／建昌地域",
+          "place": "中国・遼寧省西部から河北省北部",
+          "lon": 119.15,
+          "lat": 40.95,
+          "summary": "アーケオプテリクスに近い小型羽毛獣脚類を多く含み、鳥類飛翔の起源を考えるうえで重要なジュラ紀の産地です。",
+          "biology": "アンキオルニス、シャオティンギア、エオシノプテリクス、翼竜",
+          "environment": "湖沼と火山性堆積物",
+          "note": "参考: Xu et al. 2011 Nature「An Archaeopteryx-like theropod from China and the origin of Avialae」; Godefroit et al. 2013 Nature Communications「Reduced plumage and flight ability of a new Jurassic paravian theropod from China」."
+        },
+        {
+          "title": "スカイ島の恐竜足跡群",
+          "place": "英国・スコットランド、スカイ島トロッターニッシュ半島",
+          "lon": -6.35,
+          "lat": 57.68,
+          "summary": "中期ジュラ紀の恐竜化石が少ない時代を埋める、竜脚類・獣脚類の足跡と骨化石の重要産地です。",
+          "biology": "竜脚類、獣脚類、鳥盤類",
+          "environment": "ラグーン縁辺と潮汐平原",
+          "note": "参考: Brusatte et al. 2015「Sauropod dinosaur trackways in a Middle Jurassic lagoon on the Isle of Skye, Scotland」; Clark 2018 Geosciences「Review of the Dinosaur Remains from the Middle Jurassic of Scotland, UK」."
+        },
+        {
+          "title": "コタ層",
+          "place": "インド・テランガナ州プランヒタ＝ゴーダーヴァリ盆地",
+          "lon": 79.3,
+          "lat": 18.85,
+          "summary": "前期ジュラ紀の基盤的竜脚類バラパサウルスとコタサウルスで知られ、竜脚類の初期分布を示します。",
+          "biology": "バラパサウルス、コタサウルス、初期哺乳形類",
+          "environment": "河川・湖沼盆地",
+          "note": "参考: Bandyopadhyay et al. 2010 Palaeontology「Osteology of Barapasaurus tagorei (Dinosauria: Sauropoda) from the Early Jurassic of India」; Journal of Asian Earth Sciences 2003「The geographic and phylogenetic position of sauropod dinosaurs from the Kota Formation (Early Jurassic) of India」."
+        },
+        {
+          "title": "禄豊層",
+          "place": "中国・雲南省禄豊盆地",
+          "lon": 102.08,
+          "lat": 25.15,
+          "summary": "前期ジュラ紀の竜脚形類と初期哺乳形類の豊かな産地で、ルーフェンゴサウルスなどが発見されています。",
+          "biology": "ルーフェンゴサウルス、シンシウロン、ユンナノサウルス、初期哺乳形類",
+          "environment": "内陸湖沼と氾濫原",
+          "note": "参考: Wang et al. 2017 Scientific Reports「A new basal sauropodiform dinosaur from the Lower Jurassic of Yunnan Province, China」; Reisz et al. 2020 Nature Communications「Early Jurassic dinosaur fetal dental development...」."
+        },
+        {
+          "title": "カニャドン・アスファルト層",
+          "place": "アルゼンチン・チュブ州セロ・コンドル周辺",
+          "lon": -69.17,
+          "lat": -43.33,
+          "summary": "パタゴニアのジュラ紀湖沼盆地で、竜脚類、獣脚類、初期哺乳類、植物を含む陸上生態系を記録します。",
+          "biology": "ピアトニツキサウルス、パタゴサウルス、アスファルトヴェナトル、初期哺乳類",
+          "environment": "火山灰を含む湖沼・河川盆地",
+          "note": "参考: Escapa et al. 2008「Jurassic tetrapods and flora of Cañadón Asfalto Formation in Cerro Cóndor area」; Rauhut & Pol 2019 Scientific Reports「Probable basal allosauroid from the early Middle Jurassic Cañadón Asfalto Formation of Argentina」."
+        },
+        {
+          "title": "ハンソン層・マウントカークパトリック",
+          "place": "南極・中央横断山脈、ビアードモア氷河地域",
+          "lon": 166.42,
+          "lat": -84.33,
+          "summary": "前期ジュラ紀の南極恐竜産地で、クリョロフォサウルスと基盤的竜脚形類が知られ、ゴンドワナの生物分布を示します。",
+          "biology": "クリョロフォサウルス、グラシアリサウルス、翼竜、単弓類",
+          "environment": "高緯度の火山性河川・森林環境",
+          "note": "参考: Hammer & Hickerson 1994「A crested theropod dinosaur from Antarctica」; Smith et al. 2007 USGS「The dinosaurs of the Early Jurassic Hanson Formation of the Central Transantarctic Mountains」."
+        },
+        {
+          "title": "タルブラガー魚層",
+          "place": "オーストラリア・ニューサウスウェールズ州ガルゴン近郊",
+          "lon": 149.52,
+          "lat": -32.33,
+          "summary": "後期ジュラ紀の淡水ラーゲルシュテッテで、魚類、昆虫、植物が火山灰の影響を受けた湖沼環境に保存されました。",
+          "biology": "硬骨魚類、昆虫、針葉樹植物",
+          "environment": "淡水湖沼",
+          "note": "参考: Frese et al. 2017 PLOS ONE「Imaging of Jurassic fossils from the Talbragar Fish Bed using fluorescence, photoluminescence, and elemental and mineralogical mapping」."
         }
       ],
       "file": "data/borders/world_2010.min.geojson",
@@ -1010,7 +1557,7 @@
     {
       "id": "cretaceous",
       "label": "1.45億年前",
-      "title": "白亜紀の被子植物と恐竜",
+      "title": "白亜紀の始まりと被子植物の拡大",
       "category": "biology",
       "categoryLabel": "生物史",
       "ageMa": 145,
@@ -1019,12 +1566,273 @@
       "events": [
         {
           "title": "熱河生物群",
-          "place": "中国北東部",
+          "place": "中国・遼寧省西部から河北省北部",
           "lon": 120.5,
           "lat": 41.5,
-          "summary": "羽毛恐竜、初期鳥類、植物などを含む白亜紀の代表的な化石群です。",
-          "biology": "羽毛恐竜と初期鳥類",
-          "environment": "湖沼周辺"
+          "summary": "義県層・九仏堂層などにまたがる前期白亜紀の生物群で、羽毛恐竜、初期鳥類、哺乳類、初期被子植物が例外的に保存されます。",
+          "biology": "羽毛恐竜、初期鳥類、アーケフルクトゥス、哺乳類",
+          "environment": "火山灰の影響を受けた湖沼と森林",
+          "note": "参考: Zhou, Barrett & Hilton 2003 Nature「An exceptionally preserved Lower Cretaceous ecosystem」; Sun et al. 2002 Science「Archaefructaceae, a new basal angiosperm family」."
+        },
+        {
+          "title": "ラス・オヤス",
+          "place": "スペイン・クエンカ県ラ・ウエルギナ層",
+          "lon": -2.05,
+          "lat": 40.04,
+          "summary": "前期白亜紀の淡水湿地ラーゲルシュテッテで、水生被子植物モンセキアや、コンカヴェナトルなどの脊椎動物が知られます。",
+          "biology": "モンセキア、コンカヴェナトル、魚類、鳥類、昆虫",
+          "environment": "淡水湿地と湖沼",
+          "note": "参考: Gomez et al. 2015 PNAS「Montsechia, an ancient aquatic angiosperm」; Ortega et al. 2010 Nature「A bizarre, humped Carcharodontosauria from the Lower Cretaceous of Spain」."
+        },
+        {
+          "title": "クラト層・アラリペ盆地",
+          "place": "ブラジル北東部・セアラ州／ペルナンブコ州境周辺",
+          "lon": -39.42,
+          "lat": -7.23,
+          "summary": "前期白亜紀の石灰岩ラーゲルシュテッテで、花を伴う被子植物、昆虫、魚類、翼竜が細部まで保存されています。",
+          "biology": "アラリピア、被子植物、昆虫、翼竜、魚類",
+          "environment": "乾燥気候下の湖沼と周辺植生",
+          "note": "参考: Mohr & Eklund 2003 Review of Palaeobotany and Palynology「Araripia florifera, a magnoliid angiosperm from the Lower Cretaceous Crato Formation (Brazil)」; Martill, Bechly & Loveridge 2007「The Crato Fossil Beds of Brazil」."
+        },
+        {
+          "title": "ポトマック層群",
+          "place": "米国・バージニア州からメリーランド州の大西洋岸平野",
+          "lon": -77.45,
+          "lat": 38.45,
+          "summary": "前期白亜紀の葉・花粉記録が豊富で、被子植物が湿った低地から多様化していく過程を追える古典的地域です。",
+          "biology": "初期被子植物の葉、花粉、炭化植物片",
+          "environment": "河川低地、後背湿地、湖沼",
+          "note": "参考: Hickey & Doyle 1977 Botanical Review「Early Cretaceous fossil evidence for angiosperm evolution」; Doyle & Hickey 1976のPotomac Group被子植物研究。"
+        },
+        {
+          "title": "ダコタ層・ローズクリーク",
+          "place": "米国・ネブラスカ州南東部ジェファーソン郡",
+          "lon": -97.18,
+          "lat": 40.16,
+          "summary": "セノマニアンのダコタ層から多数の被子植物葉化石が記載され、白亜紀中頃の森林構成を示します。",
+          "biology": "被子植物の葉化石、針葉樹、シダ類",
+          "environment": "河川沿いの湿った低地林",
+          "note": "参考: Upchurch & Dilcher 1990 USGS Bulletin 1915「Cenomanian angiosperm leaf megafossils, Dakota Formation, Rose Creek locality, Jefferson County, southeastern Nebraska」."
+        },
+        {
+          "title": "ラリタン層・オールドクロスマン採掘場",
+          "place": "米国・ニュージャージー州セイアービル",
+          "lon": -74.32,
+          "lat": 40.47,
+          "summary": "後期白亜紀チューロニアンの炭化植物片と琥珀から、被子植物の果実・花と昆虫群集が知られます。",
+          "biology": "被子植物の花・果実、琥珀中の昆虫",
+          "environment": "森林湿地と河川チャネル",
+          "note": "参考: Atkinson et al. 2019 Annals of Botany「Cretaceous asterid evolution: fruits of Eydeia jerseyensis sp. nov. (Cornales) from the upper Turonian of eastern North America」; Grimaldi & Nascimbene 2010「Raritan (New Jersey) amber」."
+        },
+        {
+          "title": "カチン琥珀・フーコン谷",
+          "place": "ミャンマー・カチン州フーコン谷",
+          "lon": 96.56,
+          "lat": 26.25,
+          "summary": "約9900万年前の琥珀から、花粉を運ぶ昆虫や被子植物の小さな花が三次元的に保存されています。",
+          "biology": "被子植物の花、花粉、甲虫、ハチ、羽毛をもつ小型脊椎動物",
+          "environment": "熱帯から亜熱帯の樹脂を出す森林",
+          "note": "参考: Bao et al. 2019 Current Biology「Pollination of Cretaceous flowers」; Shi et al. 2012 Cretaceous Research「Age constraint on Burmese amber based on U-Pb dating of zircons」. ミャンマー琥珀には採集・流通倫理の議論があるため、ここでは地質記録として扱います。"
+        },
+        {
+          "title": "北谷層・勝山恐竜化石発掘地",
+          "place": "日本・福井県勝山市北谷町",
+          "lon": 136.55,
+          "lat": 36.08,
+          "summary": "前期白亜紀の河川堆積物で、フクイラプトル、フクイサウルス、フクイティタンなど日本を代表する恐竜が産します。",
+          "biology": "フクイラプトル、フクイサウルス、フクイティタン、足跡化石",
+          "environment": "河川氾濫原と湖沼",
+          "note": "参考: Azuma & Currie 2000 Canadian Journal of Earth Sciences「A new carnosaur from the Lower Cretaceous of Japan」; Shibata & Azuma 2015 Zootaxa「New basal hadrosauroid from the Lower Cretaceous Kitadani Formation, Fukui, central Japan」."
+        },
+        {
+          "title": "桑島層・白峰化石壁",
+          "place": "日本・石川県白山市白峰",
+          "lon": 136.62,
+          "lat": 36.18,
+          "summary": "手取層群の前期白亜紀陸成層で、恐竜、哺乳形類、トリティロドン類、植物化石が東アジア陸上生態系を示します。",
+          "biology": "鳥盤類恐竜、哺乳形類、トリティロドン類、植物化石",
+          "environment": "湖沼と河川周辺の森林",
+          "note": "参考: Kusuhashi et al. 2016 Journal of Vertebrate Paleontology「A new Early Cretaceous tritylodontid from the Kuwajima Formation (Tetori Group) of central Japan」; Yabe et al. 2016「Fauna and flora of Early Cretaceous Tetori Group in Central Japan」."
+        },
+        {
+          "title": "函淵層・むかわ竜産地",
+          "place": "日本・北海道むかわ町穂別稲里",
+          "lon": 141.94,
+          "lat": 42.58,
+          "summary": "後期白亜紀の海成層から、ほぼ全身が残るハドロサウルス類カムイサウルスが発見されました。",
+          "biology": "カムイサウルス、アンモナイト、海生無脊椎動物",
+          "environment": "浅い海に近い沿岸環境",
+          "note": "参考: Kobayashi et al. 2019 Scientific Reports「A New Hadrosaurine (Dinosauria: Hadrosauridae) from the Marine Deposits of the Late Cretaceous Hakobuchi Formation, Yezo Group, Japan」."
+        },
+        {
+          "title": "恐竜州立公園・ダイナソーパーク層",
+          "place": "カナダ・アルバータ州レッドディア川流域",
+          "lon": -111.5,
+          "lat": 50.76,
+          "summary": "後期白亜紀カンパニアンの最も豊かな恐竜産地の一つで、角竜、ハドロサウルス類、曲竜、獣脚類が密集します。",
+          "biology": "セントロサウルス、コリトサウルス、ゴルゴサウルス、曲竜類",
+          "environment": "西部内陸海路沿いの河川氾濫原",
+          "note": "参考: Eberth & Hamblin 1993「Tectonic, stratigraphic, and sedimentologic significance of a regional discontinuity in the upper Judith River Group」; Currie & Koppelhus 2005「Dinosaur Provincial Park: A Spectacular Ancient Ecosystem Revealed」."
+        },
+        {
+          "title": "ヘルクリーク層",
+          "place": "米国・モンタナ州からダコタ両州",
+          "lon": -106.7,
+          "lat": 47.7,
+          "summary": "白亜紀末マーストリヒチアンの河川平野で、ティラノサウルスとトリケラトプスを含む最後の非鳥類恐竜相を記録します。",
+          "biology": "ティラノサウルス、トリケラトプス、エドモントサウルス、被子植物林",
+          "environment": "河川氾濫原、湿地、沿岸平野",
+          "note": "参考: Fowler 2020 Geosciences「The Hell Creek Formation, Montana: A Stratigraphic Review and Revision Based on a Sequence Stratigraphic Approach」; Hartman, Johnson & Nichols 2002「The Hell Creek Formation and the Cretaceous-Tertiary Boundary in the Northern Great Plains」."
+        },
+        {
+          "title": "カイパロウィッツ層",
+          "place": "米国・ユタ州南部グランドステアケース＝エスカランテ",
+          "lon": -111.5,
+          "lat": 37.4,
+          "summary": "後期白亜紀の南ララミディアを代表する河川堆積物で、地域固有性の強い角竜・ハドロサウルス類・獣脚類を産します。",
+          "biology": "コスモケラトプス、ユタケラトプス、グリポサウルス、テラトフォネウス",
+          "environment": "湿潤な河川氾濫原",
+          "note": "参考: Sampson et al. 2010 PLOS ONE「New Horned Dinosaurs from Utah Provide Evidence for Intracontinental Dinosaur Endemism」; Roberts et al. 2005「Late Cretaceous stratigraphy, depositional environments, and macrovertebrate paleontology of the Kaiparowits Plateau」."
+        },
+        {
+          "title": "クローバリー層",
+          "place": "米国・モンタナ州からワイオミング州のビッグホーン盆地",
+          "lon": -108.4,
+          "lat": 44.8,
+          "summary": "前期白亜紀のデイノニクスとテノントサウルスで知られ、捕食者と被食者の関係を考える重要地点です。",
+          "biology": "デイノニクス、テノントサウルス、竜脚類、ワニ類",
+          "environment": "河川氾濫原と季節的な水場",
+          "note": "参考: Ostrom 1969 Peabody Museum Bulletin「Osteology of Deinonychus antirrhopus」; Button et al. 2022 Cretaceous Research「Gastroliths and Deinonychus teeth associated with a skeleton of Tenontosaurus from the Cloverly Formation」."
+        },
+        {
+          "title": "ネメグト層",
+          "place": "モンゴル・南ゴビ県ネメグト盆地",
+          "lon": 101,
+          "lat": 43.5,
+          "summary": "後期白亜紀の比較的湿潤な河川堆積物で、タルボサウルス、サウロロフス、テリジノサウルスなど大型恐竜が産します。",
+          "biology": "タルボサウルス、サウロロフス、テリジノサウルス、オルニトミモサウルス類",
+          "environment": "河川、氾濫原、湿地",
+          "note": "参考: Currie 2000「Theropods from the Cretaceous of Mongolia」; Funston et al. 2018 Palaeogeography, Palaeoclimatology, Palaeoecology「Ornithomimosaurs from the Nemegt Formation of Mongolia: manus morphological variation and diversity」."
+        },
+        {
+          "title": "バヤンザグ・ジャドフタ層",
+          "place": "モンゴル・南ゴビ県フレーミングクリフ周辺",
+          "lon": 103.72,
+          "lat": 44.15,
+          "summary": "後期白亜紀の乾燥した砂丘・扇状地環境で、ヴェロキラプトル、プロトケラトプス、恐竜卵と巣が有名です。",
+          "biology": "ヴェロキラプトル、プロトケラトプス、オヴィラプトル類、恐竜卵",
+          "environment": "半乾燥の砂丘、扇状地、間欠河川",
+          "note": "参考: Dashzeveg et al. 1995 American Museum Novitates「Extraordinary preservation in a new vertebrate assemblage from the Late Cretaceous of Mongolia」; Norell et al. 1994 Science「A theropod dinosaur embryo and the affinities of the Flaming Cliffs dinosaur eggs」."
+        },
+        {
+          "title": "南雄層／贛州盆地",
+          "place": "中国・江西省贛州市周辺",
+          "lon": 114.94,
+          "lat": 25.86,
+          "summary": "白亜紀末の赤色層から多様なオヴィラプトロサウルス類と恐竜卵が見つかる、アジア末期恐竜相の重要地域です。",
+          "biology": "オヴィラプトロサウルス類、恐竜卵、ハドロサウルス類胚",
+          "environment": "河川・湖沼を伴う内陸盆地",
+          "note": "参考: Lü et al. 2015 Scientific Reports「A New Oviraptorid Dinosaur from the Late Cretaceous of Southern China and Its Paleobiogeographical Implications」; Bi et al. 2022 BMC Ecology and Evolution「Hadrosauroid eggs and embryos from the Upper Cretaceous of Jiangxi Province, China」."
+        },
+        {
+          "title": "ケムケム層群",
+          "place": "モロッコ南東部・タフィラルト地方",
+          "lon": -4.3,
+          "lat": 31,
+          "summary": "白亜紀中頃の河川・デルタ環境で、スピノサウルスやカルカロドントサウルス類、大型魚類が共存した特異な脊椎動物群です。",
+          "biology": "スピノサウルス、カルカロドントサウルス類、翼竜、大型魚類",
+          "environment": "巨大河川系とデルタ",
+          "note": "参考: Ibrahim et al. 2020 Nature「Tail-propelled aquatic locomotion in a theropod dinosaur」; Ibrahim et al. 2020 ZooKeys「Geology and paleontology of the Upper Cretaceous Kem Kem Group of eastern Morocco」."
+        },
+        {
+          "title": "エルハズ層・ガドゥファワ",
+          "place": "ニジェール・テネレ砂漠ガドゥファワ地域",
+          "lon": 9,
+          "lat": 16.5,
+          "summary": "前期白亜紀の河川堆積物で、スコミムス、オウラノサウルス、ニジェールサウルスなどの恐竜と大型ワニ類が知られます。",
+          "biology": "スコミムス、オウラノサウルス、ニジェールサウルス、サルコスクス",
+          "environment": "河川と湖沼を伴う湿った低地",
+          "note": "参考: Sereno et al. 1998 Science「A long-snouted predatory dinosaur from Africa and the evolution of spinosaurids」; Sereno et al. 1999 Science「Cretaceous sauropods from the Sahara and the uneven rate of skeletal evolution among dinosaurs」."
+        },
+        {
+          "title": "ウィントン層",
+          "place": "オーストラリア・クイーンズランド州ウィントン周辺",
+          "lon": 143.04,
+          "lat": -22.39,
+          "summary": "白亜紀中頃の内陸盆地で、オーストラロヴェナトル、ディアマンティナサウルス、被子植物を含む珪化植物相が知られます。",
+          "biology": "オーストラロヴェナトル、ディアマンティナサウルス、ウィントノティタン、被子植物",
+          "environment": "河川、氾濫原、湖沼と森林",
+          "note": "参考: Hocknull et al. 2009 PLOS ONE「New Mid-Cretaceous (Latest Albian) Dinosaurs from Winton, Queensland, Australia」; Peters & Christophel 1978「A silicified angiosperm flora from the Winton Formation」."
+        },
+        {
+          "title": "ウォンタッギ層・フラットロックス",
+          "place": "オーストラリア・ビクトリア州インヴァーロック周辺",
+          "lon": 145.68,
+          "lat": -38.66,
+          "summary": "前期白亜紀に南極圏近くにあった極域生態系で、小型鳥盤類、獣脚類、初期鳥類足跡、植物化石が見つかります。",
+          "biology": "小型鳥盤類、獣脚類、初期鳥類足跡、植物化石",
+          "environment": "オーストラリア・南極リフトの河川低地",
+          "note": "参考: Woodward et al. 2018 Scientific Reports「The bone microstructure of polar 'hypsilophodontid' dinosaurs from Victoria, Australia」; Lowery et al. 2023 PLOS ONE「Earliest known Gondwanan bird tracks: Wonthaggi Formation (Early Cretaceous), Victoria, Australia」."
+        },
+        {
+          "title": "プリンスクリーク層",
+          "place": "米国・アラスカ州ノーススロープ、コルビル川流域",
+          "lon": -151.3,
+          "lat": 69.7,
+          "summary": "後期白亜紀の北極圏恐竜相で、ハドロサウルス類、角竜類、獣脚類が暗い冬を含む高緯度環境に暮らしました。",
+          "biology": "ハドロサウルス類、パキリノサウルス類、獣脚類、植物化石",
+          "environment": "北極圏の河川氾濫原と湿地林",
+          "note": "参考: Fiorillo & Gangloff 2001「Theropod teeth from the Prince Creek Formation (Cretaceous) of northern Alaska, with speculations on Arctic dinosaur paleoecology」; Fiorillo et al. 2015 Palaeogeography, Palaeoclimatology, Palaeoecology「A multi-disciplinary perspective on habitat preferences among dinosaurs in a Cretaceous Arctic greenhouse world」."
+        },
+        {
+          "title": "マエバラノ層",
+          "place": "マダガスカル北西部・マハジャンガ盆地",
+          "lon": 46.7,
+          "lat": -15.8,
+          "summary": "白亜紀末のゴンドワナ生態系を示す産地で、マジュンガサウルス、ラペトサウルス、鳥類、哺乳類、ワニ類が見つかります。",
+          "biology": "マジュンガサウルス、ラペトサウルス、ラホナヴィス、鳥類、哺乳類",
+          "environment": "半乾燥の河川平野と季節的湿地",
+          "note": "参考: Rogers et al. 2000 Journal of Sedimentary Research「Sedimentology and taphonomy of the Upper Cretaceous Maevarano Formation, Madagascar」; Curry Rogers & Forster 2001 Nature「The last of the dinosaur titans: a new sauropod from Madagascar」."
+        },
+        {
+          "title": "アウカ・マウエボ",
+          "place": "アルゼンチン・ネウケン州アニェロ周辺",
+          "lon": -68.88,
+          "lat": -38.5,
+          "summary": "後期白亜紀の巨大な営巣地で、ティタノサウルス類の卵、胚、皮膚印象が密集して見つかります。",
+          "biology": "ティタノサウルス類の卵、胚、皮膚印象",
+          "environment": "河川氾濫原の営巣地",
+          "note": "参考: Chiappe et al. 1998 Nature「Sauropod dinosaur embryos from the Late Cretaceous of Patagonia」; Chiappe et al. 2004 Palaeovertebrata「Nesting titanosaurs from Auca Mahuevo and adjacent sites」."
+        },
+        {
+          "title": "カンデレロス層・ビジャ・エル・チョコン",
+          "place": "アルゼンチン・ネウケン州ビジャ・エル・チョコン周辺",
+          "lon": -68.8,
+          "lat": -39.25,
+          "summary": "セノマニアンの河川・砂丘堆積物で、ギガノトサウルスや大型ティタノサウルス類、恐竜足跡が知られます。",
+          "biology": "ギガノトサウルス、ティタノサウルス類、獣脚類足跡",
+          "environment": "河川、砂丘、扇状地",
+          "note": "参考: Coria & Salgado 1995 Nature「A new giant carnivorous dinosaur from the Cretaceous of Patagonia」; Heredia et al. 2018 Cretaceous Research「Dinosaur tracks in the Kokorkom Desert, Candeleros Formation」."
+        },
+        {
+          "title": "ハツェグ盆地",
+          "place": "ルーマニア・トランシルヴァニア南西部",
+          "lon": 22.95,
+          "lat": 45.6,
+          "summary": "白亜紀末の島弧環境で、小型化した竜脚類・鳥脚類や巨大翼竜を含む島嶼生態系が知られます。",
+          "biology": "マジャーロサウルス、テルマトサウルス、ザルモクセス、ハツェゴプテリクス",
+          "environment": "島嶼の河川平野と湿地",
+          "note": "参考: Benton et al. 2010 Palaeogeography, Palaeoclimatology, Palaeoecology「Dinosaurs and the island rule: The dwarfed dinosaurs from Haţeg Island」; Csiki-Sava et al. 2015 ZooKeys「The East Side Story - The Transylvanian latest Cretaceous continental vertebrate record」."
+        },
+        {
+          "title": "ロ・ウエコ",
+          "place": "スペイン・クエンカ県フエンテス周辺",
+          "lon": -2.02,
+          "lat": 39.95,
+          "summary": "後期白亜紀カンパニアンからマーストリヒチアンの骨層で、多数のティタノサウルス類、ワニ類、カメ類が保存されています。",
+          "biology": "ティタノサウルス類、ワニ類、カメ類、植物片",
+          "environment": "沿岸低地の河川・湿地",
+          "note": "参考: Ortega et al. 2015 PLOS ONE「A New Titanosaurian Braincase from the Cretaceous 'Lo Hueco' Locality in Spain」; Díez Díaz et al. 2016 Cretaceous Research「A new titanosaur from the Upper Cretaceous of Lo Hueco (Cuenca, Spain)」."
         }
       ],
       "file": "data/borders/world_2010.min.geojson",
@@ -1036,7 +1844,7 @@
       "id": "paleogene",
       "label": "6600万年前",
       "tickLabel": "6600万",
-      "title": "哺乳類の拡大",
+      "title": "白亜紀末大量絶滅と哺乳類の拡大",
       "category": "biology",
       "categoryLabel": "生物史",
       "ageMa": 66,
@@ -1048,9 +1856,200 @@
           "place": "メキシコ・ユカタン半島",
           "lon": -89.5,
           "lat": 21.3,
-          "summary": "白亜紀末大量絶滅と関係する巨大衝突の代表地点です。",
-          "biology": "恐竜絶滅後の生態系再編",
-          "environment": "全球的な環境急変"
+          "summary": "白亜紀末大量絶滅と関係する巨大衝突の代表地点で、その後の哺乳類・鳥類・植物の生態系再編の起点になります。",
+          "biology": "非鳥類恐竜絶滅後の哺乳類拡大",
+          "environment": "全球的な環境急変とポストインパクト回復",
+          "note": "参考: Hildebrand et al. 1991 Geology「Chicxulub Crater: a possible Cretaceous/Tertiary boundary impact crater on the Yucatán Peninsula, Mexico」; Schulte et al. 2010 Science「The Chicxulub Asteroid Impact and Mass Extinction at the Cretaceous-Paleogene Boundary」."
+        },
+        {
+          "title": "コラルブラフス・デンバー層",
+          "place": "米国・コロラド州コロラドスプリングス東方",
+          "lon": -104.63,
+          "lat": 38.84,
+          "summary": "K-Pg境界後100万年ほどの陸上生態系回復を連続的に記録し、哺乳類が急速に大型化・多様化した様子を示します。",
+          "biology": "暁新世哺乳類、カメ、ワニ類、植物化石",
+          "environment": "河川氾濫原と温暖化する森林",
+          "note": "参考: Lyson et al. 2019 Science「Exceptional continental record of biotic recovery after the Cretaceous-Paleogene mass extinction」; Fuentes et al. 2019 GSA Bulletin「Constructing a time scale of biotic recovery across the Cretaceous-Paleogene boundary, Corral Bluffs, Denver Basin, Colorado, U.S.A.」."
+        },
+        {
+          "title": "サンフアン盆地・ナシミエント層",
+          "place": "米国・ニューメキシコ州北西部",
+          "lon": -107.75,
+          "lat": 36.2,
+          "summary": "プエルカンからトレホニアンの北米陸生哺乳類年代を支える古典的地域で、暁新世哺乳類の初期放散を追えます。",
+          "biology": "多丘歯類、プレシアダピス類、初期有蹄類型哺乳類",
+          "environment": "河川低地と氾濫原",
+          "note": "参考: Williamson 1996 New Mexico Museum of Natural History and Science Bulletin「The Beginning of the Age of Mammals in the San Juan Basin, New Mexico」; Chester et al. 2012 Journal of Human Evolution「New discoveries of early Paleocene (Torrejonian) primates from the Nacimiento Formation, San Juan Basin, New Mexico」."
+        },
+        {
+          "title": "ビッグホーン盆地・サンドクリークディバイド",
+          "place": "米国・ワイオミング州ウォーランド北東",
+          "lon": -107.85,
+          "lat": 44.12,
+          "summary": "暁新世・始新世境界の急温暖化イベントに伴い、霊長類、奇蹄類、偶蹄類など現代的な哺乳類群が北米に現れる記録です。",
+          "biology": "初期霊長類、初期ウマ類、偶蹄類、小型化した哺乳類",
+          "environment": "温暖化した河川氾濫原と乾燥化する森林",
+          "note": "参考: Gingerich 2006「Environment and evolution through the Paleocene-Eocene thermal maximum」; Gingerich 2012 Papers on Paleontology「Earliest Eocene mammalian fauna from the Paleocene-Eocene Thermal Maximum at Sand Creek Divide, southern Bighorn Basin, Wyoming」; Wing et al. 2005 Science「Transient floral change and rapid global warming at the Paleocene-Eocene boundary」."
+        },
+        {
+          "title": "グリーンリバー層・フォッシルビュート",
+          "place": "米国・ワイオミング州南西部",
+          "lon": -110.77,
+          "lat": 41.86,
+          "summary": "前期始新世の湖成層で、魚類とともに最古級の完全なコウモリ骨格が保存され、飛翔と反響定位の進化を考える重要地点です。",
+          "biology": "オニコニクテリス、イカロニクテリス、魚類、鳥類",
+          "environment": "淡水湖と周辺森林",
+          "note": "参考: Simmons et al. 2008 Nature「Primitive Early Eocene bat from Wyoming and the evolution of flight and echolocation」; Smith et al. 2023 PLOS ONE「A new early Eocene bat from the Green River Formation of Wyoming」."
+        },
+        {
+          "title": "メッセル採掘坑",
+          "place": "ドイツ・ヘッセン州メッセル",
+          "lon": 8.76,
+          "lat": 49.92,
+          "summary": "中期始新世の火山湖ラーゲルシュテッテで、霊長類、初期ウマ類、コウモリ、肉食哺乳類、鳥類が立体的に保存されます。",
+          "biology": "ダーウィニウス、プロパレオテリウム、コウモリ、初期肉食哺乳類",
+          "environment": "亜熱帯森林に囲まれた火山湖",
+          "note": "参考: Franzen et al. 2009 PLOS ONE「Complete Primate Skeleton from the Middle Eocene of Messel in Germany: Morphology and Paleobiology」; Storch, Welsch & Habersetzer 2002「Messel bats and the origin of echolocation」."
+        },
+        {
+          "title": "ドルマール",
+          "place": "ベルギー・フラームス＝ブラバント州ゾウトレウ",
+          "lon": 5.08,
+          "lat": 50.8,
+          "summary": "最初期始新世のヨーロッパ哺乳類相を代表し、食肉類型、偶蹄類、霊長類など現代的哺乳類群の初期分散を示します。",
+          "biology": "ドルマーロキオン、ディアコデクシス、初期霊長類、小型哺乳類",
+          "environment": "温暖な森林と河川低地",
+          "note": "参考: Solé et al. 2014 Journal of Vertebrate Paleontology「Dental and tarsal anatomy of 'Miacis' latouri and a phylogenetic analysis of the earliest carnivoraforms」; Missiaen et al. 2013 Geologica Belgica「The earliest Eocene mammal fauna of Dormaal」."
+        },
+        {
+          "title": "ケルシー燐鉱床",
+          "place": "フランス南西部・ロット県からタルヌ＝エ＝ガロンヌ県",
+          "lon": 1.7,
+          "lat": 44.55,
+          "summary": "始新世後期から漸新世のカルスト裂罅充填堆積物で、ヨーロッパ哺乳類の長期的な交替と霊長類記録が豊富です。",
+          "biology": "アダピス類霊長類、げっ歯類、食肉類型、センザンコウ類",
+          "environment": "石灰岩カルストの裂罅と森林環境",
+          "note": "参考: Legendre et al. 1993 Geobios「Une nouvelle faune à mammifères d'âge éocène moyen dans les phosphorites du Quercy」; Marivaux et al. 2021 Geobios「Primates and Plesiadapiformes from Cos (Eocene; Quercy, France)」."
+        },
+        {
+          "title": "ファイユーム・ジェベルカトラニ層",
+          "place": "エジプト・ファイユーム低地、ビルケット・カルーン北西",
+          "lon": 30.5,
+          "lat": 29.55,
+          "summary": "後期始新世から前期漸新世のアフロアラビア哺乳類相を代表し、初期狭鼻類、長鼻類、ハイラックス類などが見つかります。",
+          "biology": "初期狭鼻類、初期長鼻類、ハイラックス類、げっ歯類、ヒエノドン類",
+          "environment": "河川・湖沼・森林を含む低地環境",
+          "note": "参考: Seiffert 2006 PNAS「Revised age estimates for the later Paleogene mammal faunas of Egypt and Oman」; Seiffert 2010「Chronology of Paleogene mammal localities」; Simons 1987 Science「Paleoenvironment of the earliest hominoids」."
+        },
+        {
+          "title": "ワディ・アル・ヒタン",
+          "place": "エジプト・西部砂漠、クジラの谷",
+          "lon": 30.03,
+          "lat": 29.28,
+          "summary": "後期始新世の海成層にバシロサウルスやドルドンなど初期クジラが多数保存され、陸から海への哺乳類進化を示します。",
+          "biology": "バシロサウルス、ドルドン、アイギケトゥス、初期海牛類",
+          "environment": "浅いテチス海の沿岸から沖合",
+          "note": "参考: Gingerich & Uhen 1996「Ancalecetus simonsi, a new dorudontine archaeocete from Wadi Hitan」; Gingerich et al. 2019 PLOS ONE「Aegicetus gehennae, a new late Eocene protocetid from Wadi Al Hitan, Egypt, and the transition to tail-powered swimming in whales」."
+        },
+        {
+          "title": "クルダナ層・カラチッタ丘陵",
+          "place": "パキスタン・パンジャーブ州北部",
+          "lon": 72.2,
+          "lat": 33.55,
+          "summary": "中期始新世の河川・沿岸堆積物から、パキケトゥスやアンブロケトゥスなど半水生・陸生段階の初期クジラ類が知られます。",
+          "biology": "パキケトゥス、アンブロケトゥス、レミングトノケトゥス類、初期有蹄類",
+          "environment": "河川、潟、浅海に近い低地",
+          "note": "参考: Thewissen et al. 1994 Science「Fossil evidence for the origin of aquatic locomotion in archaeocete whales」; Thewissen et al. 2001 Nature「Skeletons of terrestrial cetaceans and the relationship of whales to artiodactyls」."
+        },
+        {
+          "title": "ヴァスタン褐炭鉱・カンベイ頁岩",
+          "place": "インド・グジャラート州スーラト北東",
+          "lon": 73.12,
+          "lat": 21.42,
+          "summary": "前期始新世の熱帯低地堆積物で、インド亜大陸最古級の霊長類、コウモリ、兎形類、奇蹄類型哺乳類が見つかります。",
+          "biology": "初期霊長類、コウモリ、兎形類、カンベイテリウム類",
+          "environment": "熱帯湿地林と沿岸低地",
+          "note": "参考: Bajpai et al. 2005 PNAS「Early Eocene primates from Vastan Lignite Mine, Gujarat, western India」; Smith et al. 2007 Naturwissenschaften「Early Eocene bats from Vastan Lignite Mine」; Rose et al. 2008 Proceedings of the Royal Society B「Early Eocene lagomorph from western India」."
+        },
+        {
+          "title": "イタボライ盆地",
+          "place": "ブラジル・リオデジャネイロ州イタボライ",
+          "lon": -42.86,
+          "lat": -22.75,
+          "summary": "南米の暁新世から最初期始新世哺乳類相を代表する小盆地で、南米固有有蹄類や有袋類の初期多様化を示します。",
+          "biology": "南米固有有蹄類、有袋類、異節類、ワニ類",
+          "environment": "石灰岩湖沼とカルスト裂罅",
+          "note": "参考: Bergqvist, Moreira & Pinto 2006「Postcranial skeleton of the Upper Paleocene (Itaboraian) 'Condylarthra' (Mammalia) of Itaboraí Basin, Brazil」; Guimaraes et al. 2019 Ameghiniana「A new basal notoungulate from the Itaboraí Basin (Paleogene) of Brazil」."
+        },
+        {
+          "title": "グラン・バランカ・サルミエント層",
+          "place": "アルゼンチン・チュブ州中部パタゴニア",
+          "lon": -68.98,
+          "lat": -45.7,
+          "summary": "始新世から漸新世にかけて南米哺乳類と環境変化を連続的に記録し、南米固有有蹄類や初期げっ歯類の進化を追えます。",
+          "biology": "南米固有有蹄類、異節類、初期テンジクネズミ類、鳥類",
+          "environment": "火山灰を含む草地・疎林・河川低地",
+          "note": "参考: Kay, Madden, Vucetich & Carlini 1999「The Paleontology of Gran Barranca: Evolution and Environmental Change through the Middle Cenozoic of Patagonia」; Dunn et al. 2015 PNAS「Linked canopy, climate, and faunal change in the Cenozoic of Patagonia」."
+        },
+        {
+          "title": "シーモア島・ラメセタ層",
+          "place": "南極半島沖・シーモア島",
+          "lon": -56.75,
+          "lat": -64.25,
+          "summary": "始新世の南極沿岸堆積物で、有袋類や南米固有有蹄類に近い哺乳類化石が見つかり、南米と南極のつながりを示します。",
+          "biology": "有袋類、南米固有有蹄類型哺乳類、ペンギン、海生脊椎動物",
+          "environment": "温暖な河口・浅海沿岸",
+          "note": "参考: Goin et al. 2015 Palaeontology「The oldest mammals from Antarctica, early Eocene of the La Meseta Formation, Seymour Island」; Reguero et al. 2014 Journal of Paleontology「The youngest record of fossil land mammals from Antarctica」."
+        },
+        {
+          "title": "ティンガマラ・マーゴン化石相",
+          "place": "オーストラリア・クイーンズランド州マーゴン周辺",
+          "lon": 151.95,
+          "lat": -26.23,
+          "summary": "始新世初期とされるオーストラリア最古級の哺乳類化石相で、有袋類の初期史と南半球哺乳類分布を考える重要地点です。",
+          "biology": "ジャルティア、単孔類、有袋類型哺乳類、鳥類",
+          "environment": "温暖な湖沼・河川低地",
+          "note": "参考: Godthelp et al. 1992 Science「Earliest known Australian Tertiary mammal fauna」; Beck et al. 2008 PLOS ONE「Australia's oldest marsupial fossils and their biogeographical implications」. 年代解釈には議論があるため、ここでは主要研究に従い始新世記録として扱います。"
+        },
+        {
+          "title": "エルズミーア島・ユーレカサウンド層群",
+          "place": "カナダ・ヌナブト準州エルズミーア島",
+          "lon": -82.5,
+          "lat": 78.7,
+          "summary": "前期始新世の北極圏森林に、ワニ類とともにバク類・ブロントテリウム類など低緯度的な哺乳類が暮らしていた記録です。",
+          "biology": "初期奇蹄類、ブロントテリウム類、ワニ類、鳥類",
+          "environment": "高緯度の温暖湿潤な森林と河川",
+          "note": "参考: Dawson, West & Langston 1976「The Eocene terrestrial vertebrate fauna from Ellesmere Island」; Eberle & Greenwood 2012「Life at the top of the greenhouse Eocene world」; Eberle 2016 Scientific Reports「The palaeobiology of high latitude birds from the early Eocene greenhouse of Ellesmere Island」."
+        },
+        {
+          "title": "エルリアン盆地",
+          "place": "中国・内モンゴル自治区二連浩特周辺",
+          "lon": 112,
+          "lat": 43.6,
+          "summary": "暁新世後期から漸新世初期までのアジア哺乳類層序を支える地域で、奇蹄類、偶蹄類、げっ歯類の放散を追えます。",
+          "biology": "初期奇蹄類、初期偶蹄類、げっ歯類、肉歯類",
+          "environment": "内陸盆地の河川・湖沼・乾燥化する低地",
+          "note": "参考: Bai et al. 2018 American Museum Novitates「Biostratigraphy and diversity of Paleogene perissodactyls from the Erlian Basin of Inner Mongolia, China」; Li et al. 2023 Frontiers in Earth Science「Small artiodactyls with tapir-like teeth from the middle Eocene of the Erlian Basin」."
+        },
+        {
+          "title": "ホワイトリバー層群・バッドランズ",
+          "place": "米国・サウスダコタ州バッドランズ地域",
+          "lon": -102.3,
+          "lat": 43.75,
+          "summary": "後期始新世から漸新世の北米草原化前夜の哺乳類相で、サイ類、オレオドン類、初期ウマ類、肉食哺乳類が豊富です。",
+          "biology": "オレオドン類、ブロントテリウム類、サイ類、初期ウマ類、ニムラヴィド類",
+          "environment": "火山灰を含む河川・湖沼・半乾燥平原",
+          "note": "参考: Prothero & Emry 1996「The Terrestrial Eocene-Oligocene Transition in North America」; Zanazzi & Kohn 2008 Palaeogeography, Palaeoclimatology, Palaeoecology「Ecology and physiology of White River mammals based on stable isotope ratios of teeth」."
+        },
+        {
+          "title": "ジョンデイ化石層群",
+          "place": "米国・オレゴン州中北部ジョンデイ盆地",
+          "lon": -120.05,
+          "lat": 44.65,
+          "summary": "始新世のクラーノ層から漸新世のジョンデイ層まで、森林から開けた環境への変化と哺乳類相の交替を記録します。",
+          "biology": "ブロントテリウム類、初期ウマ類、サイ類、肉食哺乳類、げっ歯類",
+          "environment": "亜熱帯森林から半乾燥林・草地への変化",
+          "note": "参考: Retallack 2004「Late Oligocene bunch grassland and early Miocene sod grassland paleosols from central Oregon」; Korth 2017 Palaeontologia Electronica「Eocene rodents from Oregon」; Fremd 2010 NPS John Day Fossil Beds scientific syntheses."
         }
       ],
       "file": "data/borders/world_2010.min.geojson",
@@ -1059,9 +2058,331 @@
       "mapNote": "????????????????????2010?????????????????"
     },
     {
+      "id": "petm-primate-dispersal",
+      "label": "5600万年前",
+      "title": "暁新世-始新世温暖化極大と霊長類拡散",
+      "category": "biology",
+      "categoryLabel": "気候・生物史",
+      "ageMa": 56,
+      "environment": "短い地質時間で炭素が大気・海洋へ入り、全球気温が急上昇した時期です。森林や浅海生態系が大きく変化しました。",
+      "biology": "哺乳類、霊長類、奇蹄類、偶蹄類などが北半球で急速に分散した時期として重要です。",
+      "events": [
+        {
+          "title": "PETMのビッグホーン盆地記録",
+          "place": "米国・ワイオミング州ビッグホーン盆地",
+          "lon": -108,
+          "lat": 44.5,
+          "summary": "陸上植物、哺乳類、炭素同位体変化がよく保存され、PETMの気候と生物相変化を結びつける代表地域です。",
+          "biology": "初期霊長類・哺乳類相の変化",
+          "environment": "温暖化した河川・氾濫原環境",
+          "note": "PETMの代表的な陸上記録として表示します。"
+        },
+        {
+          "title": "北海・北大西洋のPETM海洋記録",
+          "place": "北海-北大西洋地域",
+          "lon": 2,
+          "lat": 58,
+          "summary": "海洋底層の酸性化、温暖化、炭素同位体変動が記録され、PETMの全球的影響を示します。",
+          "biology": "海洋微化石群集の変化",
+          "environment": "温暖化・海洋酸性化を受けた浅海から外洋",
+          "note": "代表点です。実際の記録は複数の海洋コアに分散します。"
+        },
+        {
+          "title": "ワスタン褐炭鉱の初期霊長類・哺乳類相",
+          "place": "インド・グジャラート州ワスタン褐炭鉱",
+          "lon": 73.12,
+          "lat": 21.42,
+          "summary": "始新世初期の熱帯的な哺乳類相を示し、霊長類や現代型哺乳類の拡散を考える重要地点です。",
+          "biology": "初期霊長類・コウモリ・小型哺乳類",
+          "environment": "熱帯湿地・褐炭形成環境",
+          "note": "PETM直後を含む始新世初期の生物地理を示す地点です。"
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "この時代の地理は模式表示です。背景地図は2010年の海岸線を使っています。"
+    },
+    {
+      "id": "eocene-greenhouse-whales",
+      "label": "5000万年前",
+      "title": "始新世温室世界と初期鯨類",
+      "category": "biology",
+      "categoryLabel": "生物史",
+      "ageMa": 50,
+      "environment": "高温の温室気候が続き、極域まで温暖な森林が広がりました。海では現代的な海洋哺乳類への進化が始まります。",
+      "biology": "初期霊長類、初期鯨類、鳥類、被子植物林が重要です。",
+      "events": [
+        {
+          "title": "メッセル採掘坑の始新世熱帯林生態系",
+          "place": "ドイツ・メッセル採掘坑",
+          "lon": 8.75,
+          "lat": 49.92,
+          "summary": "約4700万年前の湖成堆積物に、哺乳類、鳥類、昆虫、植物が精密に保存されています。",
+          "biology": "初期霊長類・コウモリ・鳥類・昆虫",
+          "environment": "温暖湿潤な湖と森林",
+          "note": "5000万年前前後の始新世温室世界を示す代表的なラーガーシュテッテです。"
+        },
+        {
+          "title": "ワディ・アル・ヒタンの初期鯨類",
+          "place": "エジプト・ワディ・アル・ヒタン",
+          "lon": 30.18,
+          "lat": 29.32,
+          "summary": "後期始新世の海成層に、陸上祖先から海洋生活へ移行する鯨類進化の記録が残ります。",
+          "biology": "初期鯨類・海生脊椎動物",
+          "environment": "テチス海の浅海",
+          "note": "厳密には約4000万年前前後ですが、始新世の哺乳類進化を示すため追加します。"
+        },
+        {
+          "title": "エルズミーア島の始新世極域森林",
+          "place": "カナダ・エルズミーア島",
+          "lon": -82.5,
+          "lat": 79.5,
+          "summary": "北極圏に近い地域で森林や温暖環境を示す化石が見つかり、始新世温室気候の広がりを示します。",
+          "biology": "極域森林・哺乳類相",
+          "environment": "高緯度の温暖湿潤環境",
+          "note": "現在の北極圏とは大きく異なる温暖な世界を示す代表地点です。"
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "この時代の地理は模式表示です。背景地図は2010年の海岸線を使っています。"
+    },
+    {
+      "id": "eocene-oligocene-glaciation",
+      "label": "3400万年前",
+      "title": "南極氷床の成立と寒冷化",
+      "category": "geology",
+      "categoryLabel": "気候史",
+      "ageMa": 34,
+      "environment": "始新世の温室世界から漸新世の寒冷化へ移り、南極大陸に大規模な氷床が成立し始めました。",
+      "biology": "海洋循環、海洋プランクトン、陸上哺乳類相に大きな転換が起きました。",
+      "events": [
+        {
+          "title": "南極周辺海洋の氷床化記録",
+          "place": "南極周辺海域",
+          "lon": 0,
+          "lat": -70,
+          "summary": "海洋堆積物と酸素同位体記録が、始新世-漸新世境界付近の急速な寒冷化と南極氷床拡大を示します。",
+          "biology": "海洋プランクトン・冷水性生態系",
+          "environment": "寒冷化する南大洋と氷床形成",
+          "note": "代表点です。実際の記録は南大洋の複数の掘削地点にあります。"
+        },
+        {
+          "title": "グランド・クープール",
+          "place": "ヨーロッパ西部",
+          "lon": 2,
+          "lat": 47,
+          "summary": "始新世末から漸新世初めにかけ、ヨーロッパの哺乳類相が大きく入れ替わりました。",
+          "biology": "陸上哺乳類相の入れ替わり",
+          "environment": "寒冷化・乾燥化する陸上環境",
+          "note": "気候転換に伴う生物地理変化として表示します。"
+        },
+        {
+          "title": "ファイユームの初期霊長類・哺乳類相",
+          "place": "エジプト・ファイユーム盆地",
+          "lon": 30.65,
+          "lat": 29.53,
+          "summary": "漸新世の霊長類、ゾウ類、鯨類などの化石が豊富で、寒冷化後の哺乳類進化を考える重要地域です。",
+          "biology": "初期類人猿類・ゾウ類・鯨類",
+          "environment": "河川・湿地・浅海に近い環境",
+          "note": "約3400万年前以降のアフリカ哺乳類相を示す代表地点です。"
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "この時代の地理は模式表示です。背景地図は2010年の海岸線を使っています。"
+    },
+    {
+      "id": "miocene-apes-grasslands",
+      "label": "2300万年前",
+      "title": "中新世の始まりと類人猿・草原の拡大",
+      "category": "biology",
+      "categoryLabel": "生物史",
+      "ageMa": 23,
+      "environment": "中新世に入ると気候と植生が変化し、森林、草原、サバンナが地域ごとに再編されました。",
+      "biology": "類人猿、旧世界ザル、草食哺乳類、イネ科植物の拡大が重要です。",
+      "events": [
+        {
+          "title": "ルシンガ島のプロコンスル類",
+          "place": "ケニア・ヴィクトリア湖ルシンガ島",
+          "lon": 34.16,
+          "lat": -0.42,
+          "summary": "中新世前期の類人猿プロコンスル類が知られ、ヒト上科の初期進化を考える重要地点です。",
+          "biology": "初期類人猿",
+          "environment": "森林性から開けた環境を含む東アフリカの陸上生態系",
+          "note": "中新世前期の代表地点として表示します。"
+        },
+        {
+          "title": "シワリク丘陵の中新世哺乳類相",
+          "place": "インド・パキスタン国境周辺シワリク丘陵",
+          "lon": 74.5,
+          "lat": 31,
+          "summary": "中新世から鮮新世にかけての哺乳類化石が豊富で、草食動物と植生変化の長期記録を示します。",
+          "biology": "草食哺乳類・類人猿・肉食哺乳類",
+          "environment": "河川平野・森林から草原への変化",
+          "note": "代表位置です。シワリク層群は広域に分布します。"
+        },
+        {
+          "title": "グレートプレーンズの草原拡大",
+          "place": "北米グレートプレーンズ",
+          "lon": -100,
+          "lat": 40,
+          "summary": "中新世以降、イネ科草原が広がり、ウマ類など草食哺乳類の進化と結びつきました。",
+          "biology": "イネ科草原・ウマ類・草食哺乳類",
+          "environment": "乾燥化する草原環境",
+          "note": "草原化は地域差が大きいため、北米の代表点として表示します。"
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "この時代の地理は模式表示です。背景地図は2010年の海岸線を使っています。"
+    },
+    {
+      "id": "early-hominin-lineage",
+      "label": "700万年前",
+      "title": "初期人類系統の出現候補",
+      "category": "biology",
+      "categoryLabel": "人類史",
+      "ageMa": 7,
+      "environment": "中新世末にはアフリカの森林・疎林・草原環境が複雑に入り混じり、人類系統の初期候補が現れます。",
+      "biology": "初期人類系統候補、類人猿、草原・疎林生態系が重要です。",
+      "events": [
+        {
+          "title": "サヘラントロプス・チャデンシス",
+          "place": "チャド・ジュラブ砂漠トロス＝メナラ",
+          "lon": 17.47,
+          "lat": 16.25,
+          "summary": "約700万年前の初期人類系統候補で、頭骨形態から二足歩行との関連が議論されています。",
+          "biology": "初期人類系統候補",
+          "environment": "湖沼・森林・疎林が混じる環境",
+          "note": "人類系統かどうかには議論がありますが、分岐付近を示す重要地点です。"
+        },
+        {
+          "title": "オロリン・トゥゲネンシス",
+          "place": "ケニア・トゥゲン丘陵",
+          "lon": 35.73,
+          "lat": 0.75,
+          "summary": "約600万年前の大腿骨などから、初期二足歩行の可能性が議論されています。",
+          "biology": "初期人類系統候補",
+          "environment": "森林と開けた環境が混在する中新世末の東アフリカ",
+          "note": "年代は700万年前より少し新しいですが、初期人類系統を示すため追加します。"
+        },
+        {
+          "title": "アルディピテクス・カダッバ",
+          "place": "エチオピア・中部アワッシュ",
+          "lon": 40.55,
+          "lat": 11.1,
+          "summary": "約580万年前前後の初期人類系統候補で、後のアルディピテクスにつながる可能性があります。",
+          "biology": "初期人類系統候補",
+          "environment": "森林・疎林・河川環境",
+          "note": "人類出現以後の灰色帯の始まりを示す補助地点です。"
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "この時代の地理は模式表示です。背景地図は2010年の海岸線を使っています。"
+    },
+    {
+      "id": "pliocene-cooling-hominins",
+      "label": "530万年前",
+      "title": "鮮新世の始まりと人類系統の多様化",
+      "category": "biology",
+      "categoryLabel": "人類史",
+      "ageMa": 5.3,
+      "environment": "鮮新世には寒冷化・乾燥化が進み、アフリカの環境変化と人類系統の多様化が重なります。",
+      "biology": "アルディピテクス、アウストラロピテクス、草原・疎林生態系が重要です。",
+      "events": [
+        {
+          "title": "アルディピテクス・ラミダス",
+          "place": "エチオピア・アラミス",
+          "lon": 40.5,
+          "lat": 10.5,
+          "summary": "約440万年前の初期人類で、森林的環境と二足歩行の組み合わせを示します。",
+          "biology": "初期人類・二足歩行",
+          "environment": "森林・疎林環境",
+          "note": "鮮新世前半の代表地点として表示します。"
+        },
+        {
+          "title": "アウストラロピテクス・アナメンシス",
+          "place": "ケニア・カナポイ",
+          "lon": 35.88,
+          "lat": 2.33,
+          "summary": "約420万年前のアウストラロピテクス類で、二足歩行と初期人類の多様化を示します。",
+          "biology": "アウストラロピテクス類",
+          "environment": "湖沼周辺・疎林・草原環境",
+          "note": "鮮新世の人類系統の代表地点です。"
+        },
+        {
+          "title": "地中海メッシニアン塩分危機の終息",
+          "place": "ジブラルタル海峡周辺",
+          "lon": -5.6,
+          "lat": 36,
+          "summary": "約533万年前に地中海が再び大西洋とつながり、鮮新世の開始と重なる大きな海洋環境転換です。",
+          "biology": "海洋生物相・沿岸生態系",
+          "environment": "地中海の再冠水・海洋連結",
+          "note": "人類史だけでなく、鮮新世開始の地球環境イベントとして追加します。"
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "この時代の地理は模式表示です。背景地図は2010年の海岸線を使っています。"
+    },
+    {
+      "id": "laetoli-bipedalism",
+      "label": "360万年前",
+      "title": "ラエトリ足跡と確実な二足歩行",
+      "category": "biology",
+      "categoryLabel": "人類史",
+      "ageMa": 3.6,
+      "environment": "鮮新世後半には東アフリカで火山灰層に足跡や化石が残り、二足歩行の証拠が明確になります。",
+      "biology": "アウストラロピテクス類と二足歩行が重要です。",
+      "events": [
+        {
+          "title": "ラエトリ足跡",
+          "place": "タンザニア・ラエトリ",
+          "lon": 35.35,
+          "lat": -3.23,
+          "summary": "約366万年前の火山灰に残された足跡で、アウストラロピテクス類の二足歩行を示す代表的証拠です。",
+          "biology": "アウストラロピテクス類・二足歩行",
+          "environment": "火山灰に覆われたサバンナ・疎林環境",
+          "note": "現生人類ではなく、初期人類系統の二足歩行記録です。"
+        },
+        {
+          "title": "ハダールのルーシー",
+          "place": "エチオピア・ハダール",
+          "lon": 40.58,
+          "lat": 11.15,
+          "summary": "約320万年前のアウストラロピテクス・アファレンシス化石で、二足歩行と樹上性の組み合わせを示します。",
+          "biology": "アウストラロピテクス・アファレンシス",
+          "environment": "河川・湖沼周辺の多様な環境",
+          "note": "360万年前よりやや新しいですが、同じ鮮新世の代表的人類化石として表示します。"
+        },
+        {
+          "title": "アフリカ東部リフトの環境変動",
+          "place": "東アフリカ大地溝帯",
+          "lon": 36.5,
+          "lat": 0.5,
+          "summary": "鮮新世後半の地形・火山活動・気候変動は、人類系統の生活環境を大きく変えました。",
+          "biology": "初期人類・草食哺乳類・草原生態系",
+          "environment": "リフト盆地・湖沼・草原・疎林",
+          "note": "広域現象の代表点として表示します。"
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "この時代の地理は模式表示です。背景地図は2010年の海岸線を使っています。"
+    },
+    {
       "id": "quaternary",
       "label": "258万年前",
-      "title": "氷期と人類進化",
+      "title": "第四紀の始まりと人類進化",
       "category": "biology",
       "categoryLabel": "生物史",
       "ageMa": 2.58,
@@ -1070,21 +2391,283 @@
       "events": [
         {
           "title": "オルドヴァイ峡谷",
-          "place": "タンザニア",
+          "place": "タンザニア北部",
           "lon": 35.35,
           "lat": -2.99,
-          "summary": "初期人類と石器文化を考えるうえで重要な地域です。",
-          "biology": "初期人類",
-          "environment": "サバンナと湖沼"
+          "summary": "初期ホモ属、オルドワン石器、アシュール文化への移行を考えるうえで中心的な東アフリカの峡谷です。",
+          "biology": "初期ホモ属、パラントロプス、オルドワン石器、アシュール石器",
+          "environment": "湖沼、湿地、草原、河川低地",
+          "note": "参考: Leakey 1971「Olduvai Gorge」; Domínguez-Rodrigo et al. 2021 Nature Communications「Earliest Olduvai hominins exploited unstable environments ~2 million years ago」; Diez-Martín et al. 2015 Journal of Human Evolution「The origin of the Acheulean at Olduvai Gorge」."
+        },
+        {
+          "title": "トゥルカナ盆地",
+          "place": "ケニア北部・エチオピア南部、トゥルカナ湖周辺",
+          "lon": 36.2,
+          "lat": 3.7,
+          "summary": "初期ホモ属の多様性、初期アシュール石器、湖岸・河川環境への適応を示す東アフリカの代表地域です。",
+          "biology": "ホモ・ハビリス、ホモ・エレクトス、初期アシュール石器、大型哺乳類",
+          "environment": "湖岸、河川、草原、火山灰を含む堆積盆地",
+          "note": "参考: Lepre et al. 2011 Nature「An earlier origin for the Acheulian」; Leakey et al. 2012 Nature「New fossils from Koobi Fora in northern Kenya confirm taxonomic diversity in early Homo」."
+        },
+        {
+          "title": "ドマニシ",
+          "place": "ジョージア南部",
+          "lon": 44.35,
+          "lat": 41.33,
+          "summary": "約180万年前の初期ホモ属がアフリカ外へ早く拡散していたことを示す、ユーラシア最古級の人類化石産地です。",
+          "biology": "初期ホモ属、石器、更新世哺乳類",
+          "environment": "草原と森林が混じる火山性台地",
+          "note": "参考: Gabunia et al. 2000 Science「Earliest Pleistocene hominid cranial remains from Dmanisi, Republic of Georgia」; Lordkipanidze et al. 2013 Science「A complete skull from Dmanisi, Georgia, and the evolutionary biology of early Homo」."
+        },
+        {
+          "title": "サンギラン",
+          "place": "インドネシア・ジャワ島中部",
+          "lon": 110.83,
+          "lat": -7.46,
+          "summary": "東南アジアのホモ・エレクトスを代表する産地で、ジャワ島の更新世環境と人類拡散を考える基準になります。",
+          "biology": "ホモ・エレクトス、陸生哺乳類、貝化石",
+          "environment": "河川、湖沼、火山灰を含む堆積盆地",
+          "note": "参考: Larick et al. 2001 PNAS「Early Pleistocene 40Ar/39Ar ages for Bapang Formation hominins, Central Jawa, Indonesia」; Bettis et al. 2009 Journal of Human Evolution「Way out of Africa: Early Pleistocene paleoenvironments inhabited by Homo erectus in Sangiran, Java」."
+        },
+        {
+          "title": "周口店",
+          "place": "中国・北京市房山区",
+          "lon": 115.92,
+          "lat": 39.69,
+          "summary": "北京原人として知られるホモ・エレクトスの古典的産地で、寒冷な北中国での長期的な人類生活を示します。",
+          "biology": "ホモ・エレクトス、石器、動物骨",
+          "environment": "石灰岩洞窟と寒冷化する森林・草原",
+          "note": "参考: Shen et al. 2009 Nature「Age of Zhoukoudian Homo erectus determined with 26Al/10Be burial dating」; Gao et al. 2017 Quaternary International「Zhoukoudian in transition」."
+        },
+        {
+          "title": "アタプエルカ山地",
+          "place": "スペイン・ブルゴス県",
+          "lon": -3.52,
+          "lat": 42.35,
+          "summary": "シマ・デル・エレファンテ、グラン・ドリーナ、シマ・デ・ロス・ウエソスが集まり、ヨーロッパ人類史を長く追える洞窟群です。",
+          "biology": "初期ヨーロッパ人類、ホモ・アンテセッソル、ネアンデルタール系統、石器",
+          "environment": "石灰岩洞窟、森林、草原、河川谷",
+          "note": "参考: Carbonell et al. 2008 Nature「The first hominin of Europe」; Arsuaga et al. 2014 Science「Neandertal roots: Cranial and chronological evidence from Sima de los Huesos」."
+        },
+        {
+          "title": "デニソワ洞窟",
+          "place": "ロシア・アルタイ山脈",
+          "lon": 84.68,
+          "lat": 51.4,
+          "summary": "古代DNAからデニソワ人が認識された地点で、ネアンデルタール人、デニソワ人、現生人類の接触を考える鍵です。",
+          "biology": "デニソワ人、ネアンデルタール人、現生人類、古代DNA",
+          "environment": "寒冷な山地洞窟と草原・森林モザイク",
+          "note": "参考: Reich et al. 2010 Nature「Genetic history of an archaic hominin group from Denisova Cave in Siberia」; Slon et al. 2018 Nature「The genome of the offspring of a Neanderthal mother and a Denisovan father」."
+        },
+        {
+          "title": "ヴィンディヤ洞窟",
+          "place": "クロアチア北部",
+          "lon": 16.09,
+          "lat": 46.31,
+          "summary": "後期ネアンデルタール人の化石と高品質ゲノムで知られ、現生人類との遺伝的関係を検討する重要地点です。",
+          "biology": "ネアンデルタール人、古代DNA、石器",
+          "environment": "石灰岩洞窟と氷期の森林・草原",
+          "note": "参考: Green et al. 2010 Science「A draft sequence of the Neandertal genome」; Prüfer et al. 2017 Science「A high-coverage Neandertal genome from Vindija Cave in Croatia」."
+        },
+        {
+          "title": "ペシュテラ・ク・オアセ",
+          "place": "ルーマニア南西部・アニナ周辺",
+          "lon": 21.84,
+          "lat": 45,
+          "summary": "初期現生人類の化石から近い世代のネアンデルタール人祖先が示され、ヨーロッパ到達直後の交雑を示します。",
+          "biology": "初期現生人類、ネアンデルタール人由来DNA",
+          "environment": "カルスト洞窟と山地森林",
+          "note": "参考: Fu et al. 2015 Nature「An early modern human from Romania with a recent Neanderthal ancestor」."
+        },
+        {
+          "title": "リャンブア洞窟",
+          "place": "インドネシア・フローレス島",
+          "lon": 120.45,
+          "lat": -8.53,
+          "summary": "小型のホモ・フロレシエンシスが見つかった島嶼環境の洞窟で、人類進化の多様な枝分かれを示します。",
+          "biology": "ホモ・フロレシエンシス、石器、島嶼哺乳類",
+          "environment": "熱帯島嶼の石灰岩洞窟",
+          "note": "参考: Brown et al. 2004 Nature「A new small-bodied hominin from the Late Pleistocene of Flores, Indonesia」; Morwood et al. 2004 Nature「Archaeology and age of a new hominin from Flores in eastern Indonesia」; Sutikna et al. 2016 Nature「Revised stratigraphy and chronology for Homo floresiensis at Liang Bua」."
+        },
+        {
+          "title": "カラオ洞窟",
+          "place": "フィリピン・ルソン島北部",
+          "lon": 121.82,
+          "lat": 17.7,
+          "summary": "後期更新世のホモ・ルゾネンシスが記載された地点で、島嶼東南アジアの人類多様性を示します。",
+          "biology": "ホモ・ルゾネンシス、シカ類骨、石器利用の可能性",
+          "environment": "熱帯石灰岩洞窟",
+          "note": "参考: Détroit et al. 2019 Nature「A new species of Homo from the Late Pleistocene of the Philippines」; Mijares et al. 2010 Journal of Human Evolution「New evidence for a 67,000-year-old human presence at Callao Cave, Luzon, Philippines」."
+        },
+        {
+          "title": "ジェベル・イルード",
+          "place": "モロッコ中西部",
+          "lon": -8.87,
+          "lat": 31.85,
+          "summary": "約31.5万年前の現生人類的化石と中期石器時代の石器が見つかり、ホモ・サピエンスの汎アフリカ的起源を示します。",
+          "biology": "初期ホモ・サピエンス、中期石器時代石器、火を受けた燧石",
+          "environment": "北アフリカの開けた低木林・草原",
+          "note": "参考: Hublin et al. 2017 Nature「New fossils from Jebel Irhoud, Morocco and the pan-African origin of Homo sapiens」; Richter et al. 2017 Nature「The age of the hominin fossils from Jebel Irhoud, Morocco, and the origins of the Middle Stone Age」."
+        },
+        {
+          "title": "オモ・キビシュ",
+          "place": "エチオピア南西部・オモ川下流",
+          "lon": 35.97,
+          "lat": 5.4,
+          "summary": "東アフリカ最古級のホモ・サピエンス化石を含む地点で、火山灰層との対比により年代が再評価されています。",
+          "biology": "初期ホモ・サピエンス、石器、湖沼・河川性動物相",
+          "environment": "河川・湖沼低地と火山灰層",
+          "note": "参考: McDougall, Brown & Fleagle 2005 Nature「Stratigraphic placement and age of modern humans from Kibish, Ethiopia」; Vidal et al. 2022 Nature「Age of the oldest known Homo sapiens from eastern Africa」."
+        },
+        {
+          "title": "ヘルト・ブーリ",
+          "place": "エチオピア・中部アワッシュ地域",
+          "lon": 40.57,
+          "lat": 11.08,
+          "summary": "約16万年前のホモ・サピエンス化石が発見され、現生人類の形態進化とアフリカ内の分布を示します。",
+          "biology": "ホモ・サピエンス・イダルトゥ、石器、湖岸動物相",
+          "environment": "淡水湖岸、河川低地、火山性堆積物",
+          "note": "参考: White et al. 2003 Nature「Pleistocene Homo sapiens from Middle Awash, Ethiopia」; Clark et al. 2003 Nature「Stratigraphic, chronological and behavioural contexts of Pleistocene Homo sapiens from Middle Awash, Ethiopia」."
+        },
+        {
+          "title": "ブロンボス洞窟",
+          "place": "南アフリカ・西ケープ州南岸",
+          "lon": 21.22,
+          "lat": -34.41,
+          "summary": "刻線入りオーカー、貝ビーズ、顔料処理場が知られ、現生人類の象徴行動と技術の早い発達を示します。",
+          "biology": "現生人類、貝ビーズ、刻線入りオーカー、骨器",
+          "environment": "海岸洞窟と沿岸資源",
+          "note": "参考: Henshilwood et al. 2002 Science「Emergence of modern human behavior: Middle Stone Age engravings from South Africa」; Henshilwood et al. 2011 Science「A 100,000-year-old ochre-processing workshop at Blombos Cave, South Africa」; Henshilwood et al. 2018 Nature「An abstract drawing from the 73,000-year-old levels at Blombos Cave」."
+        },
+        {
+          "title": "ピナクルポイント",
+          "place": "南アフリカ・モッセルベイ周辺",
+          "lon": 22.09,
+          "lat": -34.21,
+          "summary": "海産資源利用、顔料利用、石材熱処理を示す中期石器時代の洞窟群で、海岸環境が人類行動に与えた影響を示します。",
+          "biology": "現生人類、貝類利用、石器、顔料",
+          "environment": "氷期海面変動を受ける南アフリカ沿岸",
+          "note": "参考: Marean et al. 2007 Nature「Early human use of marine resources and pigment in South Africa during the Middle Pleistocene」; Brown et al. 2009 Science「Fire as an engineering tool of early modern humans」."
+        },
+        {
+          "title": "マンゴ湖",
+          "place": "オーストラリア・ニューサウスウェールズ州ウィランドラ湖群",
+          "lon": 143.05,
+          "lat": -33.73,
+          "summary": "オーストラリア最古級の現生人類遺骸と火葬・埋葬の証拠があり、サフルへの拡散と乾燥湖沼環境を示します。",
+          "biology": "現生人類、埋葬、火葬、湖岸利用",
+          "environment": "乾燥化した湖沼盆地と砂丘",
+          "note": "参考: Bowler et al. 1972 Nature「Pleistocene man in Australia: age and significance of the Mungo skeleton」; Bowler et al. 2003 Nature「New ages for human occupation and climatic change at Lake Mungo, Australia」."
+        },
+        {
+          "title": "ヤナRHS遺跡",
+          "place": "ロシア・シベリア北東部ヤナ川下流",
+          "lon": 134.73,
+          "lat": 70.73,
+          "summary": "最終氷期最盛期より前の北極圏人類居住を示し、寒冷地適応とアメリカ大陸移住前史を考える重要地点です。",
+          "biology": "後期旧石器時代人類、マンモス象牙製品、狩猟具",
+          "environment": "北極圏の乾燥したマンモス・ステップ",
+          "note": "参考: Pitulko et al. 2004 Science「The Yana RHS Site: Humans in the Arctic Before the Last Glacial Maximum」; Sikora et al. 2019 Nature「The population history of northeastern Siberia since the Pleistocene」."
+        },
+        {
+          "title": "マリタ遺跡",
+          "place": "ロシア・シベリア、バイカル湖西方アンガラ川流域",
+          "lon": 103.5,
+          "lat": 52.88,
+          "summary": "後期旧石器時代の古代北ユーラシア系ゲノムが得られ、シベリアとアメリカ先住民の祖先関係を示します。",
+          "biology": "後期旧石器時代人類、古代DNA、骨角器、装身具",
+          "environment": "氷期の内陸ステップと河川谷",
+          "note": "参考: Raghavan et al. 2014 Nature「Upper Palaeolithic Siberian genome reveals dual ancestry of Native Americans」."
         },
         {
           "title": "ベーリンジア",
           "place": "ベーリング陸橋周辺",
           "lon": -170,
           "lat": 65,
-          "summary": "氷期の海面低下でアジアと北米をつないだ地域です。",
-          "biology": "大型哺乳類と人類移動",
-          "environment": "寒冷なステップ"
+          "summary": "氷期の海面低下でシベリアとアラスカをつないだ地域で、人類のアメリカ大陸移住と寒冷地生態系の中心です。",
+          "biology": "人類移動、マンモス・ステップの大型哺乳類、古代DNA",
+          "environment": "乾燥寒冷な草原、ツンドラ、陸橋",
+          "note": "参考: Hoffecker, Elias & O'Rourke 2014 Science「Out of Beringia?」; Moreno-Mayar et al. 2018 Nature「Terminal Pleistocene Alaskan genome reveals first founding population of Native Americans」."
+        },
+        {
+          "title": "ペイズリー洞窟",
+          "place": "米国・オレゴン州南中部",
+          "lon": -120.55,
+          "lat": 42.7,
+          "summary": "人糞石と西部有茎尖頭器が見つかり、北米のクローヴィス以前または同時期の人類存在を示す重要地点です。",
+          "biology": "現生人類、古代DNA、糞石、石器、植物・動物遺存体",
+          "environment": "乾燥した大盆地の洞窟と湖沼縁辺",
+          "note": "参考: Gilbert et al. 2008 Science「DNA from pre-Clovis human coprolites in Oregon, North America」; Jenkins et al. 2012 Science「Clovis age Western Stemmed projectile points and human coprolites at the Paisley Caves」."
+        },
+        {
+          "title": "モンテ・ヴェルデ",
+          "place": "チリ南部・ロス・ラゴス州",
+          "lon": -73.23,
+          "lat": -41.5,
+          "summary": "南米南部の湿地に残る早期人類居住地で、アメリカ大陸への沿岸・内陸移動を考える基準点です。",
+          "biology": "現生人類、木製構造物、植物利用、石器",
+          "environment": "温帯雨林の湿地と河川低地",
+          "note": "参考: Dillehay et al. 2008 Science「Monte Verde: Seaweed, Food, Medicine, and the Peopling of South America」; Dillehay et al. 2015 PLOS ONE「New Archaeological Evidence for an Early Human Presence at Monte Verde, Chile」."
+        },
+        {
+          "title": "ブラックウォーター・ドロー",
+          "place": "米国・ニューメキシコ州クローヴィス近郊",
+          "lon": -103.31,
+          "lat": 34.28,
+          "summary": "クローヴィス文化のタイプサイトで、石槍とマンモスなどの大型哺乳類利用が知られる北米終末更新世の代表地点です。",
+          "biology": "クローヴィス文化、マンモス、バイソン、石槍",
+          "environment": "湧水湿地と南部グレートプレーンズ",
+          "note": "参考: Hester 1972「Blackwater Locality No. 1: A Stratified, Early Man Site in Eastern New Mexico」; Waters & Stafford 2007 Science「Redefining the age of Clovis: implications for the peopling of the Americas」."
+        },
+        {
+          "title": "ラ・ブレア・タールピット",
+          "place": "米国・カリフォルニア州ロサンゼルス",
+          "lon": -118.36,
+          "lat": 34.06,
+          "summary": "後期更新世の大型哺乳類、鳥類、植物がアスファルト湧出に大量保存され、氷期末の生態系変化を詳細に追えます。",
+          "biology": "スミロドン、ダイアウルフ、アメリカライオン、ナマケモノ、ラクダ類",
+          "environment": "都市化前の南カリフォルニア低地、タール湧出、乾燥化する植生",
+          "note": "参考: DeSantis et al. 2019 Current Biology「Causes and Consequences of Pleistocene Megafaunal Extinctions as Revealed from Rancho La Brea Mammals」; O'Keefe et al. 2023 Science「Pre-Younger Dryas megafaunal extirpation at Rancho La Brea linked to fire-driven state shift」."
+        },
+        {
+          "title": "北グリーンランド氷床コア・NGRIP",
+          "place": "グリーンランド北部内陸氷床",
+          "lon": -42.32,
+          "lat": 75.1,
+          "summary": "最終間氷期まで伸びる高解像度の氷床コアで、氷期の急激な気候変動を北半球側から記録します。",
+          "biology": "人類移動の背景となる氷期気候",
+          "environment": "氷床、氷期・間氷期の大気記録",
+          "note": "参考: North Greenland Ice Core Project members 2004 Nature「High-resolution record of Northern Hemisphere climate extending into the last interglacial period」; Rasmussen et al. 2014 Quaternary Science Reviews「A stratigraphic framework for abrupt climatic changes during the Last Glacial period based on three synchronized Greenland ice-core records」."
+        },
+        {
+          "title": "ボストーク氷床コア",
+          "place": "南極・ボストーク基地",
+          "lon": 106.84,
+          "lat": -78.47,
+          "summary": "過去42万年の気温、二酸化炭素、メタンを示す古典的氷床コアで、氷期サイクル理解の基準になりました。",
+          "biology": "氷期環境変動の背景記録",
+          "environment": "南極氷床と閉じ込められた古大気",
+          "note": "参考: Petit et al. 1999 Nature「Climate and atmospheric history of the past 420,000 years from the Vostok ice core, Antarctica」."
+        },
+        {
+          "title": "EPICAドームC氷床コア",
+          "place": "南極・コンコルディア基地周辺",
+          "lon": 123.35,
+          "lat": -75.1,
+          "summary": "約80万年に及ぶ南極気候記録で、複数の氷期・間氷期サイクルと大気組成の変化を比較できます。",
+          "biology": "哺乳類・人類進化の背景となる長期氷期サイクル",
+          "environment": "南極氷床、古大気、ダスト、同位体記録",
+          "note": "参考: Jouzel et al. 2007 Science「Orbital and millennial Antarctic climate variability over the past 800,000 years」; Lüthi et al. 2008 Nature「High-resolution carbon dioxide concentration record 650,000-800,000 years before present」."
+        },
+        {
+          "title": "水月湖年縞",
+          "place": "日本・福井県若狭町",
+          "lon": 135.88,
+          "lat": 35.58,
+          "summary": "葉片を含む年縞堆積物が放射性炭素年代の較正に使われ、最終氷期の人類遺跡年代を結び直す基準になりました。",
+          "biology": "旧石器時代遺跡年代の較正、植生・気候変動記録",
+          "environment": "湖沼年縞と最終氷期の陸上環境",
+          "note": "参考: Bronk Ramsey et al. 2012 Science「A complete terrestrial radiocarbon record for 11.2 to 52.8 kyr B.P.」; Staff et al. 2011 Radiocarbon「New 14C determinations from Lake Suigetsu, Japan: 12,000 to 0 cal BP」."
         }
       ],
       "file": "data/borders/world_2010.min.geojson",
@@ -1095,7 +2678,7 @@
     {
       "id": "holocene",
       "label": "1.17万年前",
-      "title": "完新世",
+      "title": "完新世の始まり",
       "category": "biology",
       "categoryLabel": "生物史",
       "ageMa": 0.0117,
@@ -1104,12 +2687,263 @@
       "events": [
         {
           "title": "肥沃な三日月地帯",
-          "place": "西アジア",
+          "place": "レバントから北メソポタミア・ザグロス山麓",
           "lon": 39,
           "lat": 36,
-          "summary": "農耕と家畜化が進んだ代表地域です。",
-          "biology": "栽培植物と家畜化",
-          "environment": "草原と河川流域"
+          "summary": "最終氷期後の温暖化のなかで、コムギ・オオムギ・マメ類、ヒツジ・ヤギ・ブタ・ウシの管理が進んだ農耕起源の中心地域です。",
+          "biology": "栽培穀物、マメ類、ヒツジ、ヤギ、ブタ、ウシ",
+          "environment": "草原、疎林、河川流域、山麓低地",
+          "note": "参考: Zeder 2008 PNAS「Domestication and early agriculture in the Mediterranean Basin: Origins, diffusion, and impact」; Fuller et al. 2012 Annals of Botany「Convergent evolution and parallelism in plant domestication revealed by an expanding archaeological record」."
+        },
+        {
+          "title": "ギョベクリ・テペ",
+          "place": "トルコ・シャンルウルファ県",
+          "lon": 38.92,
+          "lat": 37.22,
+          "summary": "土器以前新石器時代の巨大な石柱建築が並ぶ丘陵遺跡で、定住化・共同労働・儀礼と植物利用の関係を示します。",
+          "biology": "狩猟採集民、野生穀物、ガゼル、イノシシ、野生動物表象",
+          "environment": "石灰岩丘陵と草原・疎林",
+          "note": "参考: Dietrich et al. 2012 Antiquity「The role of cult and feasting in the emergence of Neolithic communities. New evidence from Göbekli Tepe, south-eastern Turkey」; Peters & Schmidt 2004 Anthropozoologica「Animals in the symbolic world of Pre-Pottery Neolithic Göbekli Tepe」."
+        },
+        {
+          "title": "テル・アブ・フレイラ",
+          "place": "シリア北部・ユーフラテス川中流、アサド湖周辺",
+          "lon": 38.4,
+          "lat": 35.87,
+          "summary": "狩猟採集から初期栽培・農耕村落へ移る過程を、植物遺存体と住居の変化から追える重要地点です。",
+          "biology": "ライムギ、コムギ、マメ類、ガゼル、初期農耕民",
+          "environment": "ユーフラテス河岸、乾燥草原、洪水低地",
+          "note": "参考: Hillman et al. 2001 The Holocene「New evidence of Late Glacial cereal cultivation at Abu Hureyra on the Euphrates」; Moore, Hillman & Legge 2000「Village on the Euphrates」."
+        },
+        {
+          "title": "テル・エス＝スルタン／古代エリコ",
+          "place": "パレスチナ・ヨルダン渓谷エリコ",
+          "lon": 35.44,
+          "lat": 31.87,
+          "summary": "泉のそばに発達した前土器新石器時代の大型集落で、塔や壁を伴う早い定住社会を示します。",
+          "biology": "初期農耕民、栽培植物、家畜化初期の動物",
+          "environment": "オアシス、泉、ヨルダン渓谷低地",
+          "note": "参考: Bar-Yosef 1986 Current Anthropology「The Walls of Jericho: An Alternative Interpretation」; UNESCO World Heritage Centre「Ancient Jericho/Tell es-Sultan」."
+        },
+        {
+          "title": "ガンジ・ダレ",
+          "place": "イラン・ザグロス山脈西部",
+          "lon": 47.28,
+          "lat": 34.47,
+          "summary": "ヤギの年齢・性比構成から、約1万年前の初期家畜化管理が示されたザグロス山麓の新石器時代集落です。",
+          "biology": "家畜化初期のヤギ、初期農耕民、土器",
+          "environment": "山麓草原と季節的放牧地",
+          "note": "参考: Zeder & Hesse 2000 Science「The Initial Domestication of Goats (Capra hircus) in the Zagros Mountains 10,000 Years Ago」; Daly et al. 2021 PNAS「Herded and hunted goat genomes from the dawn of domestication in the Zagros Mountains」."
+        },
+        {
+          "title": "チャタルヒュユク",
+          "place": "トルコ・コンヤ平原",
+          "lon": 32.83,
+          "lat": 37.67,
+          "summary": "密集した住居、壁画、埋葬、植物・動物利用から、新石器時代の大規模定住と社会生活を示す代表遺跡です。",
+          "biology": "農耕民、コムギ、オオムギ、ヒツジ、ヤギ、ウシ",
+          "environment": "湿地を伴う内陸平原",
+          "note": "参考: Hodder 2014 Annual Review of Anthropology「Çatalhöyük: The Leopard Changes Its Spots」; Larsen et al. 2015 PNAS「Bioarchaeology of Neolithic Çatalhöyük reveals fundamental transitions in health, mobility, and lifestyle」."
+        },
+        {
+          "title": "メヘルガル",
+          "place": "パキスタン・バローチスターン州カチ平原",
+          "lon": 67.62,
+          "lat": 29.38,
+          "summary": "南アジア初期農耕・牧畜の中心的遺跡で、ムギ類、ウシ、ヤギ・ヒツジ、歯科治療痕などが知られます。",
+          "biology": "初期農耕民、コムギ、オオムギ、ウシ、ヤギ、ヒツジ",
+          "environment": "ボラン峠山麓の乾燥平原と季節河川",
+          "note": "参考: Jarrige 2008 Pragdhara「Mehrgarh Neolithic」; Coppa et al. 2006 Nature「Early Neolithic tradition of dentistry」."
+        },
+        {
+          "title": "賈湖",
+          "place": "中国・河南省舞陽県",
+          "lon": 113.68,
+          "lat": 33.61,
+          "summary": "新石器時代初期の集落で、稲作の初期利用、骨笛、発酵飲料、ブタやイヌの管理を示します。",
+          "biology": "イネ、ブタ、イヌ、発酵飲料、骨笛を作った人々",
+          "environment": "黄淮平原の湿地・河川低地",
+          "note": "参考: McGovern et al. 2004 PNAS「Fermented beverages of pre- and proto-historic China」; Zhang et al. 2012 Antiquity「Early mixed farming of millet and rice 7800 years ago in the Middle Yellow River region, China」."
+        },
+        {
+          "title": "上山遺跡群",
+          "place": "中国・浙江省浦江県周辺",
+          "lon": 119.86,
+          "lat": 29.45,
+          "summary": "完新世初頭の長江下流域で、植物珪酸体からイネ利用と栽培化の初期段階が示されています。",
+          "biology": "初期イネ栽培、ヒエ属植物、定住化する採集民",
+          "environment": "低丘陵、湿地、河川低地",
+          "note": "参考: Zuo et al. 2017 PNAS「Dating rice remains through phytolith carbon-14 study reveals domestication at the beginning of the Holocene」; Yang et al. 2015 Scientific Reports「Barnyard grasses were processed with rice around 10,000 years ago」."
+        },
+        {
+          "title": "河姆渡・田螺山",
+          "place": "中国・浙江省余姚市",
+          "lon": 121.36,
+          "lat": 30.03,
+          "summary": "長江下流の湿地性集落で、水田型稲作、木造建築、漁撈とブタ飼養を組み合わせた中期完新世の生活を示します。",
+          "biology": "栽培イネ、ブタ、魚類、湿地植物",
+          "environment": "沿岸低地、湿地、河川・ラグーン環境",
+          "note": "参考: Fuller & Qin 2010 Archaeological and Anthropological Sciences「The origin of rice cultivation in the Lower Yangtze Region, China」; Zheng et al. 2009「Rice fields and modes of rice cultivation between 5000 and 2500 BC in east China」."
+        },
+        {
+          "title": "クック湿地",
+          "place": "パプアニューギニア・ワギ渓谷",
+          "lon": 144.33,
+          "lat": -5.78,
+          "summary": "ニューギニア高地で独立に発達した初期農耕を示し、排水溝・畑の痕跡からタロイモやバナナなどの栽培管理が推定されます。",
+          "biology": "タロイモ、バナナ、ヤム、湿地農耕民",
+          "environment": "高地湿地と排水された畑",
+          "note": "参考: Denham et al. 2003 Science「Origins of Agriculture at Kuk Swamp in the Highlands of New Guinea」; Denham 2011 Quaternary International「Early agriculture and plant domestication in New Guinea and Island Southeast Asia」."
+        },
+        {
+          "title": "ギラ・ナキツ洞窟",
+          "place": "メキシコ・オアハカ州ミトラ谷",
+          "lon": -96.4,
+          "lat": 16.95,
+          "summary": "カボチャとトウモロコシの初期大型遺存体が見つかり、メソアメリカにおける作物栽培化の過程を示します。",
+          "biology": "トウモロコシ、カボチャ、採集・初期栽培民",
+          "environment": "乾燥した谷と季節的な洞窟利用",
+          "note": "参考: Piperno & Flannery 2001 PNAS「The earliest archaeological maize (Zea mays L.) from highland Mexico」; Smith 1997 Science「The initial domestication of Cucurbita pepo in the Americas 10,000 years ago」."
+        },
+        {
+          "title": "ニャンチョック谷",
+          "place": "ペルー北部・アンデス西斜面",
+          "lon": -79.25,
+          "lat": -6.95,
+          "summary": "前土器時代の庭園・灌漑・貯蔵施設と、カボチャ、ピーナッツ、ワタなどの早い栽培利用が記録されています。",
+          "biology": "カボチャ、ピーナッツ、ワタ、マニオク、初期園耕民",
+          "environment": "乾燥した谷、灌漑可能な斜面低地",
+          "note": "参考: Dillehay et al. 2007 Science「Preceramic adoption of peanut, squash, and cotton in northern Peru」."
+        },
+        {
+          "title": "タカコリ岩陰",
+          "place": "リビア南西部・アカクス山地",
+          "lon": 10.52,
+          "lat": 24.74,
+          "summary": "緑のサハラ期の岩陰遺跡で、土器脂質から乳利用が示され、牧畜が北アフリカの乾燥地適応を支えたことが分かります。",
+          "biology": "ウシ、ヒツジ、ヤギ、乳利用、牧畜民",
+          "environment": "完新世湿潤期のサハラ山地と草原",
+          "note": "参考: Dunne et al. 2012 Nature「First dairying in green Saharan Africa in the fifth millennium BC」; Mercuri et al. 2018 PLOS ONE「Plant behaviour from human imprints and the cultivation of wild cereals in Holocene Sahara」."
+        },
+        {
+          "title": "ナブタ・プラヤ",
+          "place": "エジプト南西部・西部砂漠",
+          "lon": 30.7,
+          "lat": 22.51,
+          "summary": "完新世湿潤期のサハラで、季節湖、牧畜、集団儀礼、巨石構造が結びついた社会変化を示します。",
+          "biology": "牧畜民、ウシ、野生動物、湖沼周辺植物",
+          "environment": "季節湖とサバンナ化した砂漠",
+          "note": "参考: Wendorf & Schild 1998 Journal of Anthropological Archaeology「Nabta Playa and its role in northeastern African prehistory」; Wendorf, Schild & Associates 2001「Holocene Settlement of the Egyptian Sahara」."
+        },
+        {
+          "title": "ボタイ文化遺跡群",
+          "place": "カザフスタン北部・イマンブルルク川流域",
+          "lon": 68.4,
+          "lat": 53.3,
+          "summary": "馬骨、歯の摩耗、土器脂質から、後期完新世の馬利用・搾乳・囲い込みが議論されるユーラシア草原の重要地点です。",
+          "biology": "馬、牧畜民、乳利用、草原動物",
+          "environment": "ユーラシア草原と河川沿いの集落",
+          "note": "参考: Outram et al. 2009 Science「The earliest horse harnessing and milking」; Taylor & Barrón-Ortiz 2021 Scientific Reports「Rethinking the evidence for early horse domestication at Botai」. Botai馬と現代家馬の系統関係には再検討があるため、ここでは早期馬利用の地点として扱います。"
+        },
+        {
+          "title": "ウルク",
+          "place": "イラク南部・ワルカ",
+          "lon": 45.64,
+          "lat": 31.32,
+          "summary": "灌漑農耕、神殿複合、行政、文字の初期形態を伴う南メソポタミアの大規模都市化を示します。",
+          "biology": "都市住民、ムギ類、ナツメヤシ、ヒツジ・ヤギ、ウシ",
+          "environment": "ユーフラテス低地、灌漑農地、湿地",
+          "note": "参考: Algaze 2008「Ancient Mesopotamia at the Dawn of Civilization」; Adams & Nissen 1972「The Uruk Countryside」; Pollock 1999「Ancient Mesopotamia: The Eden that Never Was」."
+        },
+        {
+          "title": "テル・ブラク",
+          "place": "シリア北東部・ハブール川流域",
+          "lon": 41.06,
+          "lat": 36.67,
+          "summary": "南メソポタミアとは別に北メソポタミアでも早期都市化が進んだことを示す、広い周辺集落を伴う巨大テルです。",
+          "biology": "都市住民、ムギ類、家畜、交易ネットワーク",
+          "environment": "半乾燥平原、天水農耕、河川流域",
+          "note": "参考: Oates et al. 2007 Antiquity「Early Mesopotamian urbanism: a new view from the north」; Ur, Karsgaard & Oates 2011 Iraq「The spatial dimensions of early Mesopotamian urbanism: the Tell Brak suburban survey, 2003-2006」."
+        },
+        {
+          "title": "ハラッパー",
+          "place": "パキスタン・パンジャーブ州ラーヴィー川流域",
+          "lon": 72.87,
+          "lat": 30.63,
+          "summary": "インダス文明を代表する都市で、完新世モンスーンと河川景観の変化のなかで都市・農耕・交易が発達しました。",
+          "biology": "都市住民、コムギ、オオムギ、ウシ、スイギュウ、綿",
+          "environment": "インダス水系の沖積平野とモンスーン河川",
+          "note": "参考: Giosan et al. 2012 PNAS「Fluvial landscapes of the Harappan civilization」; Petrie et al. 2017 Current Anthropology「Adaptation to Variable Environments, Resilience to Climate Change: Investigating Land, Water and Settlement in Indus Northwest India」."
+        },
+        {
+          "title": "良渚古城",
+          "place": "中国・浙江省杭州市余杭区",
+          "lon": 120.02,
+          "lat": 30.39,
+          "summary": "水利施設と稲作を基盤とする長江下流の都市的社会で、後期完新世の水環境変動と社会崩壊の議論でも重要です。",
+          "biology": "稲作民、ブタ、イヌ、水田生態系",
+          "environment": "湿地、河川デルタ、水利システム",
+          "note": "参考: Liu et al. 2017 PNAS「Earliest hydraulic enterprise in China, 5,100 years ago」; Zhang et al. 2021 Science Advances「Collapse of the Liangzhu and other Neolithic cultures in the lower Yangtze region in response to climate change」."
+        },
+        {
+          "title": "カラル＝スーペ",
+          "place": "ペルー・スーペ谷",
+          "lon": -77.52,
+          "lat": -10.89,
+          "summary": "中央アンデスの前土器時代都市的社会で、綿、海産資源、灌漑農耕、公共建築が結びついた複合社会を示します。",
+          "biology": "都市的社会、ワタ、ヒョウタン、海産魚介類、灌漑作物",
+          "environment": "乾燥海岸谷、灌漑農地、沿岸資源",
+          "note": "参考: Shady Solís, Haas & Creamer 2001 Science「Dating Caral, a Preceramic Site in the Supe Valley on the Central Coast of Peru」; Haas, Creamer & Ruiz 2004 Nature「Dating the Late Archaic occupation of the Norte Chico region in Peru」."
+        },
+        {
+          "title": "テオウマ・ラピタ墓地",
+          "place": "バヌアツ・エファテ島",
+          "lon": 168.31,
+          "lat": -17.75,
+          "summary": "リモート・オセアニア最古級のラピタ人墓地で、航海移住、古代DNA、島嶼生態系への人類拡散を示します。",
+          "biology": "ラピタ人、ブタ・ニワトリなどの移入動物、島嶼植物利用",
+          "environment": "熱帯島嶼の海岸低地",
+          "note": "参考: Skoglund et al. 2016 Nature「Genomic insights into the peopling of the Southwest Pacific」; Valentin et al. 2010 Journal of Archaeological Science「Lapita subsistence strategies and food consumption patterns in the community of Teouma, Vanuatu」."
+        },
+        {
+          "title": "ウランゲリ島",
+          "place": "ロシア・北極海",
+          "lon": -179.5,
+          "lat": 71.2,
+          "summary": "最後期まで残ったマンモス集団が完新世中頃まで生き残った島で、気候変化・隔離・小集団化と絶滅を考える地点です。",
+          "biology": "ケナガマンモス、北極島嶼生態系、古代DNA",
+          "environment": "北極島嶼、ツンドラ、海面上昇後の隔離環境",
+          "note": "参考: Stuart et al. 2004 Nature「Pleistocene to Holocene extinction dynamics in giant deer and woolly mammoth」; Rogers & Slatkin 2017 PLOS Genetics「Excess of genomic defects in a woolly mammoth on Wrangel island」; Dehasque et al. 2024 Cell「Temporal dynamics of woolly mammoth genome erosion prior to extinction」."
+        },
+        {
+          "title": "ニュージーランド・モア絶滅記録",
+          "place": "ニュージーランド南島・ワイラウバー周辺",
+          "lon": 174.05,
+          "lat": -41.51,
+          "summary": "ポリネシア人到達後、モア類が短期間で絶滅したことを示す年代記録があり、島嶼生態系への人類影響を示します。",
+          "biology": "モア類、初期ポリネシア人、狩猟、島嶼鳥類",
+          "environment": "温帯島嶼の海岸平野と森林・草原",
+          "note": "参考: Holdaway & Jacomb 2000 Science「Rapid extinction of the moas (Aves: Dinornithiformes): model, test, and implications」; Allentoft et al. 2014 Nature Communications「An extremely low-density human population exterminated New Zealand moa」."
+        },
+        {
+          "title": "アガシー＝オジブウェイ氷河湖放流域",
+          "place": "カナダ・ハドソン湾南部から北大西洋",
+          "lon": -79,
+          "lat": 56,
+          "summary": "約8200年前の寒冷イベントは、巨大氷河湖の急放流が北大西洋循環に影響した例として、完新世気候の不安定さを示します。",
+          "biology": "初期完新世の人類移動・植生変化の背景気候",
+          "environment": "氷床縁辺、巨大淡水湖、北大西洋循環",
+          "note": "参考: Barber et al. 1999 Nature「Forcing of the cold event of 8,200 years ago by catastrophic drainage of Laurentide lakes」; Clarke et al. 2004 Quaternary Science Reviews「Paleohydraulics of the last outburst flood from glacial Lake Agassiz and the 8200 BP cold event」."
+        },
+        {
+          "title": "クロフォード湖",
+          "place": "カナダ・オンタリオ州ミルトン",
+          "lon": -79.95,
+          "lat": 43.47,
+          "summary": "年縞堆積物に先住民の農耕、植民地期の土地改変、20世紀中頃の放射性降下物と工業化の痕跡が残ります。",
+          "biology": "トウモロコシ花粉、珪藻、湖沼生態系、人類活動の指標",
+          "environment": "メロミクティック湖、年縞、森林・農耕景観",
+          "note": "参考: McCarthy et al. 2023 The Anthropocene Review「The varved succession of Crawford Lake, Milton, Ontario, Canada as a candidate Global boundary Stratotype Section and Point for the Anthropocene series」; ICS/SQS 2024はAnthropocene Epoch案を正式単位として採択せず、現在の公式地質時代は完新世です。"
         }
       ],
       "file": "data/borders/world_2010.min.geojson",
@@ -1118,11 +2952,761 @@
       "mapNote": "????????????????????2010?????????????????"
     },
     {
+      "id": "early-agriculture",
+      "year": -9500,
+      "label": "紀元前9500年ごろ",
+      "title": "初期農耕と定住村落の拡大",
+      "category": "biology",
+      "categoryLabel": "人類史",
+      "environment": "完新世初頭の温暖化と地域ごとの湿潤化・乾燥化のなかで、採集・狩猟から植物管理、家畜化、定住村落へ移行しました。",
+      "biology": "栽培植物、家畜化初期の動物、定住する現生人類が重要です。",
+      "events": [
+        {
+          "title": "テル・アブ・フレイラ",
+          "place": "シリア北部・ユーフラテス川中流",
+          "lon": 38.4,
+          "lat": 35.87,
+          "summary": "野生穀物利用から初期栽培・農耕村落へ移る過程を示す、完新世初頭の代表的な集落です。",
+          "biology": "ライムギ、コムギ、マメ類、ガゼル、初期農耕民",
+          "environment": "ユーフラテス河岸、乾燥草原、洪水低地",
+          "note": "参考: Hillman et al. 2001 The Holocene「New evidence of Late Glacial cereal cultivation at Abu Hureyra on the Euphrates」; Moore, Hillman & Legge 2000「Village on the Euphrates」."
+        },
+        {
+          "title": "ギョベクリ・テペ",
+          "place": "トルコ・シャンルウルファ県",
+          "lon": 38.92,
+          "lat": 37.22,
+          "summary": "土器以前新石器時代の巨大石柱建築が並び、農耕直前から初期農耕期の定住・儀礼・共同労働を示します。",
+          "biology": "狩猟採集民、野生穀物、ガゼル、イノシシ、野生動物表象",
+          "environment": "石灰岩丘陵と草原・疎林",
+          "note": "参考: Dietrich et al. 2012 Antiquity「The role of cult and feasting in the emergence of Neolithic communities」; Peters & Schmidt 2004 Anthropozoologica「Animals in the symbolic world of Pre-Pottery Neolithic Göbekli Tepe」."
+        },
+        {
+          "title": "ガンジ・ダレ",
+          "place": "イラン・ザグロス山脈西部",
+          "lon": 47.28,
+          "lat": 34.47,
+          "summary": "ヤギの年齢・性比構成から、初期の群管理と家畜化が示されたザグロス山麓の重要集落です。",
+          "biology": "家畜化初期のヤギ、初期農耕民、土器",
+          "environment": "山麓草原と季節的放牧地",
+          "note": "参考: Zeder & Hesse 2000 Science「The Initial Domestication of Goats (Capra hircus) in the Zagros Mountains 10,000 Years Ago」; Daly et al. 2021 PNAS「Herded and hunted goat genomes from the dawn of domestication in the Zagros Mountains」."
+        },
+        {
+          "title": "上山遺跡群",
+          "place": "中国・浙江省浦江県周辺",
+          "lon": 119.86,
+          "lat": 29.45,
+          "summary": "完新世初頭の長江下流域で、植物珪酸体からイネ利用と栽培化の初期段階が示されています。",
+          "biology": "初期イネ栽培、ヒエ属植物、定住化する採集民",
+          "environment": "低丘陵、湿地、河川低地",
+          "note": "参考: Zuo et al. 2017 PNAS「Dating rice remains through phytolith carbon-14 study reveals domestication at the beginning of the Holocene」; Yang et al. 2015 Scientific Reports「Barnyard grasses were processed with rice around 10,000 years ago」."
+        },
+        {
+          "title": "ギラ・ナキツ洞窟",
+          "place": "メキシコ・オアハカ州ミトラ谷",
+          "lon": -96.4,
+          "lat": 16.95,
+          "summary": "カボチャとトウモロコシの初期大型遺存体が見つかり、アメリカ大陸での作物化を示します。",
+          "biology": "トウモロコシ、カボチャ、採集・初期栽培民",
+          "environment": "乾燥した谷と季節的な洞窟利用",
+          "note": "参考: Piperno & Flannery 2001 PNAS「The earliest archaeological maize (Zea mays L.) from highland Mexico」; Smith 1997 Science「The initial domestication of Cucurbita pepo in the Americas 10,000 years ago」."
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "現代の地図を背景に、完新世初頭の代表地点を示します。"
+    },
+    {
+      "id": "event-8200",
+      "year": -6200,
+      "label": "紀元前6200年頃",
+      "title": "8.2千年前寒冷イベントの発生",
+      "category": "biology",
+      "categoryLabel": "気候史",
+      "environment": "ローレンタイド氷床縁辺の巨大湖放流が北大西洋循環に影響し、完新世のなかでも明瞭な寒冷・乾燥イベントを引き起こしました。",
+      "biology": "初期農耕・牧畜・植生分布の背景となる急激な気候変動です。",
+      "events": [
+        {
+          "title": "アガシー＝オジブウェイ氷河湖放流域",
+          "place": "カナダ・ハドソン湾南部から北大西洋",
+          "lon": -79,
+          "lat": 56,
+          "summary": "約8200年前の寒冷イベントの主要な淡水供給源とされる、ローレンタイド氷床縁辺の巨大氷河湖放流域です。",
+          "biology": "初期完新世の人類移動・植生変化の背景気候",
+          "environment": "氷床縁辺、巨大淡水湖、北大西洋循環",
+          "note": "参考: Barber et al. 1999 Nature「Forcing of the cold event of 8,200 years ago by catastrophic drainage of Laurentide lakes」; Clarke et al. 2004 Quaternary Science Reviews「Paleohydraulics of the last outburst flood from glacial Lake Agassiz and the 8200 BP cold event」."
+        },
+        {
+          "title": "北グリーンランド氷床コア・NGRIP",
+          "place": "グリーンランド北部内陸氷床",
+          "lon": -42.32,
+          "lat": 75.1,
+          "summary": "グリーンランド氷床コアは、8.2 kaイベントを含む北半球の急激な寒冷化を高解像度で記録します。",
+          "biology": "人類移動と農耕拡散の背景気候",
+          "environment": "氷床、古大気、酸素同位体記録",
+          "note": "参考: North Greenland Ice Core Project members 2004 Nature「High-resolution record of Northern Hemisphere climate extending into the last interglacial period」; Rasmussen et al. 2014 Quaternary Science Reviews「A stratigraphic framework for abrupt climatic changes during the Last Glacial period」."
+        },
+        {
+          "title": "ソレク洞窟",
+          "place": "イスラエル・ユダヤ山地",
+          "lon": 35.02,
+          "lat": 31.75,
+          "summary": "東地中海の洞窟石筍記録は、初期農耕地域に近い場所で完新世の降水変動を追える指標です。",
+          "biology": "レバントの初期農耕・牧畜の背景環境",
+          "environment": "石灰岩洞窟、地中海性降水、乾湿変動",
+          "note": "参考: Bar-Matthews, Ayalon & Kaufman 1999 Geology「Late Quaternary paleoclimate in the eastern Mediterranean region from stable isotope analysis of speleothems at Soreq Cave, Israel」; Bar-Matthews & Ayalon 2011 Quaternary Science Reviews「Mid-Holocene climate variations revealed by high-resolution speleothem records from Soreq Cave」."
+        },
+        {
+          "title": "水月湖年縞",
+          "place": "日本・福井県若狭町",
+          "lon": 135.88,
+          "lat": 35.58,
+          "summary": "年縞堆積物は放射性炭素年代較正の基準となり、完新世前半の気候・植生変動を各地の遺跡年代と結びます。",
+          "biology": "旧石器時代末から縄文期の年代較正、植生変化",
+          "environment": "湖沼年縞と陸上環境記録",
+          "note": "参考: Bronk Ramsey et al. 2012 Science「A complete terrestrial radiocarbon record for 11.2 to 52.8 kyr B.P.」; Staff et al. 2011 Radiocarbon「New 14C determinations from Lake Suigetsu, Japan: 12,000 to 0 cal BP」."
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "現代の地図を背景に、8.2 ka寒冷イベントの代表記録地点を示します。"
+    },
+    {
+      "id": "early-urbanization",
+      "year": -3500,
+      "label": "紀元前3500年ごろ",
+      "title": "初期都市・文字・灌漑社会の形成",
+      "category": "biology",
+      "categoryLabel": "人類史",
+      "environment": "大河流域と乾燥地の灌漑農耕を背景に、都市、行政、文字、公共建築、広域分業が急速に発達しました。",
+      "biology": "都市住民、栽培植物、家畜、水利システムが生態系を作り変えました。",
+      "events": [
+        {
+          "title": "ウルク",
+          "place": "イラク南部・ワルカ",
+          "lon": 45.64,
+          "lat": 31.32,
+          "summary": "南メソポタミアの大規模都市化を代表し、灌漑農耕、神殿複合、行政、文字の初期形態が結びつきました。",
+          "biology": "都市住民、ムギ類、ナツメヤシ、ヒツジ・ヤギ、ウシ",
+          "environment": "ユーフラテス低地、灌漑農地、湿地",
+          "note": "参考: Algaze 2008「Ancient Mesopotamia at the Dawn of Civilization」; Adams & Nissen 1972「The Uruk Countryside」; Pollock 1999「Ancient Mesopotamia: The Eden that Never Was」."
+        },
+        {
+          "title": "テル・ブラク",
+          "place": "シリア北東部・ハブール川流域",
+          "lon": 41.06,
+          "lat": 36.67,
+          "summary": "北メソポタミアでも早期都市化が進んだことを示す、広い周辺集落を伴う巨大テルです。",
+          "biology": "都市住民、ムギ類、家畜、交易ネットワーク",
+          "environment": "半乾燥平原、天水農耕、河川流域",
+          "note": "参考: Oates et al. 2007 Antiquity「Early Mesopotamian urbanism: a new view from the north」; Ur, Karsgaard & Oates 2011 Iraq「The spatial dimensions of early Mesopotamian urbanism: the Tell Brak suburban survey, 2003-2006」."
+        },
+        {
+          "title": "アビドス・ウンム・エル＝カアブ",
+          "place": "エジプト・ナイル上流域アビドス",
+          "lon": 31.92,
+          "lat": 26.18,
+          "summary": "王墓U-jなどから初期の記号・ラベルが出土し、ナイル流域での国家形成と行政記録の発達を示します。",
+          "biology": "ナイル農耕民、ムギ類、家畜、行政労働",
+          "environment": "ナイル氾濫原と砂漠縁辺",
+          "note": "参考: Dreyer 1998「Umm el-Qaab I: Das prädynastische Königsgrab U-j und seine frühen Schriftzeugnisse」; Wengrow 2006「The Archaeology of Early Egypt」."
+        },
+        {
+          "title": "カラル＝スーペ",
+          "place": "ペルー・スーペ谷",
+          "lon": -77.52,
+          "lat": -10.89,
+          "summary": "中央アンデスの前土器時代都市的社会で、綿、海産資源、灌漑農耕、公共建築が結びついた複合社会を示します。",
+          "biology": "都市的社会、ワタ、ヒョウタン、海産魚介類、灌漑作物",
+          "environment": "乾燥海岸谷、灌漑農地、沿岸資源",
+          "note": "参考: Shady Solís, Haas & Creamer 2001 Science「Dating Caral, a Preceramic Site in the Supe Valley on the Central Coast of Peru」; Haas, Creamer & Ruiz 2004 Nature「Dating the Late Archaic occupation of the Norte Chico region in Peru」."
+        },
+        {
+          "title": "良渚古城",
+          "place": "中国・浙江省杭州市余杭区",
+          "lon": 120.02,
+          "lat": 30.39,
+          "summary": "水利施設と稲作を基盤とする長江下流の都市的社会で、湿地開発と大規模な社会組織を示します。",
+          "biology": "稲作民、ブタ、イヌ、水田生態系",
+          "environment": "湿地、河川デルタ、水利システム",
+          "note": "参考: Liu et al. 2017 PNAS「Earliest hydraulic enterprise in China, 5,100 years ago」; Zhang et al. 2021 Science Advances「Collapse of the Liangzhu and other Neolithic cultures in the lower Yangtze region in response to climate change」."
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "現代の地図を背景に、初期都市化の代表地点を示します。"
+    },
+    {
+      "id": "bronze-age-networks",
+      "year": -2000,
+      "label": "紀元前2000年ごろ",
+      "title": "青銅器時代の広域交易圏",
+      "category": "biology",
+      "categoryLabel": "人類史",
+      "environment": "金属、家畜、船、車輪、文字が各地の都市と農牧社会を結び、長距離交易と資源利用が広がりました。",
+      "biology": "人類集団、家畜、作物、金属資源、船と車輪による移動が重要です。",
+      "events": [
+        {
+          "title": "ハラッパー",
+          "place": "パキスタン・パンジャーブ州ラーヴィー川流域",
+          "lon": 72.87,
+          "lat": 30.63,
+          "summary": "インダス文明を代表する都市で、モンスーン河川景観のなかで都市・農耕・交易が発達しました。",
+          "biology": "都市住民、コムギ、オオムギ、ウシ、スイギュウ、綿",
+          "environment": "インダス水系の沖積平野とモンスーン河川",
+          "note": "参考: Giosan et al. 2012 PNAS「Fluvial landscapes of the Harappan civilization」; Petrie et al. 2017 Current Anthropology「Adaptation to Variable Environments, Resilience to Climate Change」."
+        },
+        {
+          "title": "ウル王墓",
+          "place": "イラク南部・テル・エル＝ムカイヤル",
+          "lon": 46.1,
+          "lat": 30.96,
+          "summary": "貴金属、ラピスラズリ、貝、木材などの副葬品は、メソポタミア都市が広域資源網に組み込まれていたことを示します。",
+          "biology": "都市住民、家畜、ムギ類、交易品を運ぶ人々",
+          "environment": "ユーフラテス下流の灌漑農地と湿地",
+          "note": "参考: Woolley 1934「Ur Excavations II: The Royal Cemetery」; Mieroop 1999「The Ancient Mesopotamian City」."
+        },
+        {
+          "title": "エルリトウ",
+          "place": "中国・河南省偃師区",
+          "lon": 112.72,
+          "lat": 34.68,
+          "summary": "青銅器、宮殿区、道路を伴う中国初期国家形成の中心的遺跡で、黄河流域の都市化を示します。",
+          "biology": "都市住民、キビ・アワ、ブタ、イヌ、青銅器生産",
+          "environment": "黄河中流域の沖積平野",
+          "note": "参考: Liu & Xu 2007 Antiquity「Rethinking Erlitou: legend, history and Chinese archaeology」; Liu 2009 Journal of Anthropological Archaeology「State emergence in early China」."
+        },
+        {
+          "title": "ゴヌール・デペ",
+          "place": "トルクメニスタン・ムルガブ扇状地",
+          "lon": 62,
+          "lat": 38.2,
+          "summary": "中央アジアのオアシス都市として、イラン高原、インダス、草原世界をつなぐ青銅器時代ネットワークを示します。",
+          "biology": "オアシス農耕民、家畜、ムギ類、交易品",
+          "environment": "乾燥地の扇状地オアシスと灌漑農地",
+          "note": "参考: Hiebert 1994「Origins of the Bronze Age Oasis Civilization in Central Asia」; Frachetti 2012 Current Anthropology「Multiregional emergence of mobile pastoralism and nonuniform institutional complexity across Eurasia」."
+        },
+        {
+          "title": "ウルブルン沈船",
+          "place": "トルコ南西岸・カシュ沖",
+          "lon": 29.65,
+          "lat": 36.13,
+          "summary": "後期青銅器時代の船荷は、銅・錫・ガラス・象牙・香料など東地中海の広域交易を具体的に示します。",
+          "biology": "船乗り、交易都市、木材、香料、象牙、金属資源",
+          "environment": "東地中海の海上交易路",
+          "note": "参考: Pulak 1998 International Journal of Nautical Archaeology「The Uluburun shipwreck: an overview」; Manning et al. 2009 Radiocarbon「Absolute age of the Uluburun shipwreck」."
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "現代の地図を背景に、青銅器時代の代表的な都市・交易地点を示します。"
+    },
+    {
+      "id": "late-bronze-iron-age",
+      "year": -1200,
+      "label": "紀元前1200年ごろ",
+      "title": "後期青銅器時代崩壊と鉄器時代の始まり",
+      "category": "biology",
+      "categoryLabel": "人類史",
+      "environment": "東地中海と西アジアでは都市・宮殿経済が動揺し、乾燥化、戦争、移動、交易網の変化を経て鉄器時代の社会が広がりました。",
+      "biology": "農耕民、牧畜民、都市住民、金属生産、乾燥化に対する適応が重要です。",
+      "events": [
+        {
+          "title": "ハットゥシャ",
+          "place": "トルコ・ボアズカレ",
+          "lon": 34.62,
+          "lat": 40.02,
+          "summary": "ヒッタイト帝国の首都で、後期青銅器時代末の政治変動を考える代表地点です。",
+          "biology": "都市住民、ムギ類、家畜、馬、軍事・行政集団",
+          "environment": "アナトリア高原の農牧環境",
+          "note": "参考: Seeher 2001 Biblical Archaeologist「Die Zerstörung der Stadt Hattusa」; Manning et al. 2023 Nature「Severe multi-year drought coincident with Hittite collapse around 1198-1196 BC」."
+        },
+        {
+          "title": "ウガリット",
+          "place": "シリア・ラス・シャムラ",
+          "lon": 35.78,
+          "lat": 35.6,
+          "summary": "東地中海交易と楔形文字文書で知られる港湾都市で、青銅器時代末の破壊と海上交易網の変化を示します。",
+          "biology": "港湾都市住民、ムギ類、ブドウ、家畜、交易品",
+          "environment": "地中海沿岸平野と港湾",
+          "note": "参考: Kaniewski et al. 2011 PLOS ONE「The Sea Peoples, from cuneiform tablets to carbon dating」; Kaniewski et al. 2013 PLOS ONE「Environmental roots of the Late Bronze Age crisis」."
+        },
+        {
+          "title": "メディネト・ハブ",
+          "place": "エジプト・ルクソール西岸",
+          "lon": 32.6,
+          "lat": 25.72,
+          "summary": "ラムセス3世の碑文と浮彫は、いわゆる海の民と東地中海の大規模な移動・紛争を伝える資料です。",
+          "biology": "ナイル農耕民、兵士、移動集団、家畜",
+          "environment": "ナイル氾濫原と砂漠縁辺",
+          "note": "参考: Cline 2014「1177 B.C.: The Year Civilization Collapsed」; Emanuel 2017 Journal of Ancient Egyptian Interconnections「Sea Peoples, Egypt, and the Aegean」."
+        },
+        {
+          "title": "エンコミ",
+          "place": "キプロス東部",
+          "lon": 33.9,
+          "lat": 35.16,
+          "summary": "銅資源と地中海交易で重要だったキプロスの都市で、青銅器時代末の海上交易と社会変化を示します。",
+          "biology": "銅生産に関わる人々、農耕民、家畜、森林資源",
+          "environment": "地中海島嶼、銅鉱床、港湾",
+          "note": "参考: Knapp 2013「The Archaeology of Cyprus」; Iacovou 2008「Cultural and political configurations in Iron Age Cyprus」."
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "現代の地図を背景に、後期青銅器時代末から鉄器時代への移行を示す代表地点を示します。"
+    },
+    {
+      "id": "classical-empires",
+      "year": -500,
+      "label": "紀元前500年ごろ",
+      "title": "古典古代の帝国・都市国家・思想圏",
+      "category": "biology",
+      "categoryLabel": "人類史",
+      "environment": "ユーラシア・アフリカ・アメリカ各地で帝国、都市、文字、貨幣、思想体系が発達し、農地拡大と交易路が生態系を変えていきました。",
+      "biology": "都市住民、農耕民、家畜、作物、森林伐採と灌漑が重要です。",
+      "events": [
+        {
+          "title": "ペルセポリス",
+          "place": "イラン・ファールス州",
+          "lon": 52.89,
+          "lat": 29.94,
+          "summary": "アケメネス朝ペルシアの王都で、広域帝国が多様な環境・人・物資を統合したことを示します。",
+          "biology": "帝国都市住民、ムギ類、家畜、輸送動物",
+          "environment": "ザグロス山麓の乾燥農耕地と王宮都市",
+          "note": "参考: Root 1979「The King and Kingship in Achaemenid Art」; Henkelman 2008「The Other Gods Who Are」."
+        },
+        {
+          "title": "アテネ",
+          "place": "ギリシア・アッティカ",
+          "lon": 23.73,
+          "lat": 37.98,
+          "summary": "地中海のポリス世界を代表し、オリーブ、ブドウ、穀物輸入、銀山と海上交易が都市生活を支えました。",
+          "biology": "都市住民、オリーブ、ブドウ、ムギ類、家畜",
+          "environment": "地中海性気候、段々畑、港湾",
+          "note": "参考: Osborne 1996「Greece in the Making 1200-479 BC」; Morris 2004「Economic growth in ancient Greece」."
+        },
+        {
+          "title": "パータリプトラ",
+          "place": "インド・ビハール州パトナ周辺",
+          "lon": 85.14,
+          "lat": 25.61,
+          "summary": "ガンジス平原の都市化とマウリヤ朝の中心で、稲作・河川交通・帝国行政の発達を示します。",
+          "biology": "都市住民、イネ、ウシ、水牛、ゾウ",
+          "environment": "ガンジス川沖積平野とモンスーン農耕",
+          "note": "参考: Chakrabarti 1995「The Archaeology of Ancient Indian Cities」; Coningham & Young 2015「The Archaeology of South Asia」."
+        },
+        {
+          "title": "咸陽・秦都圏",
+          "place": "中国・陝西省咸陽市周辺",
+          "lon": 108.7,
+          "lat": 34.34,
+          "summary": "戦国から秦漢にかけての関中盆地の都市・陵墓・道路網は、東アジアの帝国形成を示します。",
+          "biology": "都市住民、キビ・アワ、コムギ、馬、家畜",
+          "environment": "黄土高原縁辺、灌漑農地、河川盆地",
+          "note": "参考: Shelach-Lavi 2015「The Archaeology of Early China」; Pines et al. 2014「Birth of an Empire: The State of Qin Revisited」."
+        },
+        {
+          "title": "ラ・ベンタ",
+          "place": "メキシコ・タバスコ州",
+          "lon": -94.04,
+          "lat": 18.1,
+          "summary": "オルメカ文化の中心の一つで、湿地低地の農耕、儀礼中心地、長距離資源利用を示します。",
+          "biology": "トウモロコシ農耕民、カカオ利用の可能性、熱帯低地資源",
+          "environment": "メキシコ湾岸の湿地・河川低地",
+          "note": "参考: Diehl 2004「The Olmecs: America's First Civilization」; Pool 2007「Olmec Archaeology and Early Mesoamerica」."
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "現代の地図を背景に、古典古代の代表的な都市・帝国中心地を示します。"
+    },
+    {
+      "id": "history-100",
+      "year": 100,
+      "label": "100年頃",
+      "title": "ローマ帝国と後漢の時代",
+      "category": "history",
+      "categoryLabel": "歴史地図",
+      "environment": "歴史資料をもとに推定された政治勢力圏を表示します。",
+      "biology": "生物史マーカーではなく国境・勢力圏ベクターを表示します。",
+      "file": "data/borders/world_100.min.geojson",
+      "featureCount": 320,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_100.geojson"
+    },
+    {
+      "id": "history-200",
+      "year": 200,
+      "label": "200年頃",
+      "title": "セウェルス朝ローマと後漢末",
+      "category": "history",
+      "categoryLabel": "歴史地図",
+      "environment": "歴史資料をもとに推定された政治勢力圏を表示します。",
+      "biology": "生物史マーカーではなく国境・勢力圏ベクターを表示します。",
+      "file": "data/borders/world_200.min.geojson",
+      "featureCount": 258,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_200.geojson"
+    },
+    {
+      "id": "history-300",
+      "year": 300,
+      "label": "300年頃",
+      "title": "テトラルキアと古代帝国再編",
+      "category": "history",
+      "categoryLabel": "歴史地図",
+      "environment": "歴史資料をもとに推定された政治勢力圏を表示します。",
+      "biology": "生物史マーカーではなく国境・勢力圏ベクターを表示します。",
+      "file": "data/borders/world_300.min.geojson",
+      "featureCount": 318,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_300.geojson"
+    },
+    {
+      "id": "history-400",
+      "year": 400,
+      "label": "400年頃",
+      "title": "民族移動期と西ローマ衰退",
+      "category": "history",
+      "categoryLabel": "歴史地図",
+      "environment": "歴史資料をもとに推定された政治勢力圏を表示します。",
+      "biology": "生物史マーカーではなく国境・勢力圏ベクターを表示します。",
+      "file": "data/borders/world_400.min.geojson",
+      "featureCount": 271,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_400.geojson"
+    },
+    {
+      "id": "history-500",
+      "year": 500,
+      "label": "500年頃",
+      "title": "西ローマ後の地中海世界",
+      "category": "history",
+      "categoryLabel": "歴史地図",
+      "environment": "歴史資料をもとに推定された政治勢力圏を表示します。",
+      "biology": "生物史マーカーではなく国境・勢力圏ベクターを表示します。",
+      "file": "data/borders/world_500.min.geojson",
+      "featureCount": 171,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_500.geojson"
+    },
+    {
+      "id": "late-antique-climate-plague",
+      "year": 541,
+      "label": "540年頃",
+      "title": "536年寒冷化とユスティニアヌス疫病",
+      "category": "biology",
+      "categoryLabel": "気候・疾病史",
+      "environment": "536年以降の火山性寒冷化と541年からのユスティニアヌス疫病は、気候・感染症・社会変動が結びつく転換点として議論されています。",
+      "biology": "人類集団、ペスト菌、作物生産、樹木成長、火山エアロゾルが重要です。",
+      "events": [
+        {
+          "title": "グリーンランド氷床コア",
+          "place": "グリーンランド内陸氷床",
+          "lon": -42.32,
+          "lat": 75.1,
+          "summary": "6世紀の火山性硫酸塩シグナルと寒冷化を記録し、古代末期小氷期の議論の基礎になります。",
+          "biology": "農業生産と人類社会に影響した気候背景",
+          "environment": "氷床、古大気、火山性エアロゾル",
+          "note": "参考: Sigl et al. 2015 Nature「Timing and climate forcing of volcanic eruptions for the past 2,500 years」; Büntgen et al. 2016 Nature Geoscience「Cooling and societal change during the Late Antique Little Ice Age from 536 to around 660 AD」."
+        },
+        {
+          "title": "アルタイ山脈の年輪記録",
+          "place": "ロシア・アルタイ山脈",
+          "lon": 87,
+          "lat": 50,
+          "summary": "ユーラシア内陸の樹木年輪は、6世紀中頃の夏季寒冷化と樹木成長低下を示します。",
+          "biology": "森林、牧畜社会、農耕社会の気候ストレス",
+          "environment": "高山森林と寒冷化したユーラシア内陸",
+          "note": "参考: Büntgen et al. 2016 Nature Geoscience「Cooling and societal change during the Late Antique Little Ice Age from 536 to around 660 AD」; Esper et al. 2012 Nature Climate Change「Orbital forcing of tree-ring data」."
+        },
+        {
+          "title": "アシュハイム墓地",
+          "place": "ドイツ・バイエルン州アシュハイム",
+          "lon": 11.72,
+          "lat": 48.17,
+          "summary": "6世紀の墓地人骨からペスト菌DNAが検出され、ユスティニアヌス疫病が実際の感染症イベントだったことを示します。",
+          "biology": "ペスト菌、古代DNA、人類集団",
+          "environment": "中欧の集落墓地と感染症流行",
+          "note": "参考: Harbeck et al. 2013 PLOS Pathogens「Yersinia pestis DNA from skeletal remains from the 6th century AD reveals insights into Justinianic plague」; Wagner et al. 2014 The Lancet Infectious Diseases「Yersinia pestis and the Plague of Justinian 541-543 AD」."
+        },
+        {
+          "title": "コンスタンティノープル",
+          "place": "トルコ・イスタンブール",
+          "lon": 28.98,
+          "lat": 41.01,
+          "summary": "ユスティニアヌス疫病の歴史記録が集中する東ローマ帝国の巨大都市で、感染症と都市ネットワークの関係を示します。",
+          "biology": "都市住民、ペスト菌、穀物流通、ネズミ・ノミ媒介系",
+          "environment": "港湾都市、地中海交易、穀物供給網",
+          "note": "参考: Mordechai et al. 2019 PNAS「The Justinianic Plague: an inconsequential pandemic?」; Sarris 2002 Past & Present「The Justinianic plague: origins and effects」."
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "現代の地図を背景に、古代末期の気候・疾病記録地点を示します。"
+    },
+    {
+      "id": "history-600",
+      "year": 600,
+      "label": "600年頃",
+      "title": "東ローマ帝国とサーサーン朝",
+      "category": "history",
+      "categoryLabel": "歴史地図",
+      "environment": "歴史資料をもとに推定された政治勢力圏を表示します。",
+      "biology": "生物史マーカーではなく国境・勢力圏ベクターを表示します。",
+      "file": "data/borders/world_600.min.geojson",
+      "featureCount": 166,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_600.geojson"
+    },
+    {
+      "id": "history-700",
+      "year": 700,
+      "label": "700年頃",
+      "title": "イスラーム拡大と唐帝国",
+      "category": "history",
+      "categoryLabel": "歴史地図",
+      "environment": "歴史資料をもとに推定された政治勢力圏を表示します。",
+      "biology": "生物史マーカーではなく国境・勢力圏ベクターを表示します。",
+      "file": "data/borders/world_700.min.geojson",
+      "featureCount": 221,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_700.geojson"
+    },
+    {
+      "id": "history-800",
+      "year": 800,
+      "label": "800年頃",
+      "title": "カール大帝戴冠とアッバース朝",
+      "category": "history",
+      "categoryLabel": "歴史地図",
+      "environment": "歴史資料をもとに推定された政治勢力圏を表示します。",
+      "biology": "生物史マーカーではなく国境・勢力圏ベクターを表示します。",
+      "file": "data/borders/world_800.min.geojson",
+      "featureCount": 204,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_800.geojson"
+    },
+    {
+      "id": "history-900",
+      "year": 900,
+      "label": "900年頃",
+      "title": "ヴァイキング時代と唐末",
+      "category": "history",
+      "categoryLabel": "歴史地図",
+      "environment": "歴史資料をもとに推定された政治勢力圏を表示します。",
+      "biology": "生物史マーカーではなく国境・勢力圏ベクターを表示します。",
+      "file": "data/borders/world_900.min.geojson",
+      "featureCount": 222,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_900.geojson"
+    },
+    {
+      "id": "medieval-warm-period",
+      "year": 1000,
+      "label": "1000年ごろ",
+      "title": "中世温暖期と北大西洋・太平洋移動",
+      "category": "biology",
+      "categoryLabel": "人類史",
+      "environment": "中世温暖期を含む地域的な気候変動のなかで、北大西洋、インド洋、太平洋、アメリカ内陸の交易・移住・都市化が広がりました。",
+      "biology": "農耕民、航海者、家畜、島嶼生態系、都市住民が重要です。",
+      "events": [
+        {
+          "title": "ノース人のグリーンランド入植地",
+          "place": "グリーンランド南西部",
+          "lon": -45.6,
+          "lat": 61.1,
+          "summary": "北大西洋の中世移住を代表し、気候変動、牧畜、海洋資源利用、のちの入植地放棄を考える地点です。",
+          "biology": "ノース人、ウシ・ヒツジ・ヤギ、アザラシ、海鳥",
+          "environment": "北大西洋の沿岸牧畜地と寒冷化する海洋環境",
+          "note": "参考: Dugmore et al. 2012 PNAS「Cultural adaptation, compounding vulnerabilities and conjunctures in Norse Greenland」; Arneborg et al. 2012 Journal of the North Atlantic「Norse Greenland dietary economy ca. AD 980-ca. AD 1450」."
+        },
+        {
+          "title": "ランス・オ・メドー",
+          "place": "カナダ・ニューファンドランド島北端",
+          "lon": -55.53,
+          "lat": 51.6,
+          "summary": "北米に到達したノース人の遺跡で、ヨーロッパ人による1492年以前の大西洋横断移動を示します。",
+          "biology": "ノース人、木材利用、船舶技術、沿岸資源",
+          "environment": "亜寒帯沿岸、湿地、森林",
+          "note": "参考: Kuitems et al. 2021 Nature「Evidence for European presence in the Americas in AD 1021」; Wallace 2003「L'Anse aux Meadows and Vinland」."
+        },
+        {
+          "title": "アンコール",
+          "place": "カンボジア・シェムリアップ周辺",
+          "lon": 103.86,
+          "lat": 13.41,
+          "summary": "巨大な水利ネットワークを伴う都市で、モンスーン変動、農耕、都市インフラの相互作用を示します。",
+          "biology": "都市住民、イネ、水牛、湿地生態系",
+          "environment": "熱帯モンスーン、貯水池、運河、水田",
+          "note": "参考: Evans et al. 2007 PNAS「A comprehensive archaeological map of the world's largest preindustrial settlement complex at Angkor, Cambodia」; Buckley et al. 2010 PNAS「Climate as a contributing factor in the demise of Angkor, Cambodia」."
+        },
+        {
+          "title": "カホキア",
+          "place": "米国・イリノイ州ミシシッピ川東岸",
+          "lon": -90.06,
+          "lat": 38.66,
+          "summary": "北米ミシシッピ文化の大都市で、トウモロコシ農耕、墳丘建設、河川交易の拡大を示します。",
+          "biology": "都市住民、トウモロコシ、シカ、魚類、栽培植物",
+          "environment": "ミシシッピ氾濫原、湿地、農地",
+          "note": "参考: Pauketat 2004「Ancient Cahokia and the Mississippians」; Benson et al. 2009 Quaternary Science Reviews「Possible impacts of early-11th-, middle-12th-, and late-13th-century droughts on western Native Americans and the Mississippian Cahokians」."
+        },
+        {
+          "title": "ラパ・ヌイ",
+          "place": "チリ・イースター島",
+          "lon": -109.35,
+          "lat": -27.12,
+          "summary": "ポリネシア人の遠洋移住と島嶼環境改変を示す地点で、森林減少、農耕、石像建設の関係が議論されています。",
+          "biology": "ポリネシア人、サツマイモ、ニワトリ、ヤシ林、海鳥",
+          "environment": "亜熱帯島嶼、火山地形、森林減少",
+          "note": "参考: Hunt & Lipo 2006 Science「Late colonization of Easter Island」; Mieth & Bork 2005 Rapa Nui Journal「History, origin and extent of soil erosion on Easter Island」."
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "現代の地図を背景に、中世の気候・移住・都市化の代表地点を示します。"
+    },
+    {
+      "id": "history-1000",
+      "year": 1000,
+      "label": "1000年頃",
+      "title": "北宋の成立と中世諸王国",
+      "category": "history",
+      "categoryLabel": "歴史地図",
+      "environment": "歴史資料をもとに推定された政治勢力圏を表示します。",
+      "biology": "生物史マーカーではなく国境・勢力圏ベクターを表示します。",
+      "file": "data/borders/world_1000.min.geojson",
+      "featureCount": 234,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1000.geojson"
+    },
+    {
+      "id": "history-1100",
+      "year": 1100,
+      "label": "1100年頃",
+      "title": "十字軍前夜とセルジューク朝",
+      "category": "history",
+      "categoryLabel": "歴史地図",
+      "environment": "歴史資料をもとに推定された政治勢力圏を表示します。",
+      "biology": "生物史マーカーではなく国境・勢力圏ベクターを表示します。",
+      "file": "data/borders/world_1100.min.geojson",
+      "featureCount": 220,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1100.geojson"
+    },
+    {
+      "id": "history-1200",
+      "year": 1200,
+      "label": "1200年頃",
+      "title": "モンゴル帝国成立前夜",
+      "category": "history",
+      "categoryLabel": "歴史地図",
+      "environment": "歴史資料をもとに推定された政治勢力圏を表示します。",
+      "biology": "生物史マーカーではなく国境・勢力圏ベクターを表示します。",
+      "file": "data/borders/world_1200.min.geojson",
+      "featureCount": 242,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1200.geojson"
+    },
+    {
+      "id": "history-1279",
+      "year": 1279,
+      "label": "1279年頃",
+      "title": "元による中国統一",
+      "category": "history",
+      "categoryLabel": "歴史地図",
+      "environment": "歴史資料をもとに推定された政治勢力圏を表示します。",
+      "biology": "生物史マーカーではなく国境・勢力圏ベクターを表示します。",
+      "file": "data/borders/world_1279.min.geojson",
+      "featureCount": 213,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1279.geojson"
+    },
+    {
+      "id": "history-1300",
+      "year": 1300,
+      "label": "1300年頃",
+      "title": "モンゴル後継国家と中世世界",
+      "category": "history",
+      "categoryLabel": "歴史地図",
+      "environment": "歴史資料をもとに推定された政治勢力圏を表示します。",
+      "biology": "生物史マーカーではなく国境・勢力圏ベクターを表示します。",
+      "file": "data/borders/world_1300.min.geojson",
+      "featureCount": 205,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1300.geojson"
+    },
+    {
+      "id": "black-death-little-ice-age",
+      "year": 1347,
+      "label": "1347年ごろ",
+      "tickLabel": "1347",
+      "title": "黒死病の拡大と中世後期の危機",
+      "category": "biology",
+      "categoryLabel": "疾病・気候史",
+      "environment": "14世紀のペスト流行、寒冷化、飢饉、交易網の拡大は、1492年以前のユーラシア・北アフリカ世界を大きく再編しました。",
+      "biology": "ペスト菌、人類集団、ネズミ・ノミ媒介系、農地放棄、森林回復が重要です。",
+      "events": [
+        {
+          "title": "イシク・クル湖畔墓地",
+          "place": "キルギス・チュイ渓谷からイシク・クル周辺",
+          "lon": 75.2,
+          "lat": 42.7,
+          "summary": "1338-1339年の墓碑と古代DNAから、黒死病直前のペスト菌系統に近い流行が中央ユーラシアにあったことが示されました。",
+          "biology": "ペスト菌、交易路上の人類集団、古代DNA",
+          "environment": "天山山脈北麓の交易路と牧畜・農耕地",
+          "note": "参考: Spyrou et al. 2022 Nature「The source of the Black Death in fourteenth-century central Eurasia」."
+        },
+        {
+          "title": "カッファ",
+          "place": "クリミア半島・フェオドシヤ",
+          "lon": 35.38,
+          "lat": 45.03,
+          "summary": "黒海交易網と地中海世界を結ぶ港湾で、14世紀半ばのペスト拡散経路を考える代表地点です。",
+          "biology": "ペスト菌、港湾都市住民、交易動物、穀物流通",
+          "environment": "黒海港湾、交易路、都市衛生環境",
+          "note": "参考: Wheelis 2002 Emerging Infectious Diseases「Biological warfare at the 1346 siege of Caffa」; Barker 2021「Laying the Corpses to Rest: Grain, Embargoes, and Yersinia pestis in the Black Sea」."
+        },
+        {
+          "title": "イースト・スミスフィールド墓地",
+          "place": "英国・ロンドン",
+          "lon": -0.07,
+          "lat": 51.51,
+          "summary": "黒死病の大量埋葬墓地からペスト菌ゲノムが復元され、14世紀の病原体進化を直接調べられます。",
+          "biology": "ペスト菌、都市住民、古代DNA",
+          "environment": "中世都市、港湾、人口密集地",
+          "note": "参考: Bos et al. 2011 Nature「A draft genome of Yersinia pestis from victims of the Black Death」; Schuenemann et al. 2011 PNAS「Targeted enrichment of ancient pathogens yielding the pPCP1 plasmid of Yersinia pestis from victims of the Black Death」."
+        },
+        {
+          "title": "ヨーロッパ山岳氷河記録",
+          "place": "アルプス周辺",
+          "lon": 8,
+          "lat": 46.5,
+          "summary": "14世紀以降の氷河前進と寒冷化は、小氷期に向かう気候変動を示し、農業・人口・土地利用に影響しました。",
+          "biology": "農耕社会、森林、家畜、寒冷化に伴う土地利用変化",
+          "environment": "山岳氷河、寒冷化、降水変動",
+          "note": "参考: Holzhauser, Magny & Zumbühl 2005 The Holocene「Glacier and lake-level variations in west-central Europe over the last 3500 years」; Wanner et al. 2008 Quaternary Science Reviews「Mid- to Late Holocene climate change: an overview」."
+        }
+      ],
+      "file": "data/borders/world_2010.min.geojson",
+      "featureCount": 227,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_2010.geojson",
+      "mapNote": "現代の地図を背景に、14世紀の疾病・気候変動の代表地点を示します。"
+    },
+    {
+      "id": "history-1400",
+      "year": 1400,
+      "label": "1400年頃",
+      "title": "ティムール朝と明初の時代",
+      "category": "history",
+      "categoryLabel": "歴史地図",
+      "environment": "歴史資料をもとに推定された政治勢力圏を表示します。",
+      "biology": "生物史マーカーではなく国境・勢力圏ベクターを表示します。",
+      "file": "data/borders/world_1400.min.geojson",
+      "featureCount": 203,
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1400.geojson"
+    },
+    {
       "id": "history-1492",
       "year": 1492,
       "label": "1492年",
       "tickLabel": "1492",
-      "title": "1492年の国境",
+      "title": "コロンブス航海と大西洋世界の転換",
       "category": "history",
       "categoryLabel": "歴史地図",
       "environment": "近世初期の政治境界を表示します。",
@@ -1135,7 +3719,7 @@
       "id": "history-1815",
       "year": 1815,
       "label": "1815年",
-      "title": "1815年の国境",
+      "title": "ウィーン体制の成立",
       "category": "history",
       "categoryLabel": "歴史地図",
       "environment": "ナポレオン戦争後の政治境界を表示します。",
@@ -1148,7 +3732,7 @@
       "id": "history-1880",
       "year": 1880,
       "label": "1880年",
-      "title": "1880年の国境",
+      "title": "アフリカ分割期の帝国主義",
       "category": "history",
       "categoryLabel": "歴史地図",
       "environment": "19世紀後半の政治境界を表示します。",
@@ -1161,7 +3745,7 @@
       "id": "history-1914",
       "year": 1914,
       "label": "1914年",
-      "title": "1914年の国境",
+      "title": "第一次世界大戦前夜",
       "category": "history",
       "categoryLabel": "歴史地図",
       "environment": "第一次世界大戦前後の政治境界を表示します。",
@@ -1174,7 +3758,7 @@
       "id": "history-1938",
       "year": 1938,
       "label": "1938年",
-      "title": "1938年の国境",
+      "title": "第二次世界大戦前夜",
       "category": "history",
       "categoryLabel": "歴史地図",
       "environment": "第二次世界大戦直前の政治境界を表示します。",
@@ -1187,7 +3771,7 @@
       "id": "history-1945",
       "year": 1945,
       "label": "1945年",
-      "title": "1945年の国境",
+      "title": "第二次世界大戦終結と戦後秩序",
       "category": "history",
       "categoryLabel": "歴史地図",
       "environment": "第二次世界大戦末期の政治境界を表示します。",
@@ -1200,7 +3784,7 @@
       "id": "history-1960",
       "year": 1960,
       "label": "1960年",
-      "title": "1960年の国境",
+      "title": "アフリカの年と脱植民地化",
       "category": "history",
       "categoryLabel": "歴史地図",
       "environment": "脱植民地化期の政治境界を表示します。",
@@ -1213,7 +3797,7 @@
       "id": "history-1994",
       "year": 1994,
       "label": "1994年",
-      "title": "1994年の国境",
+      "title": "冷戦後秩序と南アフリカ民主化",
       "category": "history",
       "categoryLabel": "歴史地図",
       "environment": "冷戦後の政治境界を表示します。",
@@ -1227,7 +3811,7 @@
       "year": 2010,
       "label": "2010年",
       "tickLabel": "2010",
-      "title": "2010年の国境",
+      "title": "アラブの春前夜の現代世界",
       "category": "history",
       "categoryLabel": "歴史地図",
       "environment": "現代に近い政治境界を表示します。",
