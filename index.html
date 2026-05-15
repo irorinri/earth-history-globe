@@ -6,17 +6,31 @@
     <meta name="theme-color" content="#f2f2f0" />
     <title>地球型歴史地図</title>
     <link rel="icon" href="data:," />
-    <link rel="stylesheet" href="./styles.css?v=20260429-4" />
+    <link rel="stylesheet" href="./styles.css?v=20260429-9" />
   </head>
   <body>
     <main class="app-shell">
       <div id="globe-stage" class="globe-stage" aria-label="地球型歴史地図"></div>
 
       <nav class="toolbar" aria-label="地球操作">
-        <button id="zoom-out" type="button" title="縮小" aria-label="縮小">-</button>
-        <button id="zoom-in" type="button" title="拡大" aria-label="拡大">+</button>
-        <button id="reset-view" type="button" title="表示を戻す" aria-label="表示を戻す">⌂</button>
-        <button id="auto-rotate" type="button" title="自転" aria-label="自転">↻</button>
+        <div class="rotate-tools">
+          <button id="auto-rotate" type="button" title="回転を再生" aria-label="回転を再生" aria-pressed="false">▶</button>
+          <button id="rotation-settings" type="button" title="再生設定" aria-label="再生設定" aria-expanded="false" aria-controls="rotation-settings-panel">⚙</button>
+          <div id="rotation-settings-panel" class="rotation-settings-panel" hidden>
+            <button class="rotation-mode-button" type="button" data-rotation-mode="standard" aria-pressed="true">標準</button>
+            <button class="rotation-mode-button" type="button" data-rotation-mode="land" aria-pressed="false">陸地優先</button>
+            <button class="rotation-mode-button" type="button" data-rotation-mode="wave" aria-pressed="false">波形</button>
+            <button class="rotation-mode-button" type="button" data-rotation-mode="land-wave" aria-pressed="false">海避け波形</button>
+            <div class="rotation-speed-control">
+              <div class="rotation-speed-head">
+                <label for="rotation-speed">速度</label>
+                <output id="rotation-speed-value" for="rotation-speed">1.0x</output>
+              </div>
+              <input id="rotation-speed" class="rotation-speed-range" type="range" min="0.4" max="2.2" step="0.1" value="1" aria-label="地球の回転速度" />
+            </div>
+          </div>
+        </div>
+        <button id="random-pick" type="button" title="ランダム選択を開始" aria-label="ランダム選択を開始" aria-pressed="false">✦</button>
         <button id="name-language" type="button" title="地名を日本語表示に切り替え" aria-label="地名を日本語表示に切り替え" aria-pressed="false">あ</button>
       </nav>
 
@@ -29,7 +43,25 @@
         <div id="info-body" class="info-body"></div>
       </aside>
 
+      <svg id="selection-link" class="selection-link" aria-hidden="true" focusable="false" hidden>
+        <line id="selection-link-line" />
+      </svg>
+
       <section class="timeline" aria-label="時代スライダー">
+        <button id="timeline-play" type="button" title="時代を再生" aria-label="時代を再生" aria-pressed="false">▶</button>
+        <div class="timeline-settings-tools">
+          <button id="timeline-settings" type="button" title="スライダー再生設定" aria-label="スライダー再生設定" aria-expanded="false" aria-controls="timeline-settings-panel">⚙</button>
+          <div id="timeline-settings-panel" class="timeline-settings-panel" hidden>
+            <button id="timeline-reverse" class="timeline-direction-button" type="button" aria-pressed="false">逆再生</button>
+            <div class="timeline-speed-control">
+              <div class="timeline-speed-head">
+                <label for="timeline-speed">再生速度</label>
+                <output id="timeline-speed-value" for="timeline-speed">1.0x</output>
+              </div>
+              <input id="timeline-speed" class="timeline-speed-range" type="range" min="0.25" max="4" step="0.25" value="1" aria-label="スライダー再生速度" />
+            </div>
+          </div>
+        </div>
         <button id="era-prev" type="button" title="前の時代" aria-label="前の時代">‹</button>
         <div class="timeline-main">
           <div class="timeline-head">
@@ -44,6 +76,6 @@
       <div id="loading" class="loading" hidden>読み込み中</div>
     </main>
 
-    <script type="module" src="./src/app.js?v=20260429-9"></script>
+    <script type="module" src="./src/app.js?v=20260429-25"></script>
   </body>
 </html>

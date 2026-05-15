@@ -1,0 +1,40 @@
+{
+  "name": "historical-globe-electron",
+  "version": "1.0.0",
+  "private": true,
+  "productName": "Chikyu-gata Rekishi Chizu",
+  "description": "Static historical globe map wrapped in Electron.",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win portable"
+  },
+  "build": {
+    "appId": "local.historical-globe-map",
+    "artifactName": "historical-globe-map-${version}.${ext}",
+    "asar": false,
+    "files": [
+      "index.html",
+      "styles.css",
+      "src/**/*",
+      "data/**/*",
+      "vendor/**/*",
+      "electron/**/*",
+      "package.json",
+      "THIRD_PARTY_NOTICES.md"
+    ],
+    "win": {
+      "signAndEditExecutable": false,
+      "target": [
+        "portable"
+      ]
+    },
+    "directories": {
+      "output": "release"
+    }
+  },
+  "devDependencies": {
+    "electron": "^42.0.1",
+    "electron-builder": "^26.8.1"
+  }
+}

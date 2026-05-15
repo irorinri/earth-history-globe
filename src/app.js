@@ -10,6 +10,34 @@ const MAX_BORDER_SEGMENT_DEGREES = 1.25;
 const MIN_DISTANCE = 1.35;
 const MAX_DISTANCE = 4.25;
 const START_DISTANCE = 2.75;
+const AUTO_ROTATE_SPEED = 0.28;
+const ROTATION_SPEED_MIN = 0.4;
+const ROTATION_SPEED_MAX = 2.2;
+const TIMELINE_SPEED_MIN = 0.25;
+const TIMELINE_SPEED_MAX = 4;
+const AUTO_ROTATE_ORBIT_SECONDS_AT_60FPS = 60;
+const TIMELINE_PLAYBACK_SLOWDOWN = 10;
+const RANDOM_PICK_INTERVAL_MS = 10000;
+const RANDOM_PICK_TRIES = 80;
+const RANDOM_LAND_PICK_TRIES = 240;
+const LAND_ROTATION_TARGET_TRIES = 420;
+const LAND_ROTATION_BLEND = 0.42;
+const WAVE_ROTATION_LATITUDE = 24;
+const WAVE_ROTATION_PHASE_SPEED = 0.52;
+const LAND_WAVE_BLEND = 0.68;
+const LAND_WAVE_SEARCH_INTERVAL_MS = 360;
+const LAND_WAVE_DIRECT_LAND_DISTANCE = 34;
+const LAND_WAVE_LON_OFFSETS = [0, -5, 5, -11, 11, -20, 20, -34, 34, -54, 54, -82, 82, -116, 116, -152, 152, 180];
+const LAND_WAVE_LAT_OFFSETS = [0, -4, 4, -9, 9, -16, 16, -25, 25, -36, 36, -50, 50, -64, 64];
+const LAND_WAVE_DETOUR_LON_OFFSETS = [0, 4, 8, 14, 22, 34, 50, 70, 94, 122];
+const LAND_WAVE_DETOUR_LAT_OFFSETS = [0, -4, 4, -9, 9, -16, 16, -25, 25, -38, 38, -54, 54];
+const LAND_WAVE_WAVE_WEIGHT = 0.62;
+const LAND_WAVE_CONTINUITY_WEIGHT = 0.74;
+const LAND_WAVE_MAX_FORWARD_DEGREES = 58;
+const LAND_WAVE_FEATURE_SEARCH_RADIUS = 124;
+const LAND_WAVE_RING_SAMPLE_LIMIT = 96;
+const LAND_WAVE_STALL_START_DEGREES = 16;
+const LAND_WAVE_STALL_WEIGHT = 0.8;
 const EARLY_BOUNDARY_OPACITY = 0.28;
 const EARLY_BOUNDARY_END_ID = 'classical-empires';
 const HUMAN_ERA_START_ID = 'early-hominin-lineage';
@@ -260,14 +288,31 @@ const PLACE_TERM_JA = new Map([
 ]);
 
 const stage = document.querySelector('#globe-stage');
+const appShell = document.querySelector('.app-shell');
 const loading = document.querySelector('#loading');
 const detailTierEl = document.querySelector('#detail-tier');
 const featureCountEl = document.querySelector('#feature-count');
+const infoPanel = document.querySelector('.info-panel');
 const infoTitle = document.querySelector('#info-title');
 const infoBody = document.querySelector('#info-body');
 const eraTitle = document.querySelector('#era-title');
 const yearReadout = document.querySelector('#year-readout');
 const eraRange = document.querySelector('#era-range');
+const selectionLink = document.querySelector('#selection-link');
+const selectionLinkLine = document.querySelector('#selection-link-line');
+const timelinePlayButton = document.querySelector('#timeline-play');
+const timelineSettingsButton = document.querySelector('#timeline-settings');
+const timelineSettingsPanel = document.querySelector('#timeline-settings-panel');
+const timelineReverseButton = document.querySelector('#timeline-reverse');
+const timelineSpeedRange = document.querySelector('#timeline-speed');
+const timelineSpeedValue = document.querySelector('#timeline-speed-value');
+const autoRotateButton = document.querySelector('#auto-rotate');
+const rotationSettingsButton = document.querySelector('#rotation-settings');
+const rotationSettingsPanel = document.querySelector('#rotation-settings-panel');
+const rotationModeButtons = [...document.querySelectorAll('.rotation-mode-button')];
+const rotationSpeedRange = document.querySelector('#rotation-speed');
+const rotationSpeedValue = document.querySelector('#rotation-speed-value');
+const randomPickButton = document.querySelector('#random-pick');
 const nameLanguageButton = document.querySelector('#name-language');
 
 const state = {
@@ -325,14 +370,14 @@ controls.rotateSpeed = 0.62;
 controls.zoomSpeed = 0.82;
 controls.minDistance = MIN_DISTANCE;
 controls.maxDistance = MAX_DISTANCE;
-controls.autoRotateSpeed = 0.45;
+controls.autoRotateSpeed = AUTO_ROTATE_SPEED;
 
 scene.add(new THREE.HemisphereLight(0xffffff, 0xe8e8e3, 2.85));
 
 const globe = new THREE.Mesh(
   new THREE.SphereGeometry(RADIUS, 96, 48),
   new THREE.MeshLambertMaterial({
-    color: 0xeeeeee,
+    color: 0xf9f9f9,
   }),
 );
 scene.add(globe);
@@ -356,10 +401,27 @@ scene.add(selectedGroup);
 
 const raycaster = new THREE.Raycaster();
 const pointer = new THREE.Vector2();
+const projectedSelectionPoint = new THREE.Vector3();
 let pointerDown = null;
 const activeTouchPointers = new Set();
 let hadMultiTouchGesture = false;
 let pendingEraLoad = 0;
+let autoRotatePlaying = false;
+let rotationMode = 'standard';
+let rotationSpeedMultiplier = 1;
+let rotationLastTime = performance.now();
+let landRotationTarget = null;
+let waveRotationLon = null;
+let waveRotationPhase = 0;
+let landWaveRotationTarget = null;
+let landWaveSearchTime = 0;
+let randomPickTimer = 0;
+let timelinePlaying = false;
+let timelineDirection = 1;
+let timelineSpeedMultiplier = 1;
+let timelinePlayTimer = 0;
+let timelinePlayToken = 0;
+const pendingEraFetches = new Map();
 
 init().catch((error) => {
   console.error(error);
@@ -384,13 +446,33 @@ async function init() {
 }
 
 function wireUi() {
-  document.querySelector('#zoom-in').addEventListener('click', () => zoomBy(0.82));
-  document.querySelector('#zoom-out').addEventListener('click', () => zoomBy(1.18));
-  document.querySelector('#reset-view').addEventListener('click', resetView);
-  document.querySelector('#auto-rotate').addEventListener('click', (event) => {
-    controls.autoRotate = !controls.autoRotate;
-    event.currentTarget.dataset.active = String(controls.autoRotate);
+  autoRotateButton.addEventListener('click', () => {
+    autoRotatePlaying = !autoRotatePlaying;
+    applyRotationPlayback();
+    updateAutoRotateButton();
   });
+  rotationSettingsButton.addEventListener('click', () => {
+    const expanded = rotationSettingsPanel.hidden;
+    rotationSettingsPanel.hidden = !expanded;
+    rotationSettingsButton.setAttribute('aria-expanded', String(expanded));
+  });
+  rotationModeButtons.forEach((button) => {
+    button.addEventListener('click', () => setRotationMode(button.dataset.rotationMode));
+  });
+  rotationSpeedRange.addEventListener('input', () =>
+    setRotationSpeedMultiplier(Number(rotationSpeedRange.value)),
+  );
+  randomPickButton.addEventListener('click', toggleRandomPick);
+  timelinePlayButton.addEventListener('click', toggleTimelinePlayback);
+  timelineSettingsButton.addEventListener('click', () => {
+    const expanded = timelineSettingsPanel.hidden;
+    timelineSettingsPanel.hidden = !expanded;
+    timelineSettingsButton.setAttribute('aria-expanded', String(expanded));
+  });
+  timelineReverseButton.addEventListener('click', () => setTimelineDirection(timelineDirection * -1));
+  timelineSpeedRange.addEventListener('input', () =>
+    setTimelineSpeedMultiplier(Number(timelineSpeedRange.value)),
+  );
   nameLanguageButton.addEventListener('click', () => {
     state.japaneseNames = !state.japaneseNames;
     updateNameLanguageButton();
@@ -405,6 +487,7 @@ function wireUi() {
     updateYearReadout();
     clearTimeout(pendingEraLoad);
     pendingEraLoad = window.setTimeout(() => loadEra(state.eraIndex), 90);
+    if (isTimelinePlaying()) preloadEra(nextLoopingEraIndex());
   });
 
   renderer.domElement.addEventListener('pointerdown', (event) => {
@@ -424,6 +507,11 @@ function wireUi() {
       pointerId: event.pointerId,
       pointerType: event.pointerType,
     };
+    landRotationTarget = null;
+    waveRotationLon = null;
+    landWaveRotationTarget = null;
+    landWaveSearchTime = 0;
+    rotationLastTime = performance.now();
   });
 
   renderer.domElement.addEventListener('pointerup', (event) => {
@@ -461,7 +549,29 @@ function wireUi() {
 
   renderer.domElement.addEventListener('contextmenu', (event) => event.preventDefault());
 
+  document.addEventListener('pointerdown', (event) => {
+    if (!rotationSettingsPanel.hidden && !event.target.closest('.rotate-tools')) {
+      closeRotationSettings();
+    }
+    if (!timelineSettingsPanel.hidden && !event.target.closest('.timeline-settings-tools')) {
+      closeTimelineSettings();
+    }
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      closeRotationSettings();
+      closeTimelineSettings();
+    }
+  });
+
   window.addEventListener('resize', resize);
+  updateAutoRotateButton();
+  updateRotationModeButtons();
+  updateRotationSpeedControl();
+  updateRandomPickButton();
+  updateTimelinePlayButton();
+  updateTimelineDirectionButton();
+  updateTimelineSpeedControl();
   updateNameLanguageButton();
 }
 
@@ -477,7 +587,9 @@ async function loadEra(index) {
     if (era.file) {
       geojson = state.cache.get(era.file);
       if (!geojson) {
-        geojson = await fetchJson(era.file);
+        const pendingFetch = pendingEraFetches.get(era.file);
+        geojson = pendingFetch ? await pendingFetch : await fetchJson(era.file);
+        if (!geojson) geojson = await fetchJson(era.file);
         state.cache.set(era.file, geojson);
       }
     }
@@ -490,6 +602,7 @@ async function loadEra(index) {
     state.selectedEvent = null;
     state.selectedLonLat = null;
     selectedGroup.clear();
+    updateSelectionLink();
 
     if (state.landMesh) {
       state.landMesh.geometry.dispose();
@@ -546,9 +659,31 @@ async function loadEra(index) {
   }
 }
 
+function preloadEra(index) {
+  const era = state.eras[index];
+  if (!era?.file || state.cache.has(era.file)) return Promise.resolve();
+  if (pendingEraFetches.has(era.file)) return pendingEraFetches.get(era.file);
+
+  const request = fetchJson(era.file)
+    .then((geojson) => {
+      state.cache.set(era.file, geojson);
+      return geojson;
+    })
+    .catch((error) => {
+      console.warn(`時代データの先読みをスキップしました: ${era.file}`, error);
+      return null;
+    })
+    .finally(() => pendingEraFetches.delete(era.file));
+
+  pendingEraFetches.set(era.file, request);
+  return request;
+}
+
 function animate() {
+  updateRotationMode();
   controls.update();
   updateDetailTier(false);
+  updateSelectionLink();
   renderer.render(scene, camera);
   requestAnimationFrame(animate);
 }
@@ -560,29 +695,21 @@ function resize() {
   camera.updateProjectionMatrix();
   renderer.setSize(width, height);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
-}
-
-function zoomBy(factor) {
-  const offset = camera.position.clone().sub(controls.target);
-  const distance = THREE.MathUtils.clamp(offset.length() * factor, MIN_DISTANCE, MAX_DISTANCE);
-  camera.position.copy(controls.target.clone().add(offset.normalize().multiplyScalar(distance)));
-  controls.update();
-  updateDetailTier(true);
-}
-
-function resetView() {
-  camera.position.set(0, 0.18, START_DISTANCE);
-  controls.target.set(0, 0, 0);
-  controls.update();
-  updateDetailTier(true);
+  updateSelectionLink();
 }
 
 function stepEra(delta) {
   const next = THREE.MathUtils.clamp(state.eraIndex + delta, 0, state.eras.length - 1);
-  if (next === state.eraIndex) return;
+  setEraIndex(next);
+}
+
+function setEraIndex(next) {
+  next = THREE.MathUtils.clamp(next, 0, state.eras.length - 1);
+  if (next === state.eraIndex) return Promise.resolve();
   state.eraIndex = next;
   eraRange.value = String(next);
-  loadEra(next);
+  clearTimeout(pendingEraLoad);
+  return loadEra(next);
 }
 
 function displayEraTime(era) {
@@ -624,6 +751,490 @@ function updateYearReadout() {
   eraTitle.textContent = era ? displayEraTitle(era) : '地球型歴史地図';
   yearReadout.value = era ? displayEraTime(era) : '';
   yearReadout.textContent = era ? displayEraTime(era) : '';
+}
+
+function updateAutoRotateButton() {
+  autoRotateButton.dataset.active = String(autoRotatePlaying);
+  autoRotateButton.setAttribute('aria-pressed', String(autoRotatePlaying));
+  const label = autoRotatePlaying ? '回転を停止' : '回転を再生';
+  autoRotateButton.title = label;
+  autoRotateButton.setAttribute('aria-label', label);
+  autoRotateButton.textContent = autoRotatePlaying ? '⏸' : '▶';
+}
+
+function applyRotationPlayback() {
+  controls.autoRotate = autoRotatePlaying && rotationMode === 'standard';
+  rotationLastTime = performance.now();
+  landRotationTarget = null;
+  waveRotationLon = null;
+  landWaveRotationTarget = null;
+  landWaveSearchTime = 0;
+}
+
+function setRotationMode(mode) {
+  if (!['standard', 'land', 'wave', 'land-wave'].includes(mode)) return;
+  rotationMode = mode;
+  applyRotationPlayback();
+  updateRotationModeButtons();
+  closeRotationSettings();
+}
+
+function updateRotationModeButtons() {
+  for (const button of rotationModeButtons) {
+    const active = button.dataset.rotationMode === rotationMode;
+    button.dataset.active = String(active);
+    button.setAttribute('aria-pressed', String(active));
+  }
+}
+
+function setRotationSpeedMultiplier(multiplier) {
+  if (!Number.isFinite(multiplier)) return;
+
+  rotationSpeedMultiplier = THREE.MathUtils.clamp(
+    multiplier,
+    ROTATION_SPEED_MIN,
+    ROTATION_SPEED_MAX,
+  );
+  controls.autoRotateSpeed = AUTO_ROTATE_SPEED * rotationSpeedMultiplier;
+  rotationLastTime = performance.now();
+  updateRotationSpeedControl();
+
+  if (isTimelinePlaying()) scheduleTimelinePlayback(timelinePlayToken);
+}
+
+function updateRotationSpeedControl() {
+  rotationSpeedRange.value = rotationSpeedMultiplier.toFixed(1);
+  rotationSpeedValue.textContent = `${rotationSpeedMultiplier.toFixed(1)}x`;
+  rotationSpeedRange.setAttribute('aria-valuetext', `${rotationSpeedMultiplier.toFixed(1)}倍`);
+
+  const progress =
+    ((rotationSpeedMultiplier - ROTATION_SPEED_MIN) /
+      Math.max(0.001, ROTATION_SPEED_MAX - ROTATION_SPEED_MIN)) *
+    100;
+  rotationSpeedRange.style.setProperty('--rotation-speed-progress', `${progress.toFixed(1)}%`);
+}
+
+function closeRotationSettings() {
+  rotationSettingsPanel.hidden = true;
+  rotationSettingsButton.setAttribute('aria-expanded', 'false');
+}
+
+function updateRotationMode() {
+  const now = performance.now();
+  const deltaSeconds = Math.min(0.08, Math.max(0, (now - rotationLastTime) / 1000));
+  rotationLastTime = now;
+
+  if (!autoRotatePlaying || rotationMode === 'standard') return;
+  if (pointerDown) return;
+
+  if (rotationMode === 'land') {
+    updateLandRotation(deltaSeconds);
+  } else if (rotationMode === 'wave') {
+    updateWaveRotation(deltaSeconds);
+  } else if (rotationMode === 'land-wave') {
+    updateLandWaveRotation(deltaSeconds, now);
+  }
+}
+
+function updateLandRotation(deltaSeconds) {
+  const offset = camera.position.clone().sub(controls.target);
+  const distance = offset.length();
+  if (distance <= 0) return;
+
+  const currentDirection = offset.normalize();
+  let targetDirection = landRotationTarget
+    ? lonLatToVector3(landRotationTarget.lon, landRotationTarget.lat, 1).normalize()
+    : null;
+
+  if (!targetDirection || currentDirection.dot(targetDirection) > Math.cos(4 * DEG)) {
+    landRotationTarget = randomLandRotationTarget();
+    targetDirection = landRotationTarget
+      ? lonLatToVector3(landRotationTarget.lon, landRotationTarget.lat, 1).normalize()
+      : null;
+  }
+
+  if (!targetDirection) {
+    rotateCameraLongitude(deltaSeconds);
+    return;
+  }
+
+  const blend = 1 - Math.exp(-LAND_ROTATION_BLEND * deltaSeconds);
+  const nextDirection = currentDirection.lerp(targetDirection, blend).normalize();
+  camera.position.copy(controls.target.clone().add(nextDirection.multiplyScalar(distance)));
+}
+
+function updateWaveRotation(deltaSeconds) {
+  const offset = camera.position.clone().sub(controls.target);
+  const distance = offset.length();
+  if (distance <= 0) return;
+
+  const current = vectorToLonLat(offset);
+  if (!Number.isFinite(waveRotationLon)) {
+    waveRotationLon = current.lon;
+    waveRotationPhase = Math.asin(
+      THREE.MathUtils.clamp(current.lat / WAVE_ROTATION_LATITUDE, -1, 1),
+    );
+  }
+
+  waveRotationLon = normalizeLon(waveRotationLon + rotationDegreesPerSecond() * deltaSeconds);
+  waveRotationPhase += WAVE_ROTATION_PHASE_SPEED * deltaSeconds;
+  const nextLat = WAVE_ROTATION_LATITUDE * Math.sin(waveRotationPhase);
+  camera.position.copy(
+    controls.target.clone().add(lonLatToVector3(waveRotationLon, nextLat, distance)),
+  );
+}
+
+function updateLandWaveRotation(deltaSeconds, now) {
+  const offset = camera.position.clone().sub(controls.target);
+  const distance = offset.length();
+  if (distance <= 0) return;
+
+  const current = vectorToLonLat(offset);
+  if (!Number.isFinite(waveRotationLon)) {
+    waveRotationLon = current.lon;
+    waveRotationPhase = Math.asin(
+      THREE.MathUtils.clamp(current.lat / WAVE_ROTATION_LATITUDE, -1, 1),
+    );
+  }
+
+  waveRotationLon = normalizeLon(waveRotationLon + rotationDegreesPerSecond() * deltaSeconds);
+  waveRotationPhase += WAVE_ROTATION_PHASE_SPEED * deltaSeconds;
+
+  const waveTarget = {
+    lon: waveRotationLon,
+    lat: WAVE_ROTATION_LATITUDE * Math.sin(waveRotationPhase),
+  };
+
+  if (
+    findLandFeatureAt(waveTarget.lon, waveTarget.lat) &&
+    (!landWaveRotationTarget ||
+      greatCircleDistance(
+        landWaveRotationTarget.lon,
+        landWaveRotationTarget.lat,
+        waveTarget.lon,
+        waveTarget.lat,
+      ) <= LAND_WAVE_DIRECT_LAND_DISTANCE)
+  ) {
+    landWaveRotationTarget = waveTarget;
+    landWaveSearchTime = now;
+  } else if (!landWaveRotationTarget || now - landWaveSearchTime >= LAND_WAVE_SEARCH_INTERVAL_MS) {
+    landWaveRotationTarget = nearestLandWaveTarget(waveTarget, landWaveRotationTarget);
+    landWaveSearchTime = now;
+  }
+
+  const target = landWaveRotationTarget ?? waveTarget;
+  const currentDirection = offset.normalize();
+  const targetDirection = lonLatToVector3(target.lon, target.lat, 1).normalize();
+  const blend = 1 - Math.exp(-LAND_WAVE_BLEND * deltaSeconds);
+  const nextDirection = currentDirection.lerp(targetDirection, blend).normalize();
+  camera.position.copy(controls.target.clone().add(nextDirection.multiplyScalar(distance)));
+}
+
+function rotateCameraLongitude(deltaSeconds) {
+  const offset = camera.position.clone().sub(controls.target);
+  const distance = offset.length();
+  if (distance <= 0) return;
+
+  const current = vectorToLonLat(offset);
+  const nextLon = normalizeLon(current.lon + rotationDegreesPerSecond() * deltaSeconds);
+  camera.position.copy(
+    controls.target.clone().add(lonLatToVector3(nextLon, current.lat, distance)),
+  );
+}
+
+function rotationDegreesPerSecond() {
+  return 6 * Math.abs(controls.autoRotateSpeed || AUTO_ROTATE_SPEED);
+}
+
+function randomLandRotationTarget() {
+  for (let attempt = 0; attempt < LAND_ROTATION_TARGET_TRIES; attempt += 1) {
+    const feature = randomFeature(state.geojson);
+    const lonLat = feature ? randomLonLatInFeature(feature) : null;
+    if (lonLat) return lonLat;
+  }
+  return null;
+}
+
+function nearestLandWaveTarget(waveTarget, previousTarget = null) {
+  const candidates = landWaveCandidates(waveTarget, previousTarget);
+  let best = null;
+  let bestScore = Infinity;
+
+  for (const candidate of candidates) {
+    const score = landWaveCandidateScore(candidate, waveTarget, previousTarget);
+    if (score < bestScore) {
+      bestScore = score;
+      best = candidate;
+    }
+  }
+
+  return best ?? previousTarget ?? randomLandRotationTarget();
+}
+
+function landWaveCandidates(waveTarget, previousTarget = null) {
+  const candidates = new Map();
+  const add = (lon, lat, requireLand = true) => {
+    if (!Number.isFinite(lon) || !Number.isFinite(lat)) return;
+    lon = normalizeLon(lon);
+    lat = THREE.MathUtils.clamp(lat, -72, 72);
+    if (requireLand && !findLandFeatureAt(lon, lat)) return;
+
+    const key = `${Math.round((lon + 180) * 10)}:${Math.round((lat + 90) * 10)}`;
+    if (!candidates.has(key)) candidates.set(key, { lon, lat });
+  };
+
+  for (const lonOffset of LAND_WAVE_LON_OFFSETS) {
+    for (const latOffset of LAND_WAVE_LAT_OFFSETS) {
+      add(waveTarget.lon + lonOffset, waveTarget.lat + latOffset);
+    }
+  }
+
+  if (previousTarget) {
+    for (const lonOffset of LAND_WAVE_DETOUR_LON_OFFSETS) {
+      for (const latOffset of LAND_WAVE_DETOUR_LAT_OFFSETS) {
+        add(previousTarget.lon + lonOffset, previousTarget.lat + latOffset);
+      }
+    }
+  }
+
+  for (const feature of state.geojson?.features ?? []) {
+    if (!isFeatureNearLandWavePath(feature, waveTarget, previousTarget)) continue;
+
+    const waveAnchor = landFeatureAnchorNear(feature, waveTarget);
+    if (waveAnchor) add(waveAnchor.lon, waveAnchor.lat, false);
+
+    if (previousTarget) {
+      const previousAnchor = landFeatureAnchorNear(feature, previousTarget);
+      if (previousAnchor) add(previousAnchor.lon, previousAnchor.lat, false);
+    }
+  }
+
+  return [...candidates.values()];
+}
+
+function landWaveCandidateScore(candidate, waveTarget, previousTarget = null) {
+  const waveDistance = greatCircleDistance(waveTarget.lon, waveTarget.lat, candidate.lon, candidate.lat);
+  if (!previousTarget) return waveDistance;
+
+  const continuityDistance = greatCircleDistance(
+    previousTarget.lon,
+    previousTarget.lat,
+    candidate.lon,
+    candidate.lat,
+  );
+  const forwardDistance = forwardLonDelta(previousTarget.lon, candidate.lon);
+  const waveForwardDistance = forwardLonDelta(previousTarget.lon, waveTarget.lon);
+  const stepPenalty = Math.max(0, forwardDistance - LAND_WAVE_MAX_FORWARD_DEGREES) * 1.3;
+  const reversePenalty = forwardDistance > 210 ? 95 : 0;
+  const stallPenalty =
+    forwardDistance < 2
+      ? Math.max(0, waveForwardDistance - LAND_WAVE_STALL_START_DEGREES) * LAND_WAVE_STALL_WEIGHT
+      : 0;
+
+  return (
+    waveDistance * LAND_WAVE_WAVE_WEIGHT +
+    continuityDistance * LAND_WAVE_CONTINUITY_WEIGHT +
+    stepPenalty +
+    reversePenalty +
+    stallPenalty
+  );
+}
+
+function isFeatureNearLandWavePath(feature, waveTarget, previousTarget = null) {
+  const waveDistance = bboxDistanceEstimate(feature.bbox, waveTarget);
+  if (waveDistance <= LAND_WAVE_FEATURE_SEARCH_RADIUS) return true;
+
+  return previousTarget
+    ? bboxDistanceEstimate(feature.bbox, previousTarget) <= LAND_WAVE_FEATURE_SEARCH_RADIUS
+    : false;
+}
+
+function landFeatureAnchorNear(feature, reference) {
+  const bbox = feature?.bbox;
+  if (!bbox) return null;
+
+  const center = bboxCenterNear(bbox, reference.lon);
+  const near = {
+    lon: clampLonToBbox(reference.lon, bbox),
+    lat: THREE.MathUtils.clamp(reference.lat, bbox[1], bbox[3]),
+  };
+  const points = [
+    near,
+    { lon: near.lon, lat: center.lat },
+    { lon: center.lon, lat: near.lat },
+    center,
+  ];
+
+  for (const point of points) {
+    const lon = normalizeLon(point.lon);
+    if (geometryContains(feature.geometry, lon, point.lat)) return { lon, lat: point.lat };
+  }
+
+  return closestOuterRingPoint(feature.geometry, reference);
+}
+
+function closestOuterRingPoint(geometry, reference) {
+  let best = null;
+  let bestDistance = Infinity;
+
+  forEachOuterRing(geometry, (ring) => {
+    const step = Math.max(1, Math.ceil(ring.length / LAND_WAVE_RING_SAMPLE_LIMIT));
+    for (let index = 0; index < ring.length; index += step) {
+      const lon = normalizeLon(ring[index][0]);
+      const lat = THREE.MathUtils.clamp(ring[index][1], -72, 72);
+      const distance = greatCircleDistance(reference.lon, reference.lat, lon, lat);
+      if (distance < bestDistance) {
+        bestDistance = distance;
+        best = { lon, lat };
+      }
+    }
+  });
+
+  return best;
+}
+
+function toggleRandomPick() {
+  const enabled = randomPickTimer === 0;
+  if (enabled) {
+    selectRandomVisiblePoint();
+    randomPickTimer = window.setInterval(selectRandomVisiblePoint, RANDOM_PICK_INTERVAL_MS);
+  } else {
+    clearInterval(randomPickTimer);
+    randomPickTimer = 0;
+  }
+  updateRandomPickButton();
+}
+
+function updateRandomPickButton() {
+  const enabled = randomPickTimer !== 0;
+  randomPickButton.dataset.active = String(enabled);
+  randomPickButton.setAttribute('aria-pressed', String(enabled));
+  const label = enabled ? 'ランダム選択を停止' : 'ランダム選択を開始';
+  randomPickButton.title = label;
+  randomPickButton.setAttribute('aria-label', label);
+}
+
+function toggleTimelinePlayback() {
+  if (timelinePlaying) {
+    stopTimelinePlayback();
+  } else {
+    startTimelinePlayback();
+  }
+}
+
+function startTimelinePlayback() {
+  if (state.eras.length <= 1) return;
+
+  timelinePlaying = true;
+  timelinePlayToken += 1;
+  if (timelineDirection > 0 && state.eraIndex >= state.eras.length - 1) {
+    setEraIndex(0);
+  } else if (timelineDirection < 0 && state.eraIndex <= 0) {
+    setEraIndex(state.eras.length - 1);
+  }
+  scheduleTimelinePlayback(timelinePlayToken);
+  preloadEra(nextLoopingEraIndex());
+  updateTimelinePlayButton();
+}
+
+function stopTimelinePlayback() {
+  timelinePlaying = false;
+  timelinePlayToken += 1;
+  clearTimeout(timelinePlayTimer);
+  timelinePlayTimer = 0;
+  updateTimelinePlayButton();
+}
+
+function scheduleTimelinePlayback(token) {
+  clearTimeout(timelinePlayTimer);
+  timelinePlayTimer = window.setTimeout(() => advanceTimelinePlayback(token), timelineStepIntervalMs());
+}
+
+async function advanceTimelinePlayback(token) {
+  timelinePlayTimer = 0;
+  if (!timelinePlaying || token !== timelinePlayToken) return;
+
+  await setEraIndex(nextLoopingEraIndex());
+  if (!timelinePlaying || token !== timelinePlayToken) return;
+
+  preloadEra(nextLoopingEraIndex());
+  scheduleTimelinePlayback(token);
+}
+
+function isTimelinePlaying() {
+  return timelinePlaying;
+}
+
+function nextLoopingEraIndex() {
+  if (state.eras.length === 0) return 0;
+  return (state.eraIndex + timelineDirection + state.eras.length) % state.eras.length;
+}
+
+function timelineStepIntervalMs() {
+  const speed = Math.max(0.001, Math.abs(controls.autoRotateSpeed || AUTO_ROTATE_SPEED));
+  const playbackSteps = Math.max(1, state.eras.length - 1);
+  return (
+    (((AUTO_ROTATE_ORBIT_SECONDS_AT_60FPS / speed) * 1000) / playbackSteps) *
+    (TIMELINE_PLAYBACK_SLOWDOWN / Math.max(0.001, timelineSpeedMultiplier))
+  );
+}
+
+function updateTimelinePlayButton() {
+  timelinePlayButton.dataset.active = String(timelinePlaying);
+  timelinePlayButton.setAttribute('aria-pressed', String(timelinePlaying));
+  const label = timelinePlaying
+    ? '時代再生を停止'
+    : timelineDirection < 0
+      ? '時代を逆再生'
+      : '時代を再生';
+  timelinePlayButton.title = label;
+  timelinePlayButton.setAttribute('aria-label', label);
+  timelinePlayButton.textContent = timelinePlaying ? '⏸' : timelineDirection < 0 ? '◀' : '▶';
+}
+
+function setTimelineDirection(direction) {
+  timelineDirection = direction < 0 ? -1 : 1;
+  updateTimelineDirectionButton();
+  updateTimelinePlayButton();
+  if (isTimelinePlaying()) {
+    preloadEra(nextLoopingEraIndex());
+    scheduleTimelinePlayback(timelinePlayToken);
+  }
+}
+
+function updateTimelineDirectionButton() {
+  const reversed = timelineDirection < 0;
+  timelineReverseButton.dataset.active = String(reversed);
+  timelineReverseButton.setAttribute('aria-pressed', String(reversed));
+}
+
+function setTimelineSpeedMultiplier(multiplier) {
+  if (!Number.isFinite(multiplier)) return;
+
+  timelineSpeedMultiplier = THREE.MathUtils.clamp(
+    multiplier,
+    TIMELINE_SPEED_MIN,
+    TIMELINE_SPEED_MAX,
+  );
+  updateTimelineSpeedControl();
+  if (isTimelinePlaying()) scheduleTimelinePlayback(timelinePlayToken);
+}
+
+function updateTimelineSpeedControl() {
+  timelineSpeedRange.value = String(timelineSpeedMultiplier);
+  timelineSpeedValue.textContent = `${timelineSpeedMultiplier.toFixed(2).replace(/\.?0+$/, '')}x`;
+  timelineSpeedRange.setAttribute('aria-valuetext', `${timelineSpeedMultiplier.toFixed(2).replace(/\.?0+$/, '')}倍`);
+
+  const progress =
+    ((timelineSpeedMultiplier - TIMELINE_SPEED_MIN) /
+      Math.max(0.001, TIMELINE_SPEED_MAX - TIMELINE_SPEED_MIN)) *
+    100;
+  timelineSpeedRange.style.setProperty('--timeline-speed-progress', `${progress.toFixed(1)}%`);
+}
+
+function closeTimelineSettings() {
+  timelineSettingsPanel.hidden = true;
+  timelineSettingsButton.setAttribute('aria-expanded', 'false');
 }
 
 function updateNameLanguageButton() {
@@ -964,15 +1575,7 @@ function pickGlobe(event) {
   const hit = raycaster.intersectObject(globe, false)[0];
   if (!hit) return;
 
-  const lonLat = vectorToLonLat(hit.point);
-  const nearbyEvent = findNearbyEvent(lonLat);
-  const feature = findFeatureAt(lonLat.lon, lonLat.lat);
-
-  state.selectedFeature = feature;
-  state.selectedEvent = nearbyEvent;
-  state.selectedLonLat = lonLat;
-  drawSelection(feature, nearbyEvent, lonLat);
-  renderInfo();
+  selectLonLat(vectorToLonLat(hit.point));
 }
 
 function selectEvent(eventData, lonLat) {
@@ -981,6 +1584,206 @@ function selectEvent(eventData, lonLat) {
   state.selectedLonLat = lonLat;
   drawSelection(null, eventData, lonLat);
   renderInfo();
+  updateSelectionLink();
+}
+
+function selectLonLat(lonLat) {
+  const nearbyEvent = findNearbyEvent(lonLat);
+  const feature = findFeatureAt(lonLat.lon, lonLat.lat);
+
+  state.selectedFeature = feature;
+  state.selectedEvent = nearbyEvent;
+  state.selectedLonLat = lonLat;
+  drawSelection(feature, nearbyEvent, lonLat);
+  renderInfo();
+  updateSelectionLink();
+}
+
+function selectRandomVisiblePoint() {
+  const visibleEvents = visibleEventCandidates();
+  if (visibleEvents.length > 2) {
+    selectRandomEventCandidate(visibleEvents);
+    return;
+  }
+
+  const candidates = visibleEvents.map((candidate) => ({ ...candidate, type: 'event' }));
+  const landCandidate = randomVisibleLandCandidate();
+  if (landCandidate) candidates.push({ ...landCandidate, type: 'land' });
+
+  if (candidates.length === 0) return;
+  const candidate = candidates[Math.floor(Math.random() * candidates.length)];
+  if (candidate.type === 'event') {
+    selectEvent(candidate.eventData, candidate.lonLat);
+  } else {
+    selectLandLonLat(candidate.lonLat, candidate.feature);
+  }
+}
+
+function selectRandomEventCandidate(candidates) {
+  const candidate = candidates[Math.floor(Math.random() * candidates.length)];
+  selectEvent(candidate.eventData, candidate.lonLat);
+}
+
+function selectLandLonLat(lonLat, feature = findLandFeatureAt(lonLat.lon, lonLat.lat)) {
+  if (!feature) return false;
+  state.selectedFeature = feature;
+  state.selectedEvent = null;
+  state.selectedLonLat = lonLat;
+  drawSelection(feature, null, lonLat);
+  renderInfo();
+  updateSelectionLink();
+  return true;
+}
+
+function visibleEventCandidates() {
+  return eraMarkerGroup.children
+    .filter((marker) => marker.userData?.event && isLonLatVisible(marker.userData.event))
+    .map((marker) => ({
+      eventData: marker.userData.event,
+      lonLat: { lon: marker.userData.event.lon, lat: marker.userData.event.lat },
+    }));
+}
+
+function randomVisibleLandCandidate() {
+  for (let attempt = 0; attempt < RANDOM_LAND_PICK_TRIES; attempt += 1) {
+    const lonLat = randomVisibleGlobeLonLat();
+    if (!lonLat) continue;
+    const feature = findLandFeatureAt(lonLat.lon, lonLat.lat);
+    if (feature) return { lonLat, feature };
+  }
+
+  for (let attempt = 0; attempt < RANDOM_LAND_PICK_TRIES; attempt += 1) {
+    const feature = randomFeature(state.geojson);
+    const lonLat = feature ? randomLonLatInFeature(feature) : null;
+    if (!lonLat || !isLonLatVisible(lonLat)) continue;
+    if (findFeatureInGeojson({ features: [feature] }, lonLat.lon, lonLat.lat)) return { lonLat, feature };
+  }
+
+  return null;
+}
+
+function randomVisibleGlobeLonLat() {
+  for (let attempt = 0; attempt < RANDOM_PICK_TRIES; attempt += 1) {
+    pointer.set(Math.random() * 2 - 1, Math.random() * 2 - 1);
+    raycaster.setFromCamera(pointer, camera);
+    const hit = raycaster.intersectObject(globe, false)[0];
+    if (hit) return vectorToLonLat(hit.point);
+  }
+
+  return null;
+}
+
+function randomFeature(geojson) {
+  const features = geojson?.features ?? [];
+  if (features.length === 0) return null;
+  return features[Math.floor(Math.random() * features.length)];
+}
+
+function randomLonLatInFeature(feature) {
+  const bbox = feature?.bbox;
+  if (!bbox) return null;
+
+  const crossesAntimeridian = bbox[2] - bbox[0] > 300;
+  const minLon = crossesAntimeridian ? -180 : bbox[0];
+  const maxLon = crossesAntimeridian ? 180 : bbox[2];
+  const lon = normalizeLon(minLon + Math.random() * (maxLon - minLon));
+  const lat = bbox[1] + Math.random() * (bbox[3] - bbox[1]);
+  return geometryContains(feature.geometry, lon, lat) ? { lon, lat } : null;
+}
+
+function isLonLatVisible(lonLat) {
+  const position = lonLatToVector3(lonLat.lon, lonLat.lat, RADIUS);
+  const projected = position.clone().project(camera);
+  if (projected.z < -1 || projected.z > 1) return false;
+  if (Math.abs(projected.x) > 1 || Math.abs(projected.y) > 1) return false;
+
+  const cameraPosition = camera.getWorldPosition(new THREE.Vector3());
+  const cameraDistance = cameraPosition.length();
+  if (cameraDistance <= RADIUS) return true;
+  return position.normalize().dot(cameraPosition.normalize()) > RADIUS / cameraDistance;
+}
+
+function updateSelectionLink() {
+  if (!state.selectedLonLat) {
+    hideSelectionLink();
+    return;
+  }
+
+  const target = selectionScreenPosition(state.selectedLonLat);
+  if (!target) {
+    hideSelectionLink();
+    return;
+  }
+
+  const shellRect = appShell.getBoundingClientRect();
+  const panelRect = infoPanel.getBoundingClientRect();
+  const panel = {
+    left: panelRect.left - shellRect.left,
+    right: panelRect.right - shellRect.left,
+    top: panelRect.top - shellRect.top,
+    bottom: panelRect.bottom - shellRect.top,
+  };
+
+  if (target.x >= panel.left && target.x <= panel.right && target.y >= panel.top && target.y <= panel.bottom) {
+    hideSelectionLink();
+    return;
+  }
+
+  const start = panelEdgePoint(panel, target);
+  selectionLink.setAttribute('viewBox', `0 0 ${shellRect.width} ${shellRect.height}`);
+  selectionLinkLine.setAttribute('x1', start.x.toFixed(1));
+  selectionLinkLine.setAttribute('y1', start.y.toFixed(1));
+  selectionLinkLine.setAttribute('x2', target.x.toFixed(1));
+  selectionLinkLine.setAttribute('y2', target.y.toFixed(1));
+  selectionLink.removeAttribute('hidden');
+}
+
+function hideSelectionLink() {
+  selectionLink.setAttribute('hidden', '');
+}
+
+function selectionScreenPosition(lonLat) {
+  const shellRect = appShell.getBoundingClientRect();
+  const stageRect = stage.getBoundingClientRect();
+  projectedSelectionPoint
+    .copy(lonLatToVector3(lonLat.lon, lonLat.lat, SELECTED_RADIUS + 0.026))
+    .project(camera);
+
+  if (projectedSelectionPoint.z < -1 || projectedSelectionPoint.z > 1) return null;
+
+  return {
+    x: stageRect.left - shellRect.left + ((projectedSelectionPoint.x + 1) * stageRect.width) / 2,
+    y: stageRect.top - shellRect.top + ((1 - projectedSelectionPoint.y) * stageRect.height) / 2,
+  };
+}
+
+function panelEdgePoint(panel, target) {
+  const center = {
+    x: (panel.left + panel.right) / 2,
+    y: (panel.top + panel.bottom) / 2,
+  };
+  const dx = target.x - center.x;
+  const dy = target.y - center.y;
+  const candidates = [];
+
+  if (Math.abs(dx) > Number.EPSILON) {
+    for (const x of [panel.left, panel.right]) {
+      const t = (x - center.x) / dx;
+      const y = center.y + dy * t;
+      if (t > 0 && y >= panel.top && y <= panel.bottom) candidates.push({ x, y, t });
+    }
+  }
+
+  if (Math.abs(dy) > Number.EPSILON) {
+    for (const y of [panel.top, panel.bottom]) {
+      const t = (y - center.y) / dy;
+      const x = center.x + dx * t;
+      if (t > 0 && x >= panel.left && x <= panel.right) candidates.push({ x, y, t });
+    }
+  }
+
+  candidates.sort((a, b) => a.t - b.t);
+  return candidates[0] ?? center;
 }
 
 function drawSelection(feature, eventData, lonLat) {
@@ -1346,6 +2149,15 @@ function createGraticuleGeometry() {
   return geometry;
 }
 
+function forEachOuterRing(geometry, callback) {
+  if (!geometry) return;
+  if (geometry.type === 'Polygon') {
+    callback(geometry.coordinates[0]);
+  } else if (geometry.type === 'MultiPolygon') {
+    for (const polygon of geometry.coordinates) callback(polygon[0]);
+  }
+}
+
 function forEachRing(geometry, callback) {
   if (!geometry) return;
   if (geometry.type === 'Polygon') {
@@ -1367,8 +2179,16 @@ function forEachPolygon(geometry, callback) {
 }
 
 function findFeatureAt(lon, lat) {
+  return findFeatureInGeojson(state.pickGeojson ?? state.geojson, lon, lat);
+}
+
+function findLandFeatureAt(lon, lat) {
+  return findFeatureInGeojson(state.geojson, lon, lat);
+}
+
+function findFeatureInGeojson(geojson, lon, lat) {
   const matches = [];
-  const pickFeatures = state.pickGeojson?.features ?? state.geojson?.features ?? [];
+  const pickFeatures = geojson?.features ?? [];
   for (const feature of pickFeatures) {
     if (!bboxContains(feature.bbox, lon, lat)) continue;
     if (geometryContains(feature.geometry, lon, lat)) matches.push(feature);
@@ -1389,6 +2209,46 @@ function bboxContains(bbox, lon, lat) {
 function bboxArea(bbox) {
   if (!bbox) return Infinity;
   return Math.abs((bbox[2] - bbox[0]) * (bbox[3] - bbox[1]));
+}
+
+function bboxDistanceEstimate(bbox, reference) {
+  if (!bbox) return Infinity;
+
+  const latDistance =
+    reference.lat < bbox[1] ? bbox[1] - reference.lat : Math.max(0, reference.lat - bbox[3]);
+  const lonDistance = lonDistanceToBbox(reference.lon, bbox);
+  return Math.hypot(lonDistance * Math.cos(reference.lat * DEG), latDistance);
+}
+
+function lonDistanceToBbox(lon, bbox) {
+  if (!bbox) return Infinity;
+  if (bbox[2] - bbox[0] > 300) return 0;
+
+  const minLon = wrapLonNear(bbox[0], lon);
+  const maxLon = wrapLonNear(bbox[2], lon);
+  const low = Math.min(minLon, maxLon);
+  const high = Math.max(minLon, maxLon);
+  if (lon >= low && lon <= high) return 0;
+  return Math.min(Math.abs(lon - low), Math.abs(lon - high));
+}
+
+function bboxCenterNear(bbox, centerLon) {
+  const minLon = wrapLonNear(bbox[0], centerLon);
+  const maxLon = wrapLonNear(bbox[2], centerLon);
+  return {
+    lon: normalizeLon((minLon + maxLon) / 2),
+    lat: (bbox[1] + bbox[3]) / 2,
+  };
+}
+
+function clampLonToBbox(lon, bbox) {
+  if (bbox[2] - bbox[0] > 300) return normalizeLon(lon);
+
+  const minLon = wrapLonNear(bbox[0], lon);
+  const maxLon = wrapLonNear(bbox[2], lon);
+  const low = Math.min(minLon, maxLon);
+  const high = Math.max(minLon, maxLon);
+  return normalizeLon(THREE.MathUtils.clamp(lon, low, high));
 }
 
 function geometryContains(geometry, lon, lat) {
@@ -1451,6 +2311,12 @@ function greatCircleDistance(lonA, latA, lonB, latB) {
     Math.sin(deltaPhi / 2) ** 2 +
     Math.cos(phiA) * Math.cos(phiB) * Math.sin(deltaLambda / 2) ** 2;
   return 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)) * RAD;
+}
+
+function forwardLonDelta(fromLon, toLon) {
+  let delta = normalizeLon(toLon - fromLon);
+  if (delta < 0) delta += 360;
+  return delta;
 }
 
 function normalizeLon(lon) {
