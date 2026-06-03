@@ -15,7 +15,7 @@
     "education",
     "electron"
   ],
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "MIT",
   "main": "electron/main.cjs",
   "scripts": {
     "start": "electron .",

@@ -1,11 +1,4 @@
-# License
-
-This repository uses a mixed-license layout.
-
-## Application Source Code
-
-The application source code, scripts, styles, and documentation written for this
-project are licensed under the MIT License.
+MIT License
 
 Copyright (c) 2026 irorinri
 
@@ -25,12 +18,3 @@ FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-## Historical Boundary Data
-
-Files under `data/borders/` are generated from the `historical-basemaps`
-dataset and remain under that project's GPL-3.0 license terms.
-
-Source: https://github.com/aourednik/historical-basemaps
-
-See `THIRD_PARTY_NOTICES.md` for additional notes.

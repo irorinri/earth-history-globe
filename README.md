@@ -94,5 +94,5 @@ education, streaming, and creative world-history explanations.
 
 ## License
 
-This repository contains code and third-party historical data under separate
-licenses. See `LICENSE` and `THIRD_PARTY_NOTICES.md`.
+Application source code is MIT licensed. Historical boundary data keeps its
+upstream GPL-3.0 license terms; see `THIRD_PARTY_NOTICES.md`.
