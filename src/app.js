@@ -8,7 +8,7 @@ const SELECTED_RADIUS = 1.014;
 const MARKER_RADIUS = 1.03;
 const MAX_BORDER_SEGMENT_DEGREES = 1.25;
 const MIN_DISTANCE = 1.35;
-const MAX_DISTANCE = 4.25;
+const MAX_DISTANCE = 7.2;
 const START_DISTANCE = 2.75;
 const AUTO_ROTATE_SPEED = 0.28;
 const ROTATION_SPEED_MIN = 0.4;
@@ -38,6 +38,13 @@ const LAND_WAVE_FEATURE_SEARCH_RADIUS = 124;
 const LAND_WAVE_RING_SAMPLE_LIMIT = 96;
 const LAND_WAVE_STALL_START_DEGREES = 16;
 const LAND_WAVE_STALL_WEIGHT = 0.8;
+const OCEAN_ACCELERATION_SAMPLE_COUNT = 96;
+const OCEAN_ACCELERATION_REFRESH_MS = 280;
+const OCEAN_ACCELERATION_MIN_MULTIPLIER = 1;
+const OCEAN_ACCELERATION_MAX_MULTIPLIER = 3.25;
+const OCEAN_ACCELERATION_CURVE_START = 0.38;
+const OCEAN_ACCELERATION_CURVE_END = 0.92;
+const OCEAN_ACCELERATION_SAMPLES = createHemisphereSurfaceSamples(OCEAN_ACCELERATION_SAMPLE_COUNT);
 const EARLY_BOUNDARY_OPACITY = 0.28;
 const EARLY_BOUNDARY_END_ID = 'classical-empires';
 const HUMAN_ERA_START_ID = 'early-hominin-lineage';
@@ -415,6 +422,8 @@ let waveRotationLon = null;
 let waveRotationPhase = 0;
 let landWaveRotationTarget = null;
 let landWaveSearchTime = 0;
+let oceanAccelerationMultiplier = OCEAN_ACCELERATION_MIN_MULTIPLIER;
+let oceanAccelerationSampleTime = 0;
 let randomPickTimer = 0;
 let timelinePlaying = false;
 let timelineDirection = 1;
@@ -596,6 +605,7 @@ async function loadEra(index) {
 
     state.geojson = geojson;
     state.pickGeojson = geojson;
+    resetOceanAccelerationSampling();
     document.documentElement.dataset.era = era.id ?? String(index);
     document.documentElement.dataset.year = String(era.year ?? era.id ?? index);
     state.selectedFeature = null;
@@ -769,10 +779,11 @@ function applyRotationPlayback() {
   waveRotationLon = null;
   landWaveRotationTarget = null;
   landWaveSearchTime = 0;
+  resetOceanAccelerationSampling();
 }
 
 function setRotationMode(mode) {
-  if (!['standard', 'land', 'wave', 'land-wave'].includes(mode)) return;
+  if (!['standard', 'land', 'wave', 'land-wave', 'ocean-accelerate'].includes(mode)) return;
   rotationMode = mode;
   applyRotationPlayback();
   updateRotationModeButtons();
@@ -833,6 +844,8 @@ function updateRotationMode() {
     updateWaveRotation(deltaSeconds);
   } else if (rotationMode === 'land-wave') {
     updateLandWaveRotation(deltaSeconds, now);
+  } else if (rotationMode === 'ocean-accelerate') {
+    updateOceanAccelerationRotation(deltaSeconds, now);
   }
 }
 
@@ -930,13 +943,76 @@ function updateLandWaveRotation(deltaSeconds, now) {
   camera.position.copy(controls.target.clone().add(nextDirection.multiplyScalar(distance)));
 }
 
-function rotateCameraLongitude(deltaSeconds) {
+function updateOceanAccelerationRotation(deltaSeconds, now) {
+  if (
+    oceanAccelerationSampleTime === 0 ||
+    now - oceanAccelerationSampleTime >= OCEAN_ACCELERATION_REFRESH_MS
+  ) {
+    oceanAccelerationMultiplier = visibleOceanAccelerationMultiplier();
+    oceanAccelerationSampleTime = now;
+  }
+
+  rotateCameraLongitude(deltaSeconds, oceanAccelerationMultiplier);
+}
+
+function visibleOceanAccelerationMultiplier() {
+  const oceanRatio = visibleOceanSurfaceRatio();
+  const amount = smoothstep(
+    OCEAN_ACCELERATION_CURVE_START,
+    OCEAN_ACCELERATION_CURVE_END,
+    oceanRatio,
+  );
+  return THREE.MathUtils.lerp(
+    OCEAN_ACCELERATION_MIN_MULTIPLIER,
+    OCEAN_ACCELERATION_MAX_MULTIPLIER,
+    amount,
+  );
+}
+
+function visibleOceanSurfaceRatio() {
+  const features = state.geojson?.features ?? [];
+  if (features.length === 0) return 1;
+
+  const viewCenter = camera.getWorldPosition(new THREE.Vector3());
+  if (viewCenter.lengthSq() === 0) return 0;
+  viewCenter.normalize();
+
+  const upReference =
+    Math.abs(viewCenter.y) > 0.92 ? new THREE.Vector3(0, 0, 1) : new THREE.Vector3(0, 1, 0);
+  const right = new THREE.Vector3().crossVectors(upReference, viewCenter).normalize();
+  const up = new THREE.Vector3().crossVectors(viewCenter, right).normalize();
+  const direction = new THREE.Vector3();
+  let oceanSamples = 0;
+
+  for (const sample of OCEAN_ACCELERATION_SAMPLES) {
+    direction
+      .copy(right)
+      .multiplyScalar(sample.x)
+      .addScaledVector(up, sample.y)
+      .addScaledVector(viewCenter, sample.z)
+      .normalize();
+
+    const lonLat = vectorToLonLat(direction);
+    if (!findLandFeatureAt(lonLat.lon, lonLat.lat)) oceanSamples += 1;
+  }
+
+  return oceanSamples / OCEAN_ACCELERATION_SAMPLES.length;
+}
+
+function resetOceanAccelerationSampling() {
+  oceanAccelerationMultiplier = OCEAN_ACCELERATION_MIN_MULTIPLIER;
+  oceanAccelerationSampleTime = 0;
+}
+
+function rotateCameraLongitude(deltaSeconds, speedMultiplier = 1) {
   const offset = camera.position.clone().sub(controls.target);
   const distance = offset.length();
   if (distance <= 0) return;
 
   const current = vectorToLonLat(offset);
-  const nextLon = normalizeLon(current.lon + rotationDegreesPerSecond() * deltaSeconds);
+  const nextLon = normalizeLon(
+    current.lon + rotationDegreesPerSecond() * speedMultiplier * deltaSeconds,
+  );
   camera.position.copy(
     controls.target.clone().add(lonLatToVector3(nextLon, current.lat, distance)),
   );
@@ -2199,6 +2275,22 @@ function findFeatureInGeojson(geojson, lon, lat) {
   return matches[0];
 }
 
+function createHemisphereSurfaceSamples(count) {
+  const samples = [];
+  const goldenAngle = Math.PI * (3 - Math.sqrt(5));
+  for (let index = 0; index < count; index += 1) {
+    const z = (index + 0.5) / count;
+    const radius = Math.sqrt(Math.max(0, 1 - z * z));
+    const angle = index * goldenAngle;
+    samples.push({
+      x: Math.cos(angle) * radius,
+      y: Math.sin(angle) * radius,
+      z,
+    });
+  }
+  return samples;
+}
+
 function bboxContains(bbox, lon, lat) {
   if (!bbox || lat < bbox[1] || lat > bbox[3]) return false;
   const width = bbox[2] - bbox[0];
@@ -2300,6 +2392,12 @@ function vectorToLonLat(vector) {
     lon: normalizeLon(Math.atan2(normal.x, normal.z) * RAD),
     lat: Math.asin(THREE.MathUtils.clamp(normal.y, -1, 1)) * RAD,
   };
+}
+
+function smoothstep(edge0, edge1, value) {
+  const span = Math.max(0.0001, edge1 - edge0);
+  const t = THREE.MathUtils.clamp((value - edge0) / span, 0, 1);
+  return t * t * (3 - 2 * t);
 }
 
 function greatCircleDistance(lonA, latA, lonB, latB) {

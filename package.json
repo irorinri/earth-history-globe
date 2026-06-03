@@ -3,7 +3,19 @@
   "version": "1.0.0",
   "private": true,
   "productName": "Chikyu-gata Rekishi Chizu",
-  "description": "Static historical globe map wrapped in Electron.",
+  "description": "Local-first 3D historical globe map wrapped in Electron.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/irorinri/earth-history-globe.git"
+  },
+  "keywords": [
+    "threejs",
+    "historical-map",
+    "geojson",
+    "education",
+    "electron"
+  ],
+  "license": "SEE LICENSE IN LICENSE",
   "main": "electron/main.cjs",
   "scripts": {
     "start": "electron .",

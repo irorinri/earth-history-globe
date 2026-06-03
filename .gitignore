@@ -4,3 +4,14 @@ dist/
 release/
 *.asar
 *.exe
+__pycache__/
+*.py[cod]
+
+# Separate local experiments that do not belong to this repository.
+family-schedule-timeline/
+
+# Local/editor files.
+.env
+.env.*
+.vscode/
+.idea/
